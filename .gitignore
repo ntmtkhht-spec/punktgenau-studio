@@ -1,0 +1,23 @@
+# Abhaengigkeiten
+node_modules/
+
+# Erzeugte Dateien (jederzeit neu erzeugbar)
+remotion-shorts/out/
+remotion-shorts/stills/
+remotion-shorts/public/**/*.wav
+remotion-shorts/public/*.wav
+videos/*/audit/
+videos/*/export/
+videos/*/whisper.json
+research/*.mp4
+
+# Grosse Downloads (Quelle und Lizenz stehen im jeweiligen Skript)
+downloads/
+
+# Editor/OS
+.DS_Store
+Thumbs.db
+
+# Manim-Renderausgabe
+manim-scenes/media/
+manim-scenes/__pycache__/

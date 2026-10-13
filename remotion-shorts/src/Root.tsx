@@ -1,0 +1,52 @@
+import React from 'react';
+import {Composition} from 'remotion';
+import {KnnShort} from './knn/KnnShort';
+import {FPS, H, sec, W} from './knn/theme';
+import {Phantom} from './phantom/Phantom';
+import {TOTAL} from './phantom/timeline';
+import {Spiral, SPIRAL_TOTAL} from './spiral/Spiral';
+import {ChannelBanner, ProfileLogo, WordmarkWide} from './branding/Brand';
+import {zenoSchema} from './zeno/schema';
+import {ZenoThumbnail} from './zeno/Thumbnail';
+import {Zeno, ZENO_TOTAL} from './zeno/Zeno';
+import {VIDEOS} from './videos/registry';
+
+export const RemotionRoot: React.FC = () => (
+  <>
+    <Composition id="KnnShort" component={KnnShort} durationInFrames={sec(53)} fps={FPS} width={W} height={H} />
+    <Composition id="Phantomstau" component={Phantom} durationInFrames={sec(TOTAL)} fps={FPS} width={W} height={H} />
+    <Composition id="ProfilLogo" component={ProfileLogo} durationInFrames={1} fps={FPS} width={800} height={800} />
+    <Composition id="Wortmarke" component={WordmarkWide} durationInFrames={1} fps={FPS} width={1600} height={400} />
+    <Composition id="ZenonThumbnail" component={ZenoThumbnail} durationInFrames={1} fps={FPS} width={1080} height={1920} />
+    <Composition id="KanalBanner" component={ChannelBanner} durationInFrames={1} fps={FPS} width={2560} height={1440} />
+    <Composition id="Primzahlspirale" component={Spiral} durationInFrames={sec(SPIRAL_TOTAL)} fps={FPS} width={W} height={H} />
+    <Composition
+      id="Zenon"
+      component={Zeno}
+      schema={zenoSchema}
+      defaultProps={{
+        figurFarbe: '#1f7ae0',
+        tuerFarbe: '#d61f69',
+        etappenFarbe1: '#1f7ae0',
+        etappenFarbe2: '#f97316',
+        etappenFarbe3: '#d61f69',
+        hookStehenbleibenSek: 2.2,
+        tuerTempo: 1.6,
+        uebergangSek: 0.6,
+        buesteHoeheAnfang: 450,
+        buesteHoeheZeile5: 340,
+        quadratZoomEnde: 4,
+        kameraZoomLauf: 1.4,
+        laufzeitSek: 2,
+      }}
+      durationInFrames={sec(ZENO_TOTAL)}
+      fps={FPS}
+      width={W}
+      height={H}
+    />
+    {/* Neue Videos aus dem Workflow (npm run pg -- new ...) */}
+    {VIDEOS.map((v) => (
+      <Composition key={v.id} id={v.id} component={v.component} durationInFrames={sec(v.durationSec)} fps={FPS} width={W} height={H} />
+    ))}
+  </>
+);

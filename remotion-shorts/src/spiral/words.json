@@ -1,0 +1,992 @@
+[
+ {
+  "text": "Primzahlen",
+  "start": 0.15,
+  "end": 0.59,
+  "line": 0
+ },
+ {
+  "text": "folgen",
+  "start": 0.61,
+  "end": 0.914,
+  "line": 0
+ },
+ {
+  "text": "keinem",
+  "start": 0.934,
+  "end": 1.238,
+  "line": 0
+ },
+ {
+  "text": "erkennbaren",
+  "start": 1.258,
+  "end": 1.732,
+  "line": 0
+ },
+ {
+  "text": "Muster,",
+  "start": 1.752,
+  "end": 2.056,
+  "line": 0
+ },
+ {
+  "text": "doch",
+  "start": 2.146,
+  "end": 2.382,
+  "line": 0
+ },
+ {
+  "text": "sobald",
+  "start": 2.402,
+  "end": 2.706,
+  "line": 0
+ },
+ {
+  "text": "man",
+  "start": 2.726,
+  "end": 2.928,
+  "line": 0
+ },
+ {
+  "text": "sie",
+  "start": 2.948,
+  "end": 3.15,
+  "line": 0
+ },
+ {
+  "text": "in",
+  "start": 3.17,
+  "end": 3.338,
+  "line": 0
+ },
+ {
+  "text": "eine",
+  "start": 3.358,
+  "end": 3.594,
+  "line": 0
+ },
+ {
+  "text": "Spirale",
+  "start": 3.614,
+  "end": 3.952,
+  "line": 0
+ },
+ {
+  "text": "legt,",
+  "start": 3.972,
+  "end": 4.208,
+  "line": 0
+ },
+ {
+  "text": "entstehen",
+  "start": 4.298,
+  "end": 4.704,
+  "line": 0
+ },
+ {
+  "text": "plötzlich",
+  "start": 4.724,
+  "end": 5.13,
+  "line": 0
+ },
+ {
+  "text": "schnurgerade",
+  "start": 5.15,
+  "end": 5.658,
+  "line": 0
+ },
+ {
+  "text": "Linien.",
+  "start": 5.678,
+  "end": 5.982,
+  "line": 0
+ },
+ {
+  "text": "Jeder",
+  "start": 6.322,
+  "end": 6.592,
+  "line": 1
+ },
+ {
+  "text": "Punkt",
+  "start": 6.612,
+  "end": 6.882,
+  "line": 1
+ },
+ {
+  "text": "steht",
+  "start": 6.902,
+  "end": 7.172,
+  "line": 1
+ },
+ {
+  "text": "für",
+  "start": 7.192,
+  "end": 7.394,
+  "line": 1
+ },
+ {
+  "text": "eine",
+  "start": 7.414,
+  "end": 7.65,
+  "line": 1
+ },
+ {
+  "text": "Zahl,",
+  "start": 7.67,
+  "end": 7.906,
+  "line": 1
+ },
+ {
+  "text": "und",
+  "start": 7.996,
+  "end": 8.198,
+  "line": 1
+ },
+ {
+  "text": "die",
+  "start": 8.218,
+  "end": 8.42,
+  "line": 1
+ },
+ {
+  "text": "farbigen",
+  "start": 8.44,
+  "end": 8.812,
+  "line": 1
+ },
+ {
+  "text": "Punkte",
+  "start": 8.832,
+  "end": 9.136,
+  "line": 1
+ },
+ {
+  "text": "sind",
+  "start": 9.156,
+  "end": 9.392,
+  "line": 1
+ },
+ {
+  "text": "die",
+  "start": 9.412,
+  "end": 9.614,
+  "line": 1
+ },
+ {
+  "text": "Primzahlen.",
+  "start": 9.634,
+  "end": 10.074,
+  "line": 1
+ },
+ {
+  "text": "Wir",
+  "start": 10.414,
+  "end": 10.616,
+  "line": 2
+ },
+ {
+  "text": "beginnen",
+  "start": 10.636,
+  "end": 11.008,
+  "line": 2
+ },
+ {
+  "text": "mit",
+  "start": 11.028,
+  "end": 11.23,
+  "line": 2
+ },
+ {
+  "text": "der",
+  "start": 11.25,
+  "end": 11.452,
+  "line": 2
+ },
+ {
+  "text": "Eins",
+  "start": 11.472,
+  "end": 11.708,
+  "line": 2
+ },
+ {
+  "text": "in",
+  "start": 11.728,
+  "end": 11.896,
+  "line": 2
+ },
+ {
+  "text": "der",
+  "start": 11.916,
+  "end": 12.118,
+  "line": 2
+ },
+ {
+  "text": "Mitte",
+  "start": 12.138,
+  "end": 12.408,
+  "line": 2
+ },
+ {
+  "text": "und",
+  "start": 12.428,
+  "end": 12.63,
+  "line": 2
+ },
+ {
+  "text": "legen",
+  "start": 12.65,
+  "end": 12.92,
+  "line": 2
+ },
+ {
+  "text": "alle",
+  "start": 12.94,
+  "end": 13.176,
+  "line": 2
+ },
+ {
+  "text": "weiteren",
+  "start": 13.196,
+  "end": 13.568,
+  "line": 2
+ },
+ {
+  "text": "Zahlen",
+  "start": 13.588,
+  "end": 13.892,
+  "line": 2
+ },
+ {
+  "text": "spiralförmig",
+  "start": 13.912,
+  "end": 14.42,
+  "line": 2
+ },
+ {
+  "text": "darum",
+  "start": 14.44,
+  "end": 14.71,
+  "line": 2
+ },
+ {
+  "text": "herum.",
+  "start": 14.73,
+  "end": 15,
+  "line": 2
+ },
+ {
+  "text": "Am",
+  "start": 15.34,
+  "end": 15.508,
+  "line": 3
+ },
+ {
+  "text": "Anfang",
+  "start": 15.528,
+  "end": 15.832,
+  "line": 3
+ },
+ {
+  "text": "wirkt",
+  "start": 15.852,
+  "end": 16.122,
+  "line": 3
+ },
+ {
+  "text": "das",
+  "start": 16.142,
+  "end": 16.344,
+  "line": 3
+ },
+ {
+  "text": "wie",
+  "start": 16.364,
+  "end": 16.566,
+  "line": 3
+ },
+ {
+  "text": "reiner",
+  "start": 16.586,
+  "end": 16.89,
+  "line": 3
+ },
+ {
+  "text": "Zufall,",
+  "start": 16.91,
+  "end": 17.214,
+  "line": 3
+ },
+ {
+  "text": "aber",
+  "start": 17.304,
+  "end": 17.54,
+  "line": 3
+ },
+ {
+  "text": "je",
+  "start": 17.56,
+  "end": 17.728,
+  "line": 3
+ },
+ {
+  "text": "mehr",
+  "start": 17.748,
+  "end": 17.984,
+  "line": 3
+ },
+ {
+  "text": "Zahlen",
+  "start": 18.004,
+  "end": 18.308,
+  "line": 3
+ },
+ {
+  "text": "dazukommen,",
+  "start": 18.328,
+  "end": 18.768,
+  "line": 3
+ },
+ {
+  "text": "desto",
+  "start": 18.858,
+  "end": 19.128,
+  "line": 3
+ },
+ {
+  "text": "deutlicher",
+  "start": 19.148,
+  "end": 19.588,
+  "line": 3
+ },
+ {
+  "text": "werden",
+  "start": 19.608,
+  "end": 19.912,
+  "line": 3
+ },
+ {
+  "text": "die",
+  "start": 19.932,
+  "end": 20.134,
+  "line": 3
+ },
+ {
+  "text": "Linien.",
+  "start": 20.154,
+  "end": 20.458,
+  "line": 3
+ },
+ {
+  "text": "Entdeckt",
+  "start": 20.798,
+  "end": 21.17,
+  "line": 4
+ },
+ {
+  "text": "hat",
+  "start": 21.19,
+  "end": 21.392,
+  "line": 4
+ },
+ {
+  "text": "das",
+  "start": 21.412,
+  "end": 21.614,
+  "line": 4
+ },
+ {
+  "text": "im",
+  "start": 21.634,
+  "end": 21.802,
+  "line": 4
+ },
+ {
+  "text": "Jahr",
+  "start": 21.822,
+  "end": 22.058,
+  "line": 4
+ },
+ {
+  "text": "neunzehnhundertdreiundsechzig",
+  "start": 22.078,
+  "end": 23.164,
+  "line": 4
+ },
+ {
+  "text": "der",
+  "start": 23.184,
+  "end": 23.386,
+  "line": 4
+ },
+ {
+  "text": "Mathematiker",
+  "start": 23.406,
+  "end": 23.914,
+  "line": 4
+ },
+ {
+  "text": "Stanislaw",
+  "start": 23.934,
+  "end": 24.34,
+  "line": 4
+ },
+ {
+  "text": "Ulam,",
+  "start": 24.36,
+  "end": 24.596,
+  "line": 4
+ },
+ {
+  "text": "der",
+  "start": 24.686,
+  "end": 24.888,
+  "line": 4
+ },
+ {
+  "text": "sich",
+  "start": 24.908,
+  "end": 25.144,
+  "line": 4
+ },
+ {
+  "text": "angeblich",
+  "start": 25.164,
+  "end": 25.57,
+  "line": 4
+ },
+ {
+  "text": "in",
+  "start": 25.59,
+  "end": 25.758,
+  "line": 4
+ },
+ {
+  "text": "einem",
+  "start": 25.778,
+  "end": 26.048,
+  "line": 4
+ },
+ {
+  "text": "langweiligen",
+  "start": 26.068,
+  "end": 26.576,
+  "line": 4
+ },
+ {
+  "text": "Vortrag",
+  "start": 26.596,
+  "end": 26.934,
+  "line": 4
+ },
+ {
+  "text": "Zahlen",
+  "start": 26.954,
+  "end": 27.258,
+  "line": 4
+ },
+ {
+  "text": "aufgekritzelt",
+  "start": 27.278,
+  "end": 27.82,
+  "line": 4
+ },
+ {
+  "text": "hat.",
+  "start": 27.84,
+  "end": 28.042,
+  "line": 4
+ },
+ {
+  "text": "Einen",
+  "start": 28.382,
+  "end": 28.652,
+  "line": 5
+ },
+ {
+  "text": "Teil",
+  "start": 28.672,
+  "end": 28.908,
+  "line": 5
+ },
+ {
+  "text": "davon",
+  "start": 28.928,
+  "end": 29.198,
+  "line": 5
+ },
+ {
+  "text": "kann",
+  "start": 29.218,
+  "end": 29.454,
+  "line": 5
+ },
+ {
+  "text": "man",
+  "start": 29.474,
+  "end": 29.676,
+  "line": 5
+ },
+ {
+  "text": "leicht",
+  "start": 29.696,
+  "end": 30,
+  "line": 5
+ },
+ {
+  "text": "erklären:",
+  "start": 30.02,
+  "end": 30.392,
+  "line": 5
+ },
+ {
+  "text": "Auf",
+  "start": 30.612,
+  "end": 30.814,
+  "line": 5
+ },
+ {
+  "text": "jeder",
+  "start": 30.834,
+  "end": 31.104,
+  "line": 5
+ },
+ {
+  "text": "dieser",
+  "start": 31.124,
+  "end": 31.428,
+  "line": 5
+ },
+ {
+  "text": "Diagonalen",
+  "start": 31.448,
+  "end": 31.888,
+  "line": 5
+ },
+ {
+  "text": "sind",
+  "start": 31.908,
+  "end": 32.144,
+  "line": 5
+ },
+ {
+  "text": "die",
+  "start": 32.164,
+  "end": 32.366,
+  "line": 5
+ },
+ {
+  "text": "Zahlen",
+  "start": 32.386,
+  "end": 32.69,
+  "line": 5
+ },
+ {
+  "text": "entweder",
+  "start": 32.71,
+  "end": 33.082,
+  "line": 5
+ },
+ {
+  "text": "alle",
+  "start": 33.102,
+  "end": 33.338,
+  "line": 5
+ },
+ {
+  "text": "gerade",
+  "start": 33.358,
+  "end": 33.662,
+  "line": 5
+ },
+ {
+  "text": "oder",
+  "start": 33.682,
+  "end": 33.918,
+  "line": 5
+ },
+ {
+  "text": "alle",
+  "start": 33.938,
+  "end": 34.174,
+  "line": 5
+ },
+ {
+  "text": "ungerade,",
+  "start": 34.194,
+  "end": 34.566,
+  "line": 5
+ },
+ {
+  "text": "und",
+  "start": 34.656,
+  "end": 34.858,
+  "line": 5
+ },
+ {
+  "text": "weil",
+  "start": 34.878,
+  "end": 35.114,
+  "line": 5
+ },
+ {
+  "text": "Primzahlen",
+  "start": 35.134,
+  "end": 35.574,
+  "line": 5
+ },
+ {
+  "text": "fast",
+  "start": 35.594,
+  "end": 35.83,
+  "line": 5
+ },
+ {
+  "text": "immer",
+  "start": 35.85,
+  "end": 36.12,
+  "line": 5
+ },
+ {
+  "text": "ungerade",
+  "start": 36.14,
+  "end": 36.512,
+  "line": 5
+ },
+ {
+  "text": "sind,",
+  "start": 36.532,
+  "end": 36.768,
+  "line": 5
+ },
+ {
+  "text": "meiden",
+  "start": 36.858,
+  "end": 37.162,
+  "line": 5
+ },
+ {
+  "text": "sie",
+  "start": 37.182,
+  "end": 37.384,
+  "line": 5
+ },
+ {
+  "text": "die",
+  "start": 37.404,
+  "end": 37.606,
+  "line": 5
+ },
+ {
+  "text": "Diagonalen",
+  "start": 37.626,
+  "end": 38.066,
+  "line": 5
+ },
+ {
+  "text": "mit",
+  "start": 38.086,
+  "end": 38.288,
+  "line": 5
+ },
+ {
+  "text": "geraden",
+  "start": 38.308,
+  "end": 38.646,
+  "line": 5
+ },
+ {
+  "text": "Zahlen.",
+  "start": 38.666,
+  "end": 38.97,
+  "line": 5
+ },
+ {
+  "text": "Warum",
+  "start": 39.31,
+  "end": 39.58,
+  "line": 6
+ },
+ {
+  "text": "manche",
+  "start": 39.6,
+  "end": 39.904,
+  "line": 6
+ },
+ {
+  "text": "der",
+  "start": 39.924,
+  "end": 40.126,
+  "line": 6
+ },
+ {
+  "text": "übrigen",
+  "start": 40.146,
+  "end": 40.484,
+  "line": 6
+ },
+ {
+  "text": "Linien",
+  "start": 40.504,
+  "end": 40.808,
+  "line": 6
+ },
+ {
+  "text": "so",
+  "start": 40.828,
+  "end": 40.996,
+  "line": 6
+ },
+ {
+  "text": "viele",
+  "start": 41.016,
+  "end": 41.286,
+  "line": 6
+ },
+ {
+  "text": "Primzahlen",
+  "start": 41.306,
+  "end": 41.746,
+  "line": 6
+ },
+ {
+  "text": "enthalten,",
+  "start": 41.766,
+  "end": 42.172,
+  "line": 6
+ },
+ {
+  "text": "hat",
+  "start": 42.262,
+  "end": 42.464,
+  "line": 6
+ },
+ {
+  "text": "bis",
+  "start": 42.484,
+  "end": 42.686,
+  "line": 6
+ },
+ {
+  "text": "heute",
+  "start": 42.706,
+  "end": 42.976,
+  "line": 6
+ },
+ {
+  "text": "niemand",
+  "start": 42.996,
+  "end": 43.334,
+  "line": 6
+ },
+ {
+  "text": "bewiesen.",
+  "start": 43.354,
+  "end": 43.726,
+  "line": 6
+ },
+ {
+  "text": "Jede",
+  "start": 44.066,
+  "end": 44.302,
+  "line": 7
+ },
+ {
+  "text": "dieser",
+  "start": 44.322,
+  "end": 44.626,
+  "line": 7
+ },
+ {
+  "text": "Linien",
+  "start": 44.646,
+  "end": 44.95,
+  "line": 7
+ },
+ {
+  "text": "gehört",
+  "start": 44.97,
+  "end": 45.274,
+  "line": 7
+ },
+ {
+  "text": "zu",
+  "start": 45.294,
+  "end": 45.462,
+  "line": 7
+ },
+ {
+  "text": "einer",
+  "start": 45.482,
+  "end": 45.752,
+  "line": 7
+ },
+ {
+  "text": "Formel,",
+  "start": 45.772,
+  "end": 46.076,
+  "line": 7
+ },
+ {
+  "text": "und",
+  "start": 46.166,
+  "end": 46.368,
+  "line": 7
+ },
+ {
+  "text": "die",
+  "start": 46.388,
+  "end": 46.59,
+  "line": 7
+ },
+ {
+  "text": "Formel",
+  "start": 46.61,
+  "end": 46.914,
+  "line": 7
+ },
+ {
+  "text": "von",
+  "start": 46.934,
+  "end": 47.136,
+  "line": 7
+ },
+ {
+  "text": "Euler",
+  "start": 47.156,
+  "end": 47.426,
+  "line": 7
+ },
+ {
+  "text": "liefert",
+  "start": 47.446,
+  "end": 47.784,
+  "line": 7
+ },
+ {
+  "text": "zum",
+  "start": 47.804,
+  "end": 48.006,
+  "line": 7
+ },
+ {
+  "text": "Beispiel",
+  "start": 48.026,
+  "end": 48.398,
+  "line": 7
+ },
+ {
+  "text": "vierzig",
+  "start": 48.418,
+  "end": 48.756,
+  "line": 7
+ },
+ {
+  "text": "Mal",
+  "start": 48.776,
+  "end": 48.978,
+  "line": 7
+ },
+ {
+  "text": "hintereinander",
+  "start": 48.998,
+  "end": 49.574,
+  "line": 7
+ },
+ {
+  "text": "eine",
+  "start": 49.594,
+  "end": 49.83,
+  "line": 7
+ },
+ {
+  "text": "Primzahl.",
+  "start": 49.85,
+  "end": 50.222,
+  "line": 7
+ },
+ {
+  "text": "Vielleicht",
+  "start": 50.562,
+  "end": 51.002,
+  "line": 8
+ },
+ {
+  "text": "folgen",
+  "start": 51.022,
+  "end": 51.326,
+  "line": 8
+ },
+ {
+  "text": "Primzahlen",
+  "start": 51.346,
+  "end": 51.786,
+  "line": 8
+ },
+ {
+  "text": "also",
+  "start": 51.806,
+  "end": 52.042,
+  "line": 8
+ },
+ {
+  "text": "doch",
+  "start": 52.062,
+  "end": 52.298,
+  "line": 8
+ },
+ {
+  "text": "einem",
+  "start": 52.318,
+  "end": 52.588,
+  "line": 8
+ },
+ {
+  "text": "Muster,",
+  "start": 52.608,
+  "end": 52.912,
+  "line": 8
+ },
+ {
+  "text": "und",
+  "start": 53.002,
+  "end": 53.204,
+  "line": 8
+ },
+ {
+  "text": "wir",
+  "start": 53.224,
+  "end": 53.426,
+  "line": 8
+ },
+ {
+  "text": "haben",
+  "start": 53.446,
+  "end": 53.716,
+  "line": 8
+ },
+ {
+  "text": "nur",
+  "start": 53.736,
+  "end": 53.938,
+  "line": 8
+ },
+ {
+  "text": "nie",
+  "start": 53.958,
+  "end": 54.16,
+  "line": 8
+ },
+ {
+  "text": "richtig",
+  "start": 54.18,
+  "end": 54.518,
+  "line": 8
+ },
+ {
+  "text": "hingeschaut.",
+  "start": 54.538,
+  "end": 55.012,
+  "line": 8
+ }
+]

@@ -1,0 +1,914 @@
+[
+ {
+  "text": "Dieser",
+  "start": 0.15,
+  "end": 0.454,
+  "line": 0
+ },
+ {
+  "text": "Stau",
+  "start": 0.474,
+  "end": 0.71,
+  "line": 0
+ },
+ {
+  "text": "hat",
+  "start": 0.73,
+  "end": 0.932,
+  "line": 0
+ },
+ {
+  "text": "keinen",
+  "start": 0.952,
+  "end": 1.256,
+  "line": 0
+ },
+ {
+  "text": "Grund.",
+  "start": 1.276,
+  "end": 1.546,
+  "line": 0
+ },
+ {
+  "text": "Und",
+  "start": 1.766,
+  "end": 1.968,
+  "line": 0
+ },
+ {
+  "text": "trotzdem",
+  "start": 1.988,
+  "end": 2.36,
+  "line": 0
+ },
+ {
+  "text": "stehst",
+  "start": 2.38,
+  "end": 2.684,
+  "line": 0
+ },
+ {
+  "text": "du",
+  "start": 2.704,
+  "end": 2.872,
+  "line": 0
+ },
+ {
+  "text": "drin.",
+  "start": 2.892,
+  "end": 3.128,
+  "line": 0
+ },
+ {
+  "text": "Kein",
+  "start": 3.468,
+  "end": 3.704,
+  "line": 1
+ },
+ {
+  "text": "Unfall.",
+  "start": 3.724,
+  "end": 4.028,
+  "line": 1
+ },
+ {
+  "text": "Keine",
+  "start": 4.248,
+  "end": 4.518,
+  "line": 1
+ },
+ {
+  "text": "Baustelle.",
+  "start": 4.538,
+  "end": 4.944,
+  "line": 1
+ },
+ {
+  "text": "Nur",
+  "start": 5.164,
+  "end": 5.366,
+  "line": 1
+ },
+ {
+  "text": "etwas",
+  "start": 5.386,
+  "end": 5.656,
+  "line": 1
+ },
+ {
+  "text": "so",
+  "start": 5.676,
+  "end": 5.844,
+  "line": 1
+ },
+ {
+  "text": "Kleines,",
+  "start": 5.864,
+  "end": 6.202,
+  "line": 1
+ },
+ {
+  "text": "dass",
+  "start": 6.292,
+  "end": 6.528,
+  "line": 1
+ },
+ {
+  "text": "du",
+  "start": 6.548,
+  "end": 6.716,
+  "line": 1
+ },
+ {
+  "text": "es",
+  "start": 6.736,
+  "end": 6.904,
+  "line": 1
+ },
+ {
+  "text": "nie",
+  "start": 6.924,
+  "end": 7.126,
+  "line": 1
+ },
+ {
+  "text": "bemerkt",
+  "start": 7.146,
+  "end": 7.484,
+  "line": 1
+ },
+ {
+  "text": "hast.",
+  "start": 7.504,
+  "end": 7.74,
+  "line": 1
+ },
+ {
+  "text": "Gleich",
+  "start": 8.08,
+  "end": 8.384,
+  "line": 2
+ },
+ {
+  "text": "siehst",
+  "start": 8.404,
+  "end": 8.708,
+  "line": 2
+ },
+ {
+  "text": "du",
+  "start": 8.728,
+  "end": 8.896,
+  "line": 2
+ },
+ {
+  "text": "es.",
+  "start": 8.916,
+  "end": 9.084,
+  "line": 2
+ },
+ {
+  "text": "Zweiundzwanzig",
+  "start": 9.424,
+  "end": 10,
+  "line": 3
+ },
+ {
+  "text": "Autos.",
+  "start": 10.02,
+  "end": 10.29,
+  "line": 3
+ },
+ {
+  "text": "Ein",
+  "start": 10.51,
+  "end": 10.712,
+  "line": 3
+ },
+ {
+  "text": "Kreis.",
+  "start": 10.732,
+  "end": 11.002,
+  "line": 3
+ },
+ {
+  "text": "Alle",
+  "start": 11.222,
+  "end": 11.458,
+  "line": 3
+ },
+ {
+  "text": "fahren",
+  "start": 11.478,
+  "end": 11.782,
+  "line": 3
+ },
+ {
+  "text": "gleich",
+  "start": 11.802,
+  "end": 12.106,
+  "line": 3
+ },
+ {
+  "text": "schnell.",
+  "start": 12.126,
+  "end": 12.464,
+  "line": 3
+ },
+ {
+  "text": "Jetzt",
+  "start": 12.804,
+  "end": 13.074,
+  "line": 4
+ },
+ {
+  "text": "bremst",
+  "start": 13.094,
+  "end": 13.398,
+  "line": 4
+ },
+ {
+  "text": "eins.",
+  "start": 13.418,
+  "end": 13.654,
+  "line": 4
+ },
+ {
+  "text": "Nur",
+  "start": 13.874,
+  "end": 14.076,
+  "line": 4
+ },
+ {
+  "text": "ein",
+  "start": 14.096,
+  "end": 14.298,
+  "line": 4
+ },
+ {
+  "text": "bisschen.",
+  "start": 14.318,
+  "end": 14.69,
+  "line": 4
+ },
+ {
+  "text": "Das",
+  "start": 15.03,
+  "end": 15.232,
+  "line": 5
+ },
+ {
+  "text": "Auto",
+  "start": 15.252,
+  "end": 15.488,
+  "line": 5
+ },
+ {
+  "text": "dahinter",
+  "start": 15.508,
+  "end": 15.88,
+  "line": 5
+ },
+ {
+  "text": "bremst",
+  "start": 15.9,
+  "end": 16.204,
+  "line": 5
+ },
+ {
+  "text": "etwas",
+  "start": 16.224,
+  "end": 16.494,
+  "line": 5
+ },
+ {
+  "text": "stärker.",
+  "start": 16.514,
+  "end": 16.852,
+  "line": 5
+ },
+ {
+  "text": "Das",
+  "start": 17.072,
+  "end": 17.274,
+  "line": 5
+ },
+ {
+  "text": "nächste",
+  "start": 17.294,
+  "end": 17.632,
+  "line": 5
+ },
+ {
+  "text": "noch",
+  "start": 17.652,
+  "end": 17.888,
+  "line": 5
+ },
+ {
+  "text": "stärker.",
+  "start": 17.908,
+  "end": 18.246,
+  "line": 5
+ },
+ {
+  "text": "Jeder",
+  "start": 18.586,
+  "end": 18.856,
+  "line": 6
+ },
+ {
+  "text": "reagiert",
+  "start": 18.876,
+  "end": 19.248,
+  "line": 6
+ },
+ {
+  "text": "einen",
+  "start": 19.268,
+  "end": 19.538,
+  "line": 6
+ },
+ {
+  "text": "Moment",
+  "start": 19.558,
+  "end": 19.862,
+  "line": 6
+ },
+ {
+  "text": "zu",
+  "start": 19.882,
+  "end": 20.05,
+  "line": 6
+ },
+ {
+  "text": "spät.",
+  "start": 20.07,
+  "end": 20.306,
+  "line": 6
+ },
+ {
+  "text": "Und",
+  "start": 20.526,
+  "end": 20.728,
+  "line": 6
+ },
+ {
+  "text": "das",
+  "start": 20.748,
+  "end": 20.95,
+  "line": 6
+ },
+ {
+  "text": "summiert",
+  "start": 20.97,
+  "end": 21.342,
+  "line": 6
+ },
+ {
+  "text": "sich.",
+  "start": 21.362,
+  "end": 21.598,
+  "line": 6
+ },
+ {
+  "text": "Bis",
+  "start": 21.938,
+  "end": 22.14,
+  "line": 7
+ },
+ {
+  "text": "eins",
+  "start": 22.16,
+  "end": 22.396,
+  "line": 7
+ },
+ {
+  "text": "ganz",
+  "start": 22.416,
+  "end": 22.652,
+  "line": 7
+ },
+ {
+  "text": "steht.",
+  "start": 22.672,
+  "end": 22.942,
+  "line": 7
+ },
+ {
+  "text": "Aus",
+  "start": 23.162,
+  "end": 23.364,
+  "line": 7
+ },
+ {
+  "text": "einem",
+  "start": 23.384,
+  "end": 23.654,
+  "line": 7
+ },
+ {
+  "text": "Bremser",
+  "start": 23.674,
+  "end": 24.012,
+  "line": 7
+ },
+ {
+  "text": "wird",
+  "start": 24.032,
+  "end": 24.268,
+  "line": 7
+ },
+ {
+  "text": "ein",
+  "start": 24.288,
+  "end": 24.49,
+  "line": 7
+ },
+ {
+  "text": "Stau.",
+  "start": 24.51,
+  "end": 24.746,
+  "line": 7
+ },
+ {
+  "text": "Aber",
+  "start": 25.086,
+  "end": 25.322,
+  "line": 8
+ },
+ {
+  "text": "jetzt",
+  "start": 25.342,
+  "end": 25.612,
+  "line": 8
+ },
+ {
+  "text": "das",
+  "start": 25.632,
+  "end": 25.834,
+  "line": 8
+ },
+ {
+  "text": "Verrückte.",
+  "start": 25.854,
+  "end": 26.26,
+  "line": 8
+ },
+ {
+  "text": "Schau",
+  "start": 26.48,
+  "end": 26.75,
+  "line": 8
+ },
+ {
+  "text": "nicht",
+  "start": 26.77,
+  "end": 27.04,
+  "line": 8
+ },
+ {
+  "text": "auf",
+  "start": 27.06,
+  "end": 27.262,
+  "line": 8
+ },
+ {
+  "text": "die",
+  "start": 27.282,
+  "end": 27.484,
+  "line": 8
+ },
+ {
+  "text": "Autos.",
+  "start": 27.504,
+  "end": 27.774,
+  "line": 8
+ },
+ {
+  "text": "Schau",
+  "start": 27.994,
+  "end": 28.264,
+  "line": 8
+ },
+ {
+  "text": "auf",
+  "start": 28.284,
+  "end": 28.486,
+  "line": 8
+ },
+ {
+  "text": "den",
+  "start": 28.506,
+  "end": 28.708,
+  "line": 8
+ },
+ {
+  "text": "Stau.",
+  "start": 28.728,
+  "end": 28.964,
+  "line": 8
+ },
+ {
+  "text": "Er",
+  "start": 29.304,
+  "end": 29.472,
+  "line": 9
+ },
+ {
+  "text": "fährt",
+  "start": 29.492,
+  "end": 29.762,
+  "line": 9
+ },
+ {
+  "text": "rückwärts.",
+  "start": 29.782,
+  "end": 30.188,
+  "line": 9
+ },
+ {
+  "text": "Die",
+  "start": 30.408,
+  "end": 30.61,
+  "line": 9
+ },
+ {
+  "text": "Autos",
+  "start": 30.63,
+  "end": 30.9,
+  "line": 9
+ },
+ {
+  "text": "fahren",
+  "start": 30.92,
+  "end": 31.224,
+  "line": 9
+ },
+ {
+  "text": "vor,",
+  "start": 31.244,
+  "end": 31.446,
+  "line": 9
+ },
+ {
+  "text": "der",
+  "start": 31.536,
+  "end": 31.738,
+  "line": 9
+ },
+ {
+  "text": "Stau",
+  "start": 31.758,
+  "end": 31.994,
+  "line": 9
+ },
+ {
+  "text": "wandert",
+  "start": 32.014,
+  "end": 32.352,
+  "line": 9
+ },
+ {
+  "text": "zurück.",
+  "start": 32.372,
+  "end": 32.676,
+  "line": 9
+ },
+ {
+  "text": "Wie",
+  "start": 32.896,
+  "end": 33.098,
+  "line": 9
+ },
+ {
+  "text": "eine",
+  "start": 33.118,
+  "end": 33.354,
+  "line": 9
+ },
+ {
+  "text": "Welle.",
+  "start": 33.374,
+  "end": 33.644,
+  "line": 9
+ },
+ {
+  "text": "Forscher",
+  "start": 33.984,
+  "end": 34.356,
+  "line": 10
+ },
+ {
+  "text": "in",
+  "start": 34.376,
+  "end": 34.544,
+  "line": 10
+ },
+ {
+  "text": "Japan",
+  "start": 34.564,
+  "end": 34.834,
+  "line": 10
+ },
+ {
+  "text": "haben",
+  "start": 34.854,
+  "end": 35.124,
+  "line": 10
+ },
+ {
+  "text": "das",
+  "start": 35.144,
+  "end": 35.346,
+  "line": 10
+ },
+ {
+  "text": "nachgestellt.",
+  "start": 35.366,
+  "end": 35.874,
+  "line": 10
+ },
+ {
+  "text": "Zweiundzwanzig",
+  "start": 36.094,
+  "end": 36.67,
+  "line": 10
+ },
+ {
+  "text": "Autos,",
+  "start": 36.69,
+  "end": 36.96,
+  "line": 10
+ },
+ {
+  "text": "ein",
+  "start": 37.05,
+  "end": 37.252,
+  "line": 10
+ },
+ {
+  "text": "Kreis,",
+  "start": 37.272,
+  "end": 37.542,
+  "line": 10
+ },
+ {
+  "text": "alle",
+  "start": 37.632,
+  "end": 37.868,
+  "line": 10
+ },
+ {
+  "text": "sollten",
+  "start": 37.888,
+  "end": 38.226,
+  "line": 10
+ },
+ {
+  "text": "einfach",
+  "start": 38.246,
+  "end": 38.584,
+  "line": 10
+ },
+ {
+  "text": "gleichmäßig",
+  "start": 38.604,
+  "end": 39.078,
+  "line": 10
+ },
+ {
+  "text": "fahren.",
+  "start": 39.098,
+  "end": 39.402,
+  "line": 10
+ },
+ {
+  "text": "Nach",
+  "start": 39.742,
+  "end": 39.978,
+  "line": 11
+ },
+ {
+  "text": "ein",
+  "start": 39.998,
+  "end": 40.2,
+  "line": 11
+ },
+ {
+  "text": "paar",
+  "start": 40.22,
+  "end": 40.456,
+  "line": 11
+ },
+ {
+  "text": "Minuten:",
+  "start": 40.476,
+  "end": 40.814,
+  "line": 11
+ },
+ {
+  "text": "Stau.",
+  "start": 41.034,
+  "end": 41.27,
+  "line": 11
+ },
+ {
+  "text": "Aus",
+  "start": 41.49,
+  "end": 41.692,
+  "line": 11
+ },
+ {
+  "text": "dem",
+  "start": 41.712,
+  "end": 41.914,
+  "line": 11
+ },
+ {
+  "text": "Nichts.",
+  "start": 41.934,
+  "end": 42.238,
+  "line": 11
+ },
+ {
+  "text": "Was",
+  "start": 42.578,
+  "end": 42.78,
+  "line": 12
+ },
+ {
+  "text": "hilft?",
+  "start": 42.8,
+  "end": 43.07,
+  "line": 12
+ },
+ {
+  "text": "Abstand",
+  "start": 43.29,
+  "end": 43.628,
+  "line": 12
+ },
+ {
+  "text": "halten",
+  "start": 43.648,
+  "end": 43.952,
+  "line": 12
+ },
+ {
+  "text": "und",
+  "start": 43.972,
+  "end": 44.174,
+  "line": 12
+ },
+ {
+  "text": "sanft",
+  "start": 44.194,
+  "end": 44.464,
+  "line": 12
+ },
+ {
+  "text": "bremsen.",
+  "start": 44.484,
+  "end": 44.822,
+  "line": 12
+ },
+ {
+  "text": "Jedes",
+  "start": 45.162,
+  "end": 45.432,
+  "line": 13
+ },
+ {
+  "text": "Bremsen,",
+  "start": 45.452,
+  "end": 45.79,
+  "line": 13
+ },
+ {
+  "text": "das",
+  "start": 45.88,
+  "end": 46.082,
+  "line": 13
+ },
+ {
+  "text": "du",
+  "start": 46.102,
+  "end": 46.27,
+  "line": 13
+ },
+ {
+  "text": "dir",
+  "start": 46.29,
+  "end": 46.492,
+  "line": 13
+ },
+ {
+  "text": "sparst,",
+  "start": 46.512,
+  "end": 46.816,
+  "line": 13
+ },
+ {
+  "text": "ist",
+  "start": 46.906,
+  "end": 47.108,
+  "line": 13
+ },
+ {
+  "text": "ein",
+  "start": 47.128,
+  "end": 47.33,
+  "line": 13
+ },
+ {
+  "text": "Stau,",
+  "start": 47.35,
+  "end": 47.586,
+  "line": 13
+ },
+ {
+  "text": "der",
+  "start": 47.676,
+  "end": 47.878,
+  "line": 13
+ },
+ {
+  "text": "nie",
+  "start": 47.898,
+  "end": 48.1,
+  "line": 13
+ },
+ {
+  "text": "entsteht.",
+  "start": 48.12,
+  "end": 48.492,
+  "line": 13
+ },
+ {
+  "text": "Und",
+  "start": 48.832,
+  "end": 49.034,
+  "line": 14
+ },
+ {
+  "text": "der",
+  "start": 49.054,
+  "end": 49.256,
+  "line": 14
+ },
+ {
+  "text": "Stau",
+  "start": 49.276,
+  "end": 49.512,
+  "line": 14
+ },
+ {
+  "text": "von",
+  "start": 49.532,
+  "end": 49.734,
+  "line": 14
+ },
+ {
+  "text": "vorhin?",
+  "start": 49.754,
+  "end": 50.058,
+  "line": 14
+ },
+ {
+  "text": "Den",
+  "start": 50.278,
+  "end": 50.48,
+  "line": 14
+ },
+ {
+  "text": "hast",
+  "start": 50.5,
+  "end": 50.736,
+  "line": 14
+ },
+ {
+  "text": "du",
+  "start": 50.756,
+  "end": 50.924,
+  "line": 14
+ },
+ {
+  "text": "vielleicht",
+  "start": 50.944,
+  "end": 51.384,
+  "line": 14
+ },
+ {
+  "text": "selbst",
+  "start": 51.404,
+  "end": 51.708,
+  "line": 14
+ },
+ {
+  "text": "gemacht.",
+  "start": 51.728,
+  "end": 52.066,
+  "line": 14
+ }
+]

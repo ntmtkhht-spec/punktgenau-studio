@@ -1,0 +1,1022 @@
+[
+ {
+  "file": "C:/Users/ntmtk/Downloads/zenon/audio1neu.mp3",
+  "duration": 9.8743125,
+  "text": "Du wirst diese Türen niemals erreichen. Das behauptete der griechische Philosoph Xenon schon vor zweieinhalb Tausend Jahren. Und er hatte dafür sogar einen Beweis.",
+  "words": [
+   {
+    "word": "Du",
+    "start": 0.0,
+    "end": 0.2
+   },
+   {
+    "word": "wirst",
+    "start": 0.2,
+    "end": 0.42
+   },
+   {
+    "word": "diese",
+    "start": 0.42,
+    "end": 0.62
+   },
+   {
+    "word": "Türen",
+    "start": 0.62,
+    "end": 1.02
+   },
+   {
+    "word": "niemals",
+    "start": 1.02,
+    "end": 1.5
+   },
+   {
+    "word": "erreichen.",
+    "start": 1.5,
+    "end": 1.94
+   },
+   {
+    "word": "Das",
+    "start": 2.64,
+    "end": 2.74
+   },
+   {
+    "word": "behauptete",
+    "start": 2.74,
+    "end": 3.32
+   },
+   {
+    "word": "der",
+    "start": 3.32,
+    "end": 3.48
+   },
+   {
+    "word": "griechische",
+    "start": 3.48,
+    "end": 3.98
+   },
+   {
+    "word": "Philosoph",
+    "start": 3.98,
+    "end": 4.5
+   },
+   {
+    "word": "Xenon",
+    "start": 4.5,
+    "end": 5.02
+   },
+   {
+    "word": "schon",
+    "start": 5.02,
+    "end": 5.26
+   },
+   {
+    "word": "vor",
+    "start": 5.26,
+    "end": 5.48
+   },
+   {
+    "word": "zweieinhalb",
+    "start": 5.48,
+    "end": 6.2
+   },
+   {
+    "word": "Tausend",
+    "start": 6.2,
+    "end": 6.6
+   },
+   {
+    "word": "Jahren.",
+    "start": 6.6,
+    "end": 6.88
+   },
+   {
+    "word": "Und",
+    "start": 7.38,
+    "end": 7.68
+   },
+   {
+    "word": "er",
+    "start": 7.68,
+    "end": 7.96
+   },
+   {
+    "word": "hatte",
+    "start": 7.96,
+    "end": 8.16
+   },
+   {
+    "word": "dafür",
+    "start": 8.16,
+    "end": 8.52
+   },
+   {
+    "word": "sogar",
+    "start": 8.52,
+    "end": 8.74
+   },
+   {
+    "word": "einen",
+    "start": 8.74,
+    "end": 9.02
+   },
+   {
+    "word": "Beweis.",
+    "start": 9.02,
+    "end": 9.46
+   }
+  ]
+ },
+ {
+  "file": "C:/Users/ntmtk/Downloads/zenon/audio2.mp3",
+  "duration": 5.407375,
+  "text": "Stell dir vor, du gehst auf die Tür zu. Dann musst du zuerst die Hälfte des Weges schaffen.",
+  "words": [
+   {
+    "word": "Stell",
+    "start": 0.0,
+    "end": 0.24
+   },
+   {
+    "word": "dir",
+    "start": 0.24,
+    "end": 0.38
+   },
+   {
+    "word": "vor,",
+    "start": 0.38,
+    "end": 0.68
+   },
+   {
+    "word": "du",
+    "start": 0.92,
+    "end": 1.0
+   },
+   {
+    "word": "gehst",
+    "start": 1.0,
+    "end": 1.28
+   },
+   {
+    "word": "auf",
+    "start": 1.28,
+    "end": 1.38
+   },
+   {
+    "word": "die",
+    "start": 1.38,
+    "end": 1.52
+   },
+   {
+    "word": "Tür",
+    "start": 1.52,
+    "end": 1.84
+   },
+   {
+    "word": "zu.",
+    "start": 1.84,
+    "end": 2.12
+   },
+   {
+    "word": "Dann",
+    "start": 2.66,
+    "end": 2.88
+   },
+   {
+    "word": "musst",
+    "start": 2.88,
+    "end": 3.14
+   },
+   {
+    "word": "du",
+    "start": 3.14,
+    "end": 3.28
+   },
+   {
+    "word": "zuerst",
+    "start": 3.28,
+    "end": 3.64
+   },
+   {
+    "word": "die",
+    "start": 3.64,
+    "end": 3.88
+   },
+   {
+    "word": "Hälfte",
+    "start": 3.88,
+    "end": 4.26
+   },
+   {
+    "word": "des",
+    "start": 4.26,
+    "end": 4.42
+   },
+   {
+    "word": "Weges",
+    "start": 4.42,
+    "end": 4.74
+   },
+   {
+    "word": "schaffen.",
+    "start": 4.74,
+    "end": 4.98
+   }
+  ]
+ },
+ {
+  "file": "C:/Users/ntmtk/Downloads/zenon/audio3.mp3",
+  "duration": 6.0343125,
+  "text": "Danach musst du die Hälfte der restlichen Strecke gehen und dann wieder die Hälfte von dem, was noch übrig ist.",
+  "words": [
+   {
+    "word": "Danach",
+    "start": 0.0,
+    "end": 0.5
+   },
+   {
+    "word": "musst",
+    "start": 0.5,
+    "end": 0.7
+   },
+   {
+    "word": "du",
+    "start": 0.7,
+    "end": 0.84
+   },
+   {
+    "word": "die",
+    "start": 0.84,
+    "end": 0.96
+   },
+   {
+    "word": "Hälfte",
+    "start": 0.96,
+    "end": 1.28
+   },
+   {
+    "word": "der",
+    "start": 1.28,
+    "end": 1.44
+   },
+   {
+    "word": "restlichen",
+    "start": 1.44,
+    "end": 1.88
+   },
+   {
+    "word": "Strecke",
+    "start": 1.88,
+    "end": 2.36
+   },
+   {
+    "word": "gehen",
+    "start": 2.36,
+    "end": 2.6
+   },
+   {
+    "word": "und",
+    "start": 2.6,
+    "end": 3.2
+   },
+   {
+    "word": "dann",
+    "start": 3.2,
+    "end": 3.4
+   },
+   {
+    "word": "wieder",
+    "start": 3.4,
+    "end": 3.66
+   },
+   {
+    "word": "die",
+    "start": 3.66,
+    "end": 3.84
+   },
+   {
+    "word": "Hälfte",
+    "start": 3.84,
+    "end": 4.16
+   },
+   {
+    "word": "von",
+    "start": 4.16,
+    "end": 4.32
+   },
+   {
+    "word": "dem,",
+    "start": 4.32,
+    "end": 4.58
+   },
+   {
+    "word": "was",
+    "start": 4.82,
+    "end": 4.96
+   },
+   {
+    "word": "noch",
+    "start": 4.96,
+    "end": 5.12
+   },
+   {
+    "word": "übrig",
+    "start": 5.12,
+    "end": 5.4
+   },
+   {
+    "word": "ist.",
+    "start": 5.4,
+    "end": 5.72
+   }
+  ]
+ },
+ {
+  "file": "C:/Users/ntmtk/Downloads/zenon/audio4.mp3",
+  "duration": 5.7991875,
+  "text": "Egal wie nah du der Tür kommst, es bleibt immer noch ein kleines Stück, das du wiederhalbieren musst.",
+  "words": [
+   {
+    "word": "Egal",
+    "start": 0.0,
+    "end": 0.36
+   },
+   {
+    "word": "wie",
+    "start": 0.36,
+    "end": 0.58
+   },
+   {
+    "word": "nah",
+    "start": 0.58,
+    "end": 0.82
+   },
+   {
+    "word": "du",
+    "start": 0.82,
+    "end": 0.96
+   },
+   {
+    "word": "der",
+    "start": 0.96,
+    "end": 1.1
+   },
+   {
+    "word": "Tür",
+    "start": 1.1,
+    "end": 1.28
+   },
+   {
+    "word": "kommst,",
+    "start": 1.28,
+    "end": 1.9
+   },
+   {
+    "word": "es",
+    "start": 2.22,
+    "end": 2.32
+   },
+   {
+    "word": "bleibt",
+    "start": 2.32,
+    "end": 2.54
+   },
+   {
+    "word": "immer",
+    "start": 2.54,
+    "end": 2.82
+   },
+   {
+    "word": "noch",
+    "start": 2.82,
+    "end": 3.04
+   },
+   {
+    "word": "ein",
+    "start": 3.04,
+    "end": 3.18
+   },
+   {
+    "word": "kleines",
+    "start": 3.18,
+    "end": 3.72
+   },
+   {
+    "word": "Stück,",
+    "start": 3.72,
+    "end": 3.96
+   },
+   {
+    "word": "das",
+    "start": 4.18,
+    "end": 4.26
+   },
+   {
+    "word": "du",
+    "start": 4.26,
+    "end": 4.44
+   },
+   {
+    "word": "wiederhalbieren",
+    "start": 4.44,
+    "end": 5.2
+   },
+   {
+    "word": "musst.",
+    "start": 5.2,
+    "end": 5.46
+   }
+  ]
+ },
+ {
+  "file": "C:/Users/ntmtk/Downloads/zenon/audio5.mp3",
+  "duration": 7.549375,
+  "text": "Der Philosoph Xenon schloss daraus, dass du unendlich viele Strecken zurücklegen müsstest und deshalb niemals ankommst.",
+  "words": [
+   {
+    "word": "Der",
+    "start": 0.0,
+    "end": 0.2
+   },
+   {
+    "word": "Philosoph",
+    "start": 0.2,
+    "end": 0.68
+   },
+   {
+    "word": "Xenon",
+    "start": 0.68,
+    "end": 1.2
+   },
+   {
+    "word": "schloss",
+    "start": 1.2,
+    "end": 1.6
+   },
+   {
+    "word": "daraus,",
+    "start": 1.6,
+    "end": 1.96
+   },
+   {
+    "word": "dass",
+    "start": 2.32,
+    "end": 2.4
+   },
+   {
+    "word": "du",
+    "start": 2.4,
+    "end": 2.58
+   },
+   {
+    "word": "unendlich",
+    "start": 2.58,
+    "end": 3.4
+   },
+   {
+    "word": "viele",
+    "start": 3.4,
+    "end": 3.66
+   },
+   {
+    "word": "Strecken",
+    "start": 3.66,
+    "end": 4.1
+   },
+   {
+    "word": "zurücklegen",
+    "start": 4.1,
+    "end": 4.66
+   },
+   {
+    "word": "müsstest",
+    "start": 4.66,
+    "end": 5.22
+   },
+   {
+    "word": "und",
+    "start": 5.22,
+    "end": 5.66
+   },
+   {
+    "word": "deshalb",
+    "start": 5.66,
+    "end": 6.04
+   },
+   {
+    "word": "niemals",
+    "start": 6.04,
+    "end": 6.72
+   },
+   {
+    "word": "ankommst.",
+    "start": 6.72,
+    "end": 7.34
+   }
+  ]
+ },
+ {
+  "file": "C:/Users/ntmtk/Downloads/zenon/audio6.mp3",
+  "duration": 5.146125,
+  "text": "Doch in dieser Überlegung steckt ein Denkfehler, den man mit Mathematik genau zeigen kann.",
+  "words": [
+   {
+    "word": "Doch",
+    "start": 0.0,
+    "end": 0.18
+   },
+   {
+    "word": "in",
+    "start": 0.18,
+    "end": 0.36
+   },
+   {
+    "word": "dieser",
+    "start": 0.36,
+    "end": 0.58
+   },
+   {
+    "word": "Überlegung",
+    "start": 0.58,
+    "end": 1.24
+   },
+   {
+    "word": "steckt",
+    "start": 1.24,
+    "end": 1.56
+   },
+   {
+    "word": "ein",
+    "start": 1.56,
+    "end": 1.7
+   },
+   {
+    "word": "Denkfehler,",
+    "start": 1.7,
+    "end": 2.46
+   },
+   {
+    "word": "den",
+    "start": 2.74,
+    "end": 2.84
+   },
+   {
+    "word": "man",
+    "start": 2.84,
+    "end": 3.0
+   },
+   {
+    "word": "mit",
+    "start": 3.0,
+    "end": 3.16
+   },
+   {
+    "word": "Mathematik",
+    "start": 3.16,
+    "end": 3.8
+   },
+   {
+    "word": "genau",
+    "start": 3.8,
+    "end": 4.14
+   },
+   {
+    "word": "zeigen",
+    "start": 4.14,
+    "end": 4.52
+   },
+   {
+    "word": "kann.",
+    "start": 4.52,
+    "end": 4.86
+   }
+  ]
+ },
+ {
+  "file": "C:/Users/ntmtk/Downloads/zenon/audio7.mp3",
+  "duration": 5.407375,
+  "text": "Der Fehler ist die Annahme, dass unendlich viele Schritte auch unendlich viel Zeit brauchen.",
+  "words": [
+   {
+    "word": "Der",
+    "start": 0.0,
+    "end": 0.2
+   },
+   {
+    "word": "Fehler",
+    "start": 0.2,
+    "end": 0.48
+   },
+   {
+    "word": "ist",
+    "start": 0.48,
+    "end": 0.72
+   },
+   {
+    "word": "die",
+    "start": 0.72,
+    "end": 0.88
+   },
+   {
+    "word": "Annahme,",
+    "start": 0.88,
+    "end": 1.42
+   },
+   {
+    "word": "dass",
+    "start": 1.58,
+    "end": 1.7
+   },
+   {
+    "word": "unendlich",
+    "start": 1.7,
+    "end": 2.44
+   },
+   {
+    "word": "viele",
+    "start": 2.44,
+    "end": 2.62
+   },
+   {
+    "word": "Schritte",
+    "start": 2.62,
+    "end": 3.12
+   },
+   {
+    "word": "auch",
+    "start": 3.12,
+    "end": 3.46
+   },
+   {
+    "word": "unendlich",
+    "start": 3.46,
+    "end": 4.18
+   },
+   {
+    "word": "viel",
+    "start": 4.18,
+    "end": 4.32
+   },
+   {
+    "word": "Zeit",
+    "start": 4.32,
+    "end": 4.58
+   },
+   {
+    "word": "brauchen.",
+    "start": 4.58,
+    "end": 5.04
+   }
+  ]
+ },
+ {
+  "file": "C:/Users/ntmtk/Downloads/zenon/audio8.mp3",
+  "duration": 9.169,
+  "text": "Legt man nämlich alle Hälften aneinander, also eine Hälfte, ein Viertel, ein Achtel und so weiter, füllen sie zusammen genau die ganze Strecke.",
+  "words": [
+   {
+    "word": "Legt",
+    "start": 0.0,
+    "end": 0.36
+   },
+   {
+    "word": "man",
+    "start": 0.36,
+    "end": 0.44
+   },
+   {
+    "word": "nämlich",
+    "start": 0.44,
+    "end": 0.72
+   },
+   {
+    "word": "alle",
+    "start": 0.72,
+    "end": 1.06
+   },
+   {
+    "word": "Hälften",
+    "start": 1.06,
+    "end": 1.46
+   },
+   {
+    "word": "aneinander,",
+    "start": 1.46,
+    "end": 2.06
+   },
+   {
+    "word": "also",
+    "start": 2.58,
+    "end": 2.78
+   },
+   {
+    "word": "eine",
+    "start": 2.78,
+    "end": 3.14
+   },
+   {
+    "word": "Hälfte,",
+    "start": 3.14,
+    "end": 3.6
+   },
+   {
+    "word": "ein",
+    "start": 3.94,
+    "end": 4.02
+   },
+   {
+    "word": "Viertel,",
+    "start": 4.02,
+    "end": 4.54
+   },
+   {
+    "word": "ein",
+    "start": 4.76,
+    "end": 4.9
+   },
+   {
+    "word": "Achtel",
+    "start": 4.9,
+    "end": 5.36
+   },
+   {
+    "word": "und",
+    "start": 5.36,
+    "end": 5.54
+   },
+   {
+    "word": "so",
+    "start": 5.54,
+    "end": 5.74
+   },
+   {
+    "word": "weiter,",
+    "start": 5.74,
+    "end": 5.96
+   },
+   {
+    "word": "füllen",
+    "start": 6.54,
+    "end": 6.84
+   },
+   {
+    "word": "sie",
+    "start": 6.84,
+    "end": 6.94
+   },
+   {
+    "word": "zusammen",
+    "start": 6.94,
+    "end": 7.32
+   },
+   {
+    "word": "genau",
+    "start": 7.32,
+    "end": 7.78
+   },
+   {
+    "word": "die",
+    "start": 7.78,
+    "end": 8.08
+   },
+   {
+    "word": "ganze",
+    "start": 8.08,
+    "end": 8.34
+   },
+   {
+    "word": "Strecke.",
+    "start": 8.34,
+    "end": 8.86
+   }
+  ]
+ },
+ {
+  "file": "C:/Users/ntmtk/Downloads/zenon/audio9.mp3",
+  "duration": 7.0008125,
+  "text": "Weil die Stücke immer kleiner werden, schrumpft auch die Zeit dafür und die gesamte Strecke ist nach einer endlichen Zeit geschafft.",
+  "words": [
+   {
+    "word": "Weil",
+    "start": 0.0,
+    "end": 0.24
+   },
+   {
+    "word": "die",
+    "start": 0.24,
+    "end": 0.36
+   },
+   {
+    "word": "Stücke",
+    "start": 0.36,
+    "end": 0.68
+   },
+   {
+    "word": "immer",
+    "start": 0.68,
+    "end": 0.86
+   },
+   {
+    "word": "kleiner",
+    "start": 0.86,
+    "end": 1.26
+   },
+   {
+    "word": "werden,",
+    "start": 1.26,
+    "end": 1.7
+   },
+   {
+    "word": "schrumpft",
+    "start": 2.06,
+    "end": 2.36
+   },
+   {
+    "word": "auch",
+    "start": 2.36,
+    "end": 2.46
+   },
+   {
+    "word": "die",
+    "start": 2.46,
+    "end": 2.62
+   },
+   {
+    "word": "Zeit",
+    "start": 2.62,
+    "end": 2.9
+   },
+   {
+    "word": "dafür",
+    "start": 2.9,
+    "end": 3.24
+   },
+   {
+    "word": "und",
+    "start": 3.24,
+    "end": 3.9
+   },
+   {
+    "word": "die",
+    "start": 3.9,
+    "end": 4.04
+   },
+   {
+    "word": "gesamte",
+    "start": 4.04,
+    "end": 4.46
+   },
+   {
+    "word": "Strecke",
+    "start": 4.46,
+    "end": 4.88
+   },
+   {
+    "word": "ist",
+    "start": 4.88,
+    "end": 5.02
+   },
+   {
+    "word": "nach",
+    "start": 5.02,
+    "end": 5.22
+   },
+   {
+    "word": "einer",
+    "start": 5.22,
+    "end": 5.42
+   },
+   {
+    "word": "endlichen",
+    "start": 5.42,
+    "end": 5.84
+   },
+   {
+    "word": "Zeit",
+    "start": 5.84,
+    "end": 6.18
+   },
+   {
+    "word": "geschafft.",
+    "start": 6.18,
+    "end": 6.54
+   }
+  ]
+ },
+ {
+  "file": "C:/Users/ntmtk/Downloads/zenon/audio10.mp3",
+  "duration": 9.247375,
+  "text": "Unendlich viele Schritte können also zusammen etwas Endliches ergeben. Und genau daran scheitert Sinons Beweis. Auch wenn er bis heute behaupten würde...",
+  "words": [
+   {
+    "word": "Unendlich",
+    "start": 0.0,
+    "end": 0.66
+   },
+   {
+    "word": "viele",
+    "start": 0.66,
+    "end": 0.88
+   },
+   {
+    "word": "Schritte",
+    "start": 0.88,
+    "end": 1.34
+   },
+   {
+    "word": "können",
+    "start": 1.34,
+    "end": 1.66
+   },
+   {
+    "word": "also",
+    "start": 1.66,
+    "end": 1.94
+   },
+   {
+    "word": "zusammen",
+    "start": 1.94,
+    "end": 2.42
+   },
+   {
+    "word": "etwas",
+    "start": 2.42,
+    "end": 2.78
+   },
+   {
+    "word": "Endliches",
+    "start": 2.78,
+    "end": 3.46
+   },
+   {
+    "word": "ergeben.",
+    "start": 3.46,
+    "end": 3.94
+   },
+   {
+    "word": "Und",
+    "start": 4.62,
+    "end": 4.68
+   },
+   {
+    "word": "genau",
+    "start": 4.68,
+    "end": 4.96
+   },
+   {
+    "word": "daran",
+    "start": 4.96,
+    "end": 5.42
+   },
+   {
+    "word": "scheitert",
+    "start": 5.42,
+    "end": 5.94
+   },
+   {
+    "word": "Sinons",
+    "start": 5.94,
+    "end": 6.34
+   },
+   {
+    "word": "Beweis.",
+    "start": 6.34,
+    "end": 6.74
+   },
+   {
+    "word": "Auch",
+    "start": 7.28,
+    "end": 7.5
+   },
+   {
+    "word": "wenn",
+    "start": 7.5,
+    "end": 7.7
+   },
+   {
+    "word": "er",
+    "start": 7.7,
+    "end": 7.78
+   },
+   {
+    "word": "bis",
+    "start": 7.78,
+    "end": 7.88
+   },
+   {
+    "word": "heute",
+    "start": 7.88,
+    "end": 8.16
+   },
+   {
+    "word": "behaupten",
+    "start": 8.16,
+    "end": 8.68
+   },
+   {
+    "word": "würde...",
+    "start": 8.68,
+    "end": 9.16
+   }
+  ]
+ }
+]
