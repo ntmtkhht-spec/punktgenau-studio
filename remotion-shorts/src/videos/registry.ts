@@ -9,6 +9,8 @@ export interface VideoEntry {
   readonly slug: string; // Ordnername, z. B. "04-monty-hall"
   readonly component: React.FC;
   readonly durationSec: number;
+  readonly width?: number; // Longform: 1920
+  readonly height?: number; // Longform: 1080
 }
 
 // <pg:imports>

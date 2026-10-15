@@ -27,3 +27,34 @@ Zielläng festlegen (Nutzer fragt meist nach Minuten → ca. 140 Wörter/min Deu
 - Mathematik/Fakten sind frei; jede Behauptung im Abschnitt „Fakten-Check“ belegen, Fehler der Vorlage korrigieren.
 - Format: Abschnitte mit Zeitbereich, `[Bild: …]`-Anweisungen im Punktgenau-Stil, Sprechtext in vollständigen Sätzen. Am Ende Wortzahl und geschätzte Dauer.
 - Ablage: `videos/_source/<id>/script-longform.md`, Vorlage im Kopf vermerken („Aufbau nach …“).
+- Ziellänge ist ein Richtwert: Lieber vollständig und flüssig als auf Minuten gekürzt (9 statt 8 Minuten war okay).
+
+### Sprachstil (vom Nutzer als „extrem gut“ bestätigt)
+- **Nah am Original:** gleicher Gedankengang, gleiche Beispiele (Zahlen, Mengen, Gedankenexperimente), gleiche Fragen an den Zuschauer an denselben Stellen. Keine erfundenen Ersatzbeispiele, wenn das Original eins hat – nur dessen markanteste Formulierungen eigen umschreiben.
+- **Natürliches gesprochenes Deutsch:** kurze, vollständige Sätze, wie man es einem Freund erklärt. Keine verdrehten Bilder, keine gestelzten Wortspiele, keine Telegramm-Fragmente.
+- **Direkte Ansprache:** „Stell dir vor …“, „Was ist die größte Zahl, die dir einfällt?“, „Aber Moment.“ als Wendepunkte.
+- **Jeder Begriff wird beim ersten Auftreten erklärt** (fett im Skript), dann konsequent gleich benannt.
+- **Aufzählungen nie als Satzfetzen** („Nur die Fünf. Alle außer fünf.“). Erst erklären, wie man es liest (Tabelle, Punkt = dabei), dann Beispiele in ganzen Sätzen.
+- Jede Abschnitts-Überschrift trägt Zeitbereich und `[Bild: …]`-Anweisung.
+
+## Phase 4 – Szenen- und Animationsplan (Freigabe)
+Alles, was erzählt wird, muss zu sehen sein. **Erst komplett planen, dann animieren**, damit alles zusammenpasst.
+- Format Longform: **1920×1080, 30 fps**. Look aus `CLAUDE.md` (Punktraster, flach, Farben, Inter, weiße Kontur), Captions optional unten.
+- Datei `videos/_source/<id>/storyboard.md`:
+  1. **Bildsprache** (gilt fürs ganze Video): welches Objekt steht wofür (z. B. blauer Punkt = Element, oranger Strich = „das Neue“, magenta = Wendepunkt/Beweis), feste Positionen, wiederkehrende Bauteile.
+  2. **Bauteile-Liste**: wiederverwendbare Komponenten (z. B. `NumberLine`, `TickRow`, `SetTable`) mit Props – jede Szene setzt sich daraus zusammen.
+  3. **Pro Szene**: Satz/Wörter des Skripts → was erscheint, wo, wie es animiert (Einblenden, Kamera, Übergang), Dauer in Wörtern, Übergang zur nächsten Szene. Zu jedem Satz mit Bildbezug („das hier“, Zahlen, Beispiele) ein sichtbares Element.
+  4. **Übergänge**: Szenen gehen ineinander über (Kamera fährt weiter, Elemente verwandeln sich), keine harten Schnitte ohne Grund.
+- Erst nach Freigabe Code bauen: Bauteile zuerst, dann Szene für Szene.
+
+## Phase 5 – Szenen einzeln bauen und prüfen (je Szene Freigabe)
+- Das Video hat `src/videos/<slug>/sections.json` (erste Skriptzeile je Abschnitt). Daran erkennt `pg` ein Longform.
+- **Nie das ganze Video rendern, solange gebaut wird.** Immer nur einen Abschnitt:
+  `npm run pg -- scene <slug> <n>` → `videos/<slug>/scenes/szene-NN.mp4` in **720p** und öffnet es im Browser (offener Tab lädt neu).
+- Ablauf: Szene n bauen → `pg scene` → Nutzer bewertet → verbessern → erneut `pg scene` → nächste Szene.
+- Kontrolle zwischendurch über Einzelbilder (Remotion `renderStill`, halbe Größe), nicht über Komplett-Renders.
+
+## Phase 6 – Export (nur auf Wunsch des Nutzers)
+- `npm run pg -- render <slug>` rendert Longform in **4K** (3840×2160, `--scale=2`) in Teilstücken zu 2.000 Bildern (`--concurrency=4`, sonst stürzt der Browser ab), fügt sie zusammen und öffnet das Ergebnis im Browser. Bricht es ab: Befehl erneut starten, fertige Teile werden übersprungen.
+- 4K **ausschließlich** für den finalen Export – nie für Zwischenstände.
+- Einzelne Videos (Code unter `src/videos/<slug>`, `public/<slug>`, `videos/<slug>`) werden **nicht committet**, nur Pipeline-Dateien.

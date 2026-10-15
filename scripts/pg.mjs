@@ -5,7 +5,8 @@
 //   npm run pg -- words <slug>           Wortzeiten aus dem Skript schaetzen (Vorschau ohne Stimme)
 //   npm run pg -- voice <slug>           Stimme: Whisper-Wortzeiten, Tonspur zusammenfuegen, Musik erzeugen
 //   npm run pg -- audit <slug>           Kontaktboegen (alle 0,5 s ein Bild) zur Pruefung auf Ueberschneidungen
-//   npm run pg -- render <slug>          Finales Video rendern
+//   npm run pg -- scene <slug> <n>       Longform: nur Abschnitt n in 720p rendern und im Browser zeigen (zum Pruefen)
+//   npm run pg -- render <slug>          Finales Video rendern (Longform: 4K in Teilstuecken) – nur fuer den Export
 //   npm run pg -- preview <slug>         Letzten Export im Browser zeigen (Render macht das automatisch)
 //   npm run pg -- list                   Alle Videos anzeigen
 //
@@ -116,11 +117,92 @@ const cmdAudit = (slug) => {
   console.log(`\nAudit: ${sheets} Kontaktboegen (je 10 s, alle 0,5 s ein Bild) in videos/${slug}/audit/`);
 };
 
-const cmdRender = (slug) => {
+// ---------------------------------------------------------------- Browser-Vorschau
+const PREVIEW_PORT = Number(process.env.PG_PREVIEW_PORT ?? 4747);
+const PREVIEW = `http://localhost:${PREVIEW_PORT}`;
+const sleep = (ms) => new Promise((r) => setTimeout(r, ms));
+
+const previewUp = async () => {
+  try {
+    return await (await fetch(`${PREVIEW}/status`)).json();
+  } catch {
+    return null;
+  }
+};
+
+/** Startet den Vorschau-Server bei Bedarf, laedt offene Tabs neu, sonst oeffnet er einen neuen Tab. */
+const showInBrowser = async (slug, rel = `export/${slug}.mp4`) => {
+  if (!existsSync(join(videoDir(slug), rel))) fail(`${rel} gibt es noch nicht.`);
+  if (!(await previewUp())) {
+    spawn('node', [join(SCRIPTS, 'preview-server.mjs')], {detached: true, stdio: 'ignore', windowsHide: true}).unref();
+    for (let i = 0; i < 20 && !(await previewUp()); i++) await sleep(150);
+  }
+  const query = `slug=${slug}&file=${encodeURIComponent(rel)}`;
+  const res = await fetch(`${PREVIEW}/reload?${query}`, {method: 'POST'})
+    .then((r) => r.json())
+    .catch(() => ({clients: 0}));
+  if (res.clients > 0) return console.log(`Vorschau neu geladen: ${rel}`);
+  const url = `${PREVIEW}/v/${slug}?file=${encodeURIComponent(rel)}`;
+  const [cmd, args] = process.platform === 'win32' ? ['cmd', ['/c', 'start', '""', url]] : [process.platform === 'darwin' ? 'open' : 'xdg-open', [url]];
+  spawn(cmd, args, {detached: true, stdio: 'ignore', windowsHide: true}).unref();
+  console.log(`Vorschau: ${url}`);
+};
+
+// ---------------------------------------------------------------- Longform (16:9, Abschnitte)
+const FPS = 30;
+const sectionsFile = (slug) => join(srcDir(slug), 'sections.json');
+const isLongform = (slug) => existsSync(sectionsFile(slug));
+
+/** Bildbereiche je Abschnitt aus Wortzeiten + sections.json (gleiche Logik wie lib.ts im Video). */
+const sectionFrames = (slug) => {
+  const words = JSON.parse(readFileSync(join(srcDir(slug), 'words.json'), 'utf8'));
+  const starts = JSON.parse(readFileSync(sectionsFile(slug), 'utf8')).map((line) => words.find((w) => w.line === line).start);
+  const total = words[words.length - 1].end + 0.6 + 1;
+  return starts.map((t, i) => [Math.round(t * FPS), Math.round((starts[i + 1] ?? total) * FPS) - 1]);
+};
+
+const renderRange = (slug, out, frames, scale, extra = []) =>
+  run('npx', ['remotion', 'render', 'src/index.ts', compId(slug), out, `--frames=${frames[0]}-${frames[1]}`, `--scale=${scale}`, '--gl=angle', ...extra], {cwd: RS, shell: true});
+
+/** Einen Abschnitt in 720p rendern: zum Bewerten reicht das und es geht ein Vielfaches schneller als 4K. */
+const cmdScene = async (slug, n) => {
+  requireVideo(slug);
+  if (!isLongform(slug)) fail(`${slug} hat keine Abschnitte (sections.json fehlt) – scene gibt es nur fuer Longform.`);
+  const ranges = sectionFrames(slug);
+  const i = Number(n) - 1;
+  if (!Number.isInteger(i) || i < 0 || i >= ranges.length) fail(`Abschnitt muss 1 bis ${ranges.length} sein.`);
+  mkdirSync(join(videoDir(slug), 'scenes'), {recursive: true});
+  const rel = `scenes/szene-${String(i + 1).padStart(2, '0')}.mp4`;
+  renderRange(slug, join(videoDir(slug), rel), ranges[i], 2 / 3, ['--crf=23', '--concurrency=50%']);
+  console.log(`\nSzene ${i + 1}: videos/${slug}/${rel} (${((ranges[i][1] - ranges[i][0] + 1) / FPS).toFixed(1)} s, 720p)`);
+  await showInBrowser(slug, rel);
+};
+
+/** Finaler Longform-Export: 4K in Teilstuecken (stabil bei wenig Speicher), danach ohne Neukodierung zusammenfuegen. */
+const renderLongform4k = (slug, out) => {
+  const parts = join(videoDir(slug), 'export', 'parts');
+  mkdirSync(parts, {recursive: true});
+  const total = sectionFrames(slug).at(-1)[1] + 1;
+  const CHUNK = 2000;
+  const list = [];
+  for (let s = 0; s < total; s += CHUNK) {
+    const f = join(parts, `part_${String(s).padStart(5, '0')}.mp4`);
+    list.push(`file '${f.replaceAll('\\', '/')}'`);
+    if (existsSync(f)) continue; // fertige Teile beim Neustart ueberspringen
+    renderRange(slug, f, [s, Math.min(total, s + CHUNK) - 1], 2, ['--crf=18', '--concurrency=4', '--timeout=120000']);
+  }
+  writeFileSync(join(parts, 'list.txt'), list.join('\n'));
+  run('ffmpeg', ['-v', 'error', '-y', '-f', 'concat', '-safe', '0', '-i', join(parts, 'list.txt'), '-c', 'copy', out]);
+  rmSync(parts, {recursive: true, force: true});
+};
+
+const cmdRender = async (slug, flag) => {
   requireVideo(slug);
   const out = join(videoDir(slug), 'export', `${slug}.mp4`);
-  run('npx', ['remotion', 'render', 'src/index.ts', compId(slug), out, '--crf=18', '--gl=angle'], {cwd: RS, shell: true});
-  console.log(`\nFertig: videos/${slug}/export/${slug}.mp4`);
+  if (isLongform(slug)) renderLongform4k(slug, out);
+  else run('npx', ['remotion', 'render', 'src/index.ts', compId(slug), out, '--crf=18', '--gl=angle'], {cwd: RS, shell: true});
+  console.log(`\nFertig: videos/${slug}/export/${slug}.mp4${isLongform(slug) ? ' (4K)' : ''}`);
+  if (flag !== '--no-preview') await showInBrowser(slug);
 };
 
 const cmdList = () => {
@@ -133,9 +215,9 @@ const cmdList = () => {
 };
 
 const [cmd, a, b] = process.argv.slice(2);
-const commands = {preview: () => (requireVideo(a), showInBrowser(a)), new: () => cmdNew(a, b), words: () => (requireVideo(a), estimateWords(a)), voice: () => cmdVoice(a), audit: () => cmdAudit(a), render: () => cmdRender(a), list: cmdList};
+const commands = {preview: () => (requireVideo(a), showInBrowser(a)), new: () => cmdNew(a, b), words: () => (requireVideo(a), estimateWords(a)), voice: () => cmdVoice(a), audit: () => cmdAudit(a), scene: () => cmdScene(a, b), render: () => cmdRender(a, b), list: cmdList};
 if (!commands[cmd]) {
-  console.log('Befehle: new <slug> "<Titel>" | words <slug> | voice <slug> | audit <slug> | render <slug> [--no-preview] | preview <slug> | list');
+  console.log('Befehle: new <slug> "<Titel>" | words <slug> | voice <slug> | audit <slug> | scene <slug> <n> | render <slug> [--no-preview] | preview <slug> | list');
   process.exit(cmd ? 1 : 0);
 }
 commands[cmd]();

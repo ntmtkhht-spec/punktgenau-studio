@@ -46,7 +46,7 @@ export const RemotionRoot: React.FC = () => (
     />
     {/* Neue Videos aus dem Workflow (npm run pg -- new ...) */}
     {VIDEOS.map((v) => (
-      <Composition key={v.id} id={v.id} component={v.component} durationInFrames={sec(v.durationSec)} fps={FPS} width={W} height={H} />
+      <Composition key={v.id} id={v.id} component={v.component} durationInFrames={sec(v.durationSec)} fps={FPS} width={v.width ?? W} height={v.height ?? H} />
     ))}
   </>
 );

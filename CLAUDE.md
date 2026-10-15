@@ -20,7 +20,8 @@ Neue Videos immer mit dem Skill `/punktgenau-short` erstellen (Ablauf in Phasen,
 | `npm run pg -- words <slug>` | Wortzeiten aus Skript schätzen (Vorschau ohne Stimme) |
 | `npm run pg -- voice <slug>` | Whisper-Wortzeiten + Tonspur + Musik |
 | `npm run pg -- audit <slug>` | Kontaktbögen alle 0,5 s nach `videos/<slug>/audit/` |
-| `npm run pg -- render <slug>` | Finales Video nach `videos/<slug>/export/`, danach automatisch im Browser (offener Tab lädt neu, kein neues Fenster) |
+| `npm run pg -- scene <slug> <n>` | Longform: nur Abschnitt n in 720p nach `videos/<slug>/scenes/`, danach im Browser. Beim Bauen **immer** so prüfen, nie das ganze Video |
+| `npm run pg -- render <slug>` | Finales Video nach `videos/<slug>/export/` (Longform in 4K, in Teilstücken), danach automatisch im Browser (offener Tab lädt neu, kein neues Fenster). Nur für den Export |
 | `npm run pg -- preview <slug>` | Letzten Export im Browser zeigen |
 | `npm run pg -- list` | Übersicht |
 | `npm run studio` | Remotion Studio (Vorschau, Regler) |
