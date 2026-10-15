@@ -6,10 +6,11 @@
 //   npm run pg -- voice <slug>           Stimme: Whisper-Wortzeiten, Tonspur zusammenfuegen, Musik erzeugen
 //   npm run pg -- audit <slug>           Kontaktboegen (alle 0,5 s ein Bild) zur Pruefung auf Ueberschneidungen
 //   npm run pg -- render <slug>          Finales Video rendern
+//   npm run pg -- preview <slug>         Letzten Export im Browser zeigen (Render macht das automatisch)
 //   npm run pg -- list                   Alle Videos anzeigen
 //
 // Aufruf aus remotion-shorts/ (dort liegt das npm-Skript "pg").
-import {execFileSync} from 'node:child_process';
+import {execFileSync, spawn} from 'node:child_process';
 import {existsSync, mkdirSync, readdirSync, readFileSync, rmSync, writeFileSync} from 'node:fs';
 import {dirname, join, resolve} from 'node:path';
 import {fileURLToPath} from 'node:url';
@@ -132,9 +133,9 @@ const cmdList = () => {
 };
 
 const [cmd, a, b] = process.argv.slice(2);
-const commands = {new: () => cmdNew(a, b), words: () => (requireVideo(a), estimateWords(a)), voice: () => cmdVoice(a), audit: () => cmdAudit(a), render: () => cmdRender(a), list: cmdList};
+const commands = {preview: () => (requireVideo(a), showInBrowser(a)), new: () => cmdNew(a, b), words: () => (requireVideo(a), estimateWords(a)), voice: () => cmdVoice(a), audit: () => cmdAudit(a), render: () => cmdRender(a), list: cmdList};
 if (!commands[cmd]) {
-  console.log('Befehle: new <slug> "<Titel>" | words <slug> | voice <slug> | audit <slug> | render <slug> | list');
+  console.log('Befehle: new <slug> "<Titel>" | words <slug> | voice <slug> | audit <slug> | render <slug> [--no-preview] | preview <slug> | list');
   process.exit(cmd ? 1 : 0);
 }
 commands[cmd]();

@@ -20,7 +20,8 @@ Neue Videos immer mit dem Skill `/punktgenau-short` erstellen (Ablauf in Phasen,
 | `npm run pg -- words <slug>` | Wortzeiten aus Skript schätzen (Vorschau ohne Stimme) |
 | `npm run pg -- voice <slug>` | Whisper-Wortzeiten + Tonspur + Musik |
 | `npm run pg -- audit <slug>` | Kontaktbögen alle 0,5 s nach `videos/<slug>/audit/` |
-| `npm run pg -- render <slug>` | Finales Video nach `videos/<slug>/export/` |
+| `npm run pg -- render <slug>` | Finales Video nach `videos/<slug>/export/`, danach automatisch im Browser (offener Tab lädt neu, kein neues Fenster) |
+| `npm run pg -- preview <slug>` | Letzten Export im Browser zeigen |
 | `npm run pg -- list` | Übersicht |
 | `npm run studio` | Remotion Studio (Vorschau, Regler) |
 | `npm run typecheck` | TypeScript prüfen |
