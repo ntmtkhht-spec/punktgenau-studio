@@ -21,3 +21,4 @@ Thumbs.db
 # Manim-Renderausgabe
 manim-scenes/media/
 manim-scenes/__pycache__/
+videos/_source/
