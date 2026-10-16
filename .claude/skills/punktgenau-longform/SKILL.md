@@ -37,15 +37,15 @@ Zielläng festlegen (Nutzer fragt meist nach Minuten → ca. 140 Wörter/min Deu
 - **Aufzählungen nie als Satzfetzen** („Nur die Fünf. Alle außer fünf.“). Erst erklären, wie man es liest (Tabelle, Punkt = dabei), dann Beispiele in ganzen Sätzen.
 - Jede Abschnitts-Überschrift trägt Zeitbereich und `[Bild: …]`-Anweisung.
 
-## Phase 4 – Szenen- und Animationsplan (Freigabe)
-Alles, was erzählt wird, muss zu sehen sein. **Erst komplett planen, dann animieren**, damit alles zusammenpasst.
-- Format Longform: **1920×1080, 30 fps**. Look aus `CLAUDE.md` (Punktraster, flach, Farben, Inter, weiße Kontur), Captions optional unten.
-- Datei `videos/_source/<id>/storyboard.md`:
-  1. **Bildsprache** (gilt fürs ganze Video): welches Objekt steht wofür (z. B. blauer Punkt = Element, oranger Strich = „das Neue“, magenta = Wendepunkt/Beweis), feste Positionen, wiederkehrende Bauteile.
-  2. **Bauteile-Liste**: wiederverwendbare Komponenten (z. B. `NumberLine`, `TickRow`, `SetTable`) mit Props – jede Szene setzt sich daraus zusammen.
-  3. **Pro Szene**: Satz/Wörter des Skripts → was erscheint, wo, wie es animiert (Einblenden, Kamera, Übergang), Dauer in Wörtern, Übergang zur nächsten Szene. Zu jedem Satz mit Bildbezug („das hier“, Zahlen, Beispiele) ein sichtbares Element.
-  4. **Übergänge**: Szenen gehen ineinander über (Kamera fährt weiter, Elemente verwandeln sich), keine harten Schnitte ohne Grund.
-- Erst nach Freigabe Code bauen: Bauteile zuerst, dann Szene für Szene.
+## Phase 4 – Storyboards: eins pro Szene (Freigabe)
+Alles, was erzählt wird, muss zu sehen sein, und zwar **intuitiv**, **didaktisch sauber** und **wissenschaftlich korrekt**. Erst alles planen, dann animieren.
+- Ordner `videos/<slug>/storyboard/`:
+  - `00-grundlagen.md`: Lernziele des Videos (roter Faden), didaktische Prinzipien (Mayer/Sweller: Kohärenz, Signalisierung, zeitliche und räumliche Kontiguität, Segmentierung, konkret → abstrakt, Fehlvorstellungen aktiv widerlegen), **Layout-Zonen** (Inhalt x 120–1800, y 80–860; Captions y 900–1040; 40 px Mindestabstand), Zeichensprache (was Farbe/Form im ganzen Video bedeutet), Regeln für Bilder.
+  - `szene-NN.md` **je Szene**: Kontext (was davor, was danach – die Szene muss dort anschließen), Lernziel, Kernbild, Didaktik, **Beat-Tabelle** (Skriptzeile → Bild → Animation/Timing → Layout-Koordinaten), Objekte, **Prüfung** (jede Rechnung, Zuordnung, Grafik nachgerechnet, mit Quelle), Fehlerquellen (Überschneidungen, Ränder) vorab gelöst.
+  - `pruefung.mjs`: Skript, das die gezeigten Rechnungen/Zuordnungen nachrechnet (muss grün laufen, bevor gebaut wird).
+- Fakten, die sich nicht belegen lassen, kommen raus oder werden durch belegte ersetzt (Skript anpassen, Wortzeiten neu schätzen).
+- **Keine einfachen Strich-Icons.** Gegenstände werden eigens als flache, gefüllte Formen gezeichnet oder als echte Fotos geladen (Downloads erlaubt, Nutzer trägt die Verantwortung; bevorzugt freie Lizenzen, Quelle in `storyboard/assets.md`).
+- Visuell darf Neues ausprobiert werden, solange der Punktgenau-Look gilt.
 
 ## Phase 5 – Szenen einzeln bauen und prüfen (je Szene Freigabe)
 - Das Video hat `src/videos/<slug>/sections.json` (erste Skriptzeile je Abschnitt). Daran erkennt `pg` ein Longform.
@@ -53,8 +53,8 @@ Alles, was erzählt wird, muss zu sehen sein. **Erst komplett planen, dann animi
 - **Clips immer im Remotion Studio öffnen**, nie als einzelne MP4 im Browser-Player: `npm run pg -- scene <slug> <n>` startet bei Bedarf das Studio und öffnet den Clip der Szene. Dort kann der Nutzer abspielen, Regler ändern und mit „Save“ speichern.
 - Jede Szene bekommt beim Bauen **Regler** (Zod-Schema + `defaultProps`): Positionen, Größen, Farben, Tempo/Verzögerungen, Kamera, Beschriftungen. Werte, die der Nutzer im Studio speichert, nie überschreiben.
 - **Nie das ganze Video rendern, solange gebaut wird.** Nur bei Bedarf eine Szene als Datei: `pg scene <slug> <n> --mp4` (720p).
-- Ablauf: Szene n bauen → `pg scene` → Nutzer bewertet/justiert im Studio → verbessern → nächste Szene.
-- Kontrolle zwischendurch über Einzelbilder (Remotion `renderStill`, halbe Größe), nicht über Komplett-Renders.
+- **Immer nur eine Szene in Arbeit.** Szene n bauen → Selbstkontrolle → `pg scene` → auf Feedback warten → Szene n verbessern *oder* mit n+1 weitermachen. Nie mehrere Szenen gleichzeitig bauen, rendern oder öffnen.
+- **Selbstkontrolle vor dem Öffnen** (Pflicht): Einzelbilder jede Sekunde der Szene (`renderStill`, halbe Größe) ansehen und prüfen: (1) überschneidet sich etwas, (2) ragt etwas aus dem Bild oder in die Captions, (3) zeigt das Bild genau das, was in diesem Moment gesagt wird. Erst wenn alle drei passen, dem Nutzer zeigen.
 
 ## Phase 6 – Export (nur auf Wunsch des Nutzers)
 - `npm run pg -- render <slug>` rendert Longform in **4K** (3840×2160, `--scale=2`) in Teilstücken zu 2.000 Bildern (`--concurrency=4`, sonst stürzt der Browser ab), fügt sie zusammen und öffnet das Ergebnis im Browser. Bricht es ab: Befehl erneut starten, fertige Teile werden übersprungen.
