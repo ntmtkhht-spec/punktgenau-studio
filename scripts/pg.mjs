@@ -93,7 +93,7 @@ const cmdVoice = (slug) => {
   console.log(`Whisper: ${files.length} Dateien ...`);
   run('python', [join(SCRIPTS, 'whisper-words.py'), whisperJson, ...files]);
   mkdirSync(publicDir(slug), {recursive: true});
-  run('node', [join(SCRIPTS, 'align-whisper.mjs'), join(videoDir(slug), 'script.md'), whisperJson, join(publicDir(slug), 'voice.wav'), join(srcDir(slug), 'words.json')]);
+  run('node', [join(SCRIPTS, 'align-whisper.mjs'), join(videoDir(slug), 'script.md'), whisperJson, join(publicDir(slug), 'voice.wav'), join(srcDir(slug), 'words.json'), '--full']);
   const words = JSON.parse(readFileSync(join(srcDir(slug), 'words.json'), 'utf8'));
   const total = words[words.length - 1].end + 1.5;
   run('python', [join(SCRIPTS, 'make-ambient.py'), join(publicDir(slug), 'music.wav'), total.toFixed(1)]);
