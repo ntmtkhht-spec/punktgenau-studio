@@ -50,6 +50,7 @@ Alles, was erzählt wird, muss zu sehen sein, und zwar **intuitiv**, **didaktisc
 ## Phase 5 – Szenen einzeln bauen und prüfen (je Szene Freigabe)
 - Das Video hat `src/videos/<slug>/sections.json` (erste Skriptzeile je Abschnitt). Daran erkennt `pg` ein Longform.
 - `Video.tsx` exportiert `SECTION_FRAMES`; der Registry-Eintrag bekommt `sections: <Alias>_SEC`. Dann legt `Root.tsx` automatisch für jeden Abschnitt einen eigenen Studio-Clip `<CompId>-Szene01`, `-Szene02`, … an.
+- **Studio starten (Claude):** über die Desktop-App mit `preview_start` und dem Eintrag `remotion-studio` aus `.claude/launch.json`. So bleibt der Server dauerhaft an; aus Bash gestartete Studios werden beendet, wenn der Befehl endet.
 - **Clips immer im Remotion Studio öffnen**, nie als einzelne MP4 im Browser-Player: `npm run pg -- scene <slug> <n>` startet bei Bedarf das Studio und öffnet den Clip der Szene. Dort kann der Nutzer abspielen, Regler ändern und mit „Save“ speichern.
 - Jede Szene bekommt beim Bauen **Regler** (Zod-Schema + `defaultProps`): Positionen, Größen, Farben, Tempo/Verzögerungen, Kamera, Beschriftungen. Werte, die der Nutzer im Studio speichert, nie überschreiben.
 - **Nie das ganze Video rendern, solange gebaut wird.** Nur bei Bedarf eine Szene als Datei: `pg scene <slug> <n> --mp4` (720p).
