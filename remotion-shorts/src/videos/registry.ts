@@ -13,6 +13,8 @@ export interface VideoEntry {
   readonly height?: number; // Longform: 1080
   /** Longform: Bildbereiche [von, bis] je Abschnitt – jeder wird im Studio ein eigener Clip "<id>-Szene01" … */
   readonly sections?: readonly (readonly [number, number])[];
+  /** Longform mit eigenen Szenen-Clips (Regler je Szene): ersetzt die automatischen Clips. */
+  readonly scenes?: React.FC;
 }
 
 // <pg:imports>
