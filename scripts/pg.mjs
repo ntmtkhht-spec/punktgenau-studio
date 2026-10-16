@@ -178,7 +178,10 @@ const openUrl = (url) => {
 const openInStudio = async (compositionId) => {
   if (!(await studioUp())) {
     console.log('Starte Remotion Studio ...');
-    spawn('npx', ['remotion', 'studio', 'src/index.ts', `--port=${STUDIO_PORT}`, '--no-open'], {cwd: RS, shell: true, detached: true, stdio: 'ignore', windowsHide: true}).unref();
+    const studioArgs = ['remotion', 'studio', 'src/index.ts', `--port=${STUDIO_PORT}`, '--no-open'];
+    // Windows: eigenes (minimiertes) Konsolenfenster, sonst endet das Studio mit dem aufrufenden Prozess.
+    if (process.platform === 'win32') spawn('cmd', ['/c', 'start', '"Remotion Studio"', '/min', 'cmd', '/c', 'npx', ...studioArgs], {cwd: RS, detached: true, stdio: 'ignore', windowsHide: true, windowsVerbatimArguments: true}).unref();
+    else spawn('npx', studioArgs, {cwd: RS, detached: true, stdio: 'ignore'}).unref();
     for (let i = 0; i < 360 && !(await studioUp()); i++) await sleep(500); // erster Start bündelt das Projekt (bis ~3 min)
     if (!(await studioUp())) fail('Remotion Studio startet nicht (Port belegt?). Manuell: npm run studio');
   }
