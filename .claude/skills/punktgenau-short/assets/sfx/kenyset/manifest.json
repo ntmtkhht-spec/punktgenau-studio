@@ -1,0 +1,1349 @@
+{
+  "pack": "Kenyset [FREE SFX PACK]",
+  "source_archive": "C:\\Users\\ntmtk\\Downloads\\Kenyset [FREE SFX PACK].zip",
+  "source_sha256": "cacf9bf27a05cab2025c90dfa9ccf3b5f724c6ae3ddf5a56d391f41e841c025b",
+  "archive_entries": 114,
+  "unique_audio_files": 94,
+  "duplicate_entries": 20,
+  "default_enabled": false,
+  "requires_explicit_user_confirmation": true,
+  "license_status": "No license document included; FREE in filename is not license evidence.",
+  "files": [
+    {
+      "file": "creatorshome-plop-333525.mp3",
+      "category": "pop",
+      "category_basis": "filename, not auditioned",
+      "sha256": "2396c7d30a6579d6354627f06a6191c87c8a3b9d80056c9c47001ee8ae276baf",
+      "bytes": 10752,
+      "duration_seconds": 0.336,
+      "sample_rate": "48000",
+      "channels": 2,
+      "archive_entries": [
+        "creatorshome-plop-333525.mp3"
+      ],
+      "license_status": "not supplied in archive"
+    },
+    {
+      "file": "creatorshome-sharp-pop-328170.mp3",
+      "category": "pop",
+      "category_basis": "filename, not auditioned",
+      "sha256": "b89f463a8ebc94babe30ec854cbf7493eafdee8c04ea9eb12b444e44166b0b7b",
+      "bytes": 32600,
+      "duration_seconds": 1.0188,
+      "sample_rate": "44100",
+      "channels": 2,
+      "archive_entries": [
+        "creatorshome-sharp-pop-328170.mp3"
+      ],
+      "license_status": "not supplied in archive"
+    },
+    {
+      "file": "universfield-computer-mouse-click-352734.mp3",
+      "category": "click",
+      "category_basis": "filename, not auditioned",
+      "sha256": "64d9331804512e308f52ecbac75e0124b79b6ed46144ec740d9b6129a7880156",
+      "bytes": 20736,
+      "duration_seconds": 0.648,
+      "sample_rate": "48000",
+      "channels": 2,
+      "archive_entries": [
+        "universfield-computer-mouse-click-352734.mp3"
+      ],
+      "license_status": "not supplied in archive"
+    },
+    {
+      "file": "universfield-swoosh-023-454830.mp3",
+      "category": "whoosh",
+      "category_basis": "filename, not auditioned",
+      "sha256": "76584c06dad69aef4f91d014323b7a361ade178a190ae65b1a87afce63b1a612",
+      "bytes": 40704,
+      "duration_seconds": 1.272,
+      "sample_rate": "48000",
+      "channels": 2,
+      "archive_entries": [
+        "universfield-swoosh-023-454830.mp3"
+      ],
+      "license_status": "not supplied in archive"
+    },
+    {
+      "file": "victorabdo-spin-232536.mp3",
+      "category": "whoosh",
+      "category_basis": "filename, not auditioned",
+      "sha256": "9696ad18821d107fcb57e235382eab3beb4062523b840da17f7daefebc6ad5cc",
+      "bytes": 117864,
+      "duration_seconds": 3.6833,
+      "sample_rate": "44100",
+      "channels": 2,
+      "archive_entries": [
+        "victorabdo-spin-232536.mp3"
+      ],
+      "license_status": "not supplied in archive"
+    },
+    {
+      "file": "benkirb-shine-1-268902.mp3",
+      "category": "shine",
+      "category_basis": "filename, not auditioned",
+      "sha256": "104cb3677c7faa661a40f70c8539f91de442bdc5c940f969988658eb1a1403da",
+      "bytes": 132096,
+      "duration_seconds": 4.128,
+      "sample_rate": "48000",
+      "channels": 2,
+      "archive_entries": [
+        "benkirb-shine-1-268902.mp3"
+      ],
+      "license_status": "not supplied in archive"
+    },
+    {
+      "file": "freesound_community-appearance-effect-6733.mp3",
+      "category": "pop",
+      "category_basis": "filename, not auditioned",
+      "sha256": "d720eebc7a4c2fd9a21a74bab1ad65b02d5ae74d98081aab1136c83561383b58",
+      "bytes": 78240,
+      "duration_seconds": 3.912,
+      "sample_rate": "24000",
+      "channels": 2,
+      "archive_entries": [
+        "freesound_community-appearance-effect-6733.mp3"
+      ],
+      "license_status": "not supplied in archive"
+    },
+    {
+      "file": "clash-royale-king-cry.mp3",
+      "category": "other",
+      "category_basis": "filename, not auditioned",
+      "sha256": "43ef97c34e628da1d66ab6423f6065721b6688cc0970d9f87142f50f099468bc",
+      "bytes": 18736,
+      "duration_seconds": 1.1,
+      "sample_rate": "44100",
+      "channels": 2,
+      "archive_entries": [
+        "clash-royale-king-cry.mp3"
+      ],
+      "license_status": "not supplied in archive"
+    },
+    {
+      "file": "47313572-ui-sounds-pack-2-sound-7-358894.mp3",
+      "category": "digital",
+      "category_basis": "filename, not auditioned",
+      "sha256": "2820799f39f8b8c4b9adf229d37becac9710f3b36bb30f7acf1aba2e169165fb",
+      "bytes": 62693,
+      "duration_seconds": 1.9592,
+      "sample_rate": "44100",
+      "channels": 2,
+      "archive_entries": [
+        "47313572-ui-sounds-pack-2-sound-7-358894.mp3",
+        "ui-sounds-pack-2-sound-7-358894.mp3"
+      ],
+      "license_status": "not supplied in archive"
+    },
+    {
+      "file": "47313572-ui-sounds-pack-2-sound-8-358892.mp3",
+      "category": "digital",
+      "category_basis": "filename, not auditioned",
+      "sha256": "5aefc890c14a330cc415c5c45891c6f42321a39f5946008f8a087a2a50c2c83b",
+      "bytes": 30093,
+      "duration_seconds": 0.9404,
+      "sample_rate": "44100",
+      "channels": 2,
+      "archive_entries": [
+        "47313572-ui-sounds-pack-2-sound-8-358892.mp3"
+      ],
+      "license_status": "not supplied in archive"
+    },
+    {
+      "file": "son_duquotidient-message-envoye-iphone-apple-391098.mp3",
+      "category": "notification",
+      "category_basis": "filename, not auditioned",
+      "sha256": "f80d496814aa158b209f50d63fc1d802fe6cfe85ed6ca2e9127347e774162fa5",
+      "bytes": 16128,
+      "duration_seconds": 0.504,
+      "sample_rate": "48000",
+      "channels": 1,
+      "archive_entries": [
+        "son_duquotidient-message-envoye-iphone-apple-391098.mp3",
+        "message-envoye-iphone-apple-391098 (1).mp3",
+        "message-envoye-iphone-apple-391098.mp3"
+      ],
+      "license_status": "not supplied in archive"
+    },
+    {
+      "file": "bubble_pop_1-476367.mp3",
+      "category": "pop",
+      "category_basis": "filename, not auditioned",
+      "sha256": "41b0844dac2d3694b9072ac66a16c3af63e1a81ddac204cdb3a337c9f8a39ba7",
+      "bytes": 3343,
+      "duration_seconds": 0.1045,
+      "sample_rate": "44100",
+      "channels": 2,
+      "archive_entries": [
+        "bubble_pop_1-476367.mp3"
+      ],
+      "license_status": "not supplied in archive"
+    },
+    {
+      "file": "ui-processing-data-sequence-modern-interface-progress-02-230495.mp3",
+      "category": "digital",
+      "category_basis": "filename, not auditioned",
+      "sha256": "144a2ca8186b0b3bbd99f0ce49ff70ed0a5246c3ea4dd0af9000327f5ca2b3de",
+      "bytes": 386304,
+      "duration_seconds": 12.072,
+      "sample_rate": "48000",
+      "channels": 2,
+      "archive_entries": [
+        "ui-processing-data-sequence-modern-interface-progress-02-230495.mp3"
+      ],
+      "license_status": "not supplied in archive"
+    },
+    {
+      "file": "immersivecontrol-button-click-sound-463065.mp3",
+      "category": "click",
+      "category_basis": "filename, not auditioned",
+      "sha256": "8d81cbfe9a05b30da6730f03c1976e59143cb425f8fa4d9e4129df6f65643b7a",
+      "bytes": 1536,
+      "duration_seconds": 0.048,
+      "sample_rate": "48000",
+      "channels": 1,
+      "archive_entries": [
+        "immersivecontrol-button-click-sound-463065.mp3",
+        "immersivecontrol-button-click-sound-463065.mp3"
+      ],
+      "license_status": "not supplied in archive"
+    },
+    {
+      "file": "ui-sound-270349 (1).mp3",
+      "category": "digital",
+      "category_basis": "filename, not auditioned",
+      "sha256": "4032c1aeaf41f12f2d93e4de4e6592cb2fd8191898b77ec792661c21496d05bb",
+      "bytes": 103653,
+      "duration_seconds": 3.2392,
+      "sample_rate": "44100",
+      "channels": 2,
+      "archive_entries": [
+        "ui-sound-270349 (1).mp3",
+        "ui-sound-270349 (1).mp3",
+        "ui-sound-270349.mp3"
+      ],
+      "license_status": "not supplied in archive"
+    },
+    {
+      "file": "swoosh-014-383768 (2).mp3",
+      "category": "whoosh",
+      "category_basis": "filename, not auditioned",
+      "sha256": "359eee130585eb3fc4ebe2c918ffb19fc492ce56c2ddf8cb5273103477f3dff7",
+      "bytes": 33792,
+      "duration_seconds": 1.056,
+      "sample_rate": "48000",
+      "channels": 2,
+      "archive_entries": [
+        "swoosh-014-383768 (2).mp3",
+        "swoosh-014-383768 (2).mp3",
+        "swoosh-014-383768.mp3"
+      ],
+      "license_status": "not supplied in archive"
+    },
+    {
+      "file": "04_handy-mitteilung-2-473883.mp3",
+      "category": "other",
+      "category_basis": "filename, not auditioned",
+      "sha256": "d723f075a902236c04606b6fa3574823f2fda7ca7fd4db229a7f8c9ee45bc1db",
+      "bytes": 43008,
+      "duration_seconds": 1.344,
+      "sample_rate": "48000",
+      "channels": 2,
+      "archive_entries": [
+        "04_handy-mitteilung-2-473883.mp3",
+        "04_handy-mitteilung-2-473883.mp3"
+      ],
+      "license_status": "not supplied in archive"
+    },
+    {
+      "file": "sfx-erreur-363728.mp3",
+      "category": "digital",
+      "category_basis": "filename, not auditioned",
+      "sha256": "b2535d7fa726b230eb21931d9b5895308bf5f8e47bf462929ac8d70ede4dc319",
+      "bytes": 28421,
+      "duration_seconds": 0.8882,
+      "sample_rate": "44100",
+      "channels": 2,
+      "archive_entries": [
+        "sfx-erreur-363728.mp3",
+        "sfx-erreur-363728.mp3"
+      ],
+      "license_status": "not supplied in archive"
+    },
+    {
+      "file": "swoosh-010-352856.mp3",
+      "category": "whoosh",
+      "category_basis": "filename, not auditioned",
+      "sha256": "c0127ab6099b531b25ead4e51494cec470a451f5556a398739172739b8be0da3",
+      "bytes": 43776,
+      "duration_seconds": 1.368,
+      "sample_rate": "48000",
+      "channels": 2,
+      "archive_entries": [
+        "swoosh-010-352856.mp3"
+      ],
+      "license_status": "not supplied in archive"
+    },
+    {
+      "file": "soft-ui-pop-light-minimal-click-451232.mp3",
+      "category": "pop",
+      "category_basis": "filename, not auditioned",
+      "sha256": "ba801851d3bfa2d65a32c07b484e53da3e91f3392558eaf03c0e29583369a2d8",
+      "bytes": 161332,
+      "duration_seconds": 5.0416,
+      "sample_rate": "44100",
+      "channels": 2,
+      "archive_entries": [
+        "soft-ui-pop-light-minimal-click-451232.mp3"
+      ],
+      "license_status": "not supplied in archive"
+    },
+    {
+      "file": "confirm-tap-394001.mp3",
+      "category": "click",
+      "category_basis": "filename, not auditioned",
+      "sha256": "254e4ae8758b85547f276010d8f1411873d78246913dd37667d49a6a12d32298",
+      "bytes": 35108,
+      "duration_seconds": 1.0971,
+      "sample_rate": "44100",
+      "channels": 2,
+      "archive_entries": [
+        "confirm-tap-394001.mp3"
+      ],
+      "license_status": "not supplied in archive"
+    },
+    {
+      "file": "sci-fi-sfx-1-350830.mp3",
+      "category": "digital",
+      "category_basis": "filename, not auditioned",
+      "sha256": "6363b363fb09411903677c4ea3787d88b5b712d294318dc0fc2890f58ad92c01",
+      "bytes": 54334,
+      "duration_seconds": 1.6979,
+      "sample_rate": "44100",
+      "channels": 2,
+      "archive_entries": [
+        "sci-fi-sfx-1-350830.mp3",
+        "sci-fi-sfx-2-350831.mp3"
+      ],
+      "license_status": "not supplied in archive"
+    },
+    {
+      "file": "simple-pop-noise-383737.mp3",
+      "category": "pop",
+      "category_basis": "filename, not auditioned",
+      "sha256": "8fe3bc881f47e807a8443f645ed32c83a5e6722b9e7b6fccd5b688152e681797",
+      "bytes": 68352,
+      "duration_seconds": 2.136,
+      "sample_rate": "48000",
+      "channels": 2,
+      "archive_entries": [
+        "simple-pop-noise-383737.mp3"
+      ],
+      "license_status": "not supplied in archive"
+    },
+    {
+      "file": "ui-pop-up-2-197887.mp3",
+      "category": "pop",
+      "category_basis": "filename, not auditioned",
+      "sha256": "b473a6746f44f816c718e269e94cc833522f28189071becbf16aae01e564c5b9",
+      "bytes": 14592,
+      "duration_seconds": 0.456,
+      "sample_rate": "48000",
+      "channels": 2,
+      "archive_entries": [
+        "ui-pop-up-2-197887.mp3"
+      ],
+      "license_status": "not supplied in archive"
+    },
+    {
+      "file": "minimal-pop-click-ui-11-198311.mp3",
+      "category": "pop",
+      "category_basis": "filename, not auditioned",
+      "sha256": "e869dcbb02dc3954eeccc797880aad9e2bb1bbd5433d9df7f0d2c8ebecbc8793",
+      "bytes": 49152,
+      "duration_seconds": 1.536,
+      "sample_rate": "48000",
+      "channels": 2,
+      "archive_entries": [
+        "minimal-pop-click-ui-11-198311.mp3"
+      ],
+      "license_status": "not supplied in archive"
+    },
+    {
+      "file": "marimba-bloop-3-188151.mp3",
+      "category": "pop",
+      "category_basis": "filename, not auditioned",
+      "sha256": "fc7c62150c71a80e4ebb8ad472fa2dcc09d3cb8f070aed3218c7940b10bb3870",
+      "bytes": 65280,
+      "duration_seconds": 2.04,
+      "sample_rate": "48000",
+      "channels": 2,
+      "archive_entries": [
+        "marimba-bloop-3-188151.mp3"
+      ],
+      "license_status": "not supplied in archive"
+    },
+    {
+      "file": "marimba-bloop-2-188149.mp3",
+      "category": "pop",
+      "category_basis": "filename, not auditioned",
+      "sha256": "4209496331e018fc2b811f59aea9730ec7d9058d0586e39fcbf48b32ecf6aa68",
+      "bytes": 72960,
+      "duration_seconds": 2.28,
+      "sample_rate": "48000",
+      "channels": 2,
+      "archive_entries": [
+        "marimba-bloop-2-188149.mp3"
+      ],
+      "license_status": "not supplied in archive"
+    },
+    {
+      "file": "pop-sound-423716.mp3",
+      "category": "pop",
+      "category_basis": "filename, not auditioned",
+      "sha256": "264e2aedc8c7db0336e2e22e53c3af88f2c042aaf061bdd64872a39ff4036105",
+      "bytes": 56832,
+      "duration_seconds": 1.776,
+      "sample_rate": "48000",
+      "channels": 2,
+      "archive_entries": [
+        "pop-sound-423716.mp3"
+      ],
+      "license_status": "not supplied in archive"
+    },
+    {
+      "file": "multi-pop-2-188167.mp3",
+      "category": "pop",
+      "category_basis": "filename, not auditioned",
+      "sha256": "d003df8d5b9d90daa48c7749922fa023f726e68915ce6a554530c4fedd093c0f",
+      "bytes": 6912,
+      "duration_seconds": 0.216,
+      "sample_rate": "48000",
+      "channels": 2,
+      "archive_entries": [
+        "multi-pop-2-188167.mp3"
+      ],
+      "license_status": "not supplied in archive"
+    },
+    {
+      "file": "new-notification-013-363676.mp3",
+      "category": "notification",
+      "category_basis": "filename, not auditioned",
+      "sha256": "cd84743053dbe226d1bd6b628c89e41e7842b8bca98d70c4aba8743e759cd6a2",
+      "bytes": 34560,
+      "duration_seconds": 1.08,
+      "sample_rate": "48000",
+      "channels": 2,
+      "archive_entries": [
+        "new-notification-013-363676.mp3"
+      ],
+      "license_status": "not supplied in archive"
+    },
+    {
+      "file": "iphone-keyboard-typing-sound-effect-336778 (1).mp3",
+      "category": "typing",
+      "category_basis": "filename, not auditioned",
+      "sha256": "c0b22cea8db27239d17d9fe12beac2b69cc52f850cd990bdab7cbd25c962d1cd",
+      "bytes": 726413,
+      "duration_seconds": 22.7004,
+      "sample_rate": "44100",
+      "channels": 2,
+      "archive_entries": [
+        "iphone-keyboard-typing-sound-effect-336778 (1).mp3",
+        "iphone-keyboard-typing-sound-effect-336778.mp3"
+      ],
+      "license_status": "not supplied in archive"
+    },
+    {
+      "file": "flipcard-91468.mp3",
+      "category": "click",
+      "category_basis": "filename, not auditioned",
+      "sha256": "1c04e41918b392a643c22d6c02ef34eeab0341c70d46b7d517078725b79d8ee4",
+      "bytes": 30929,
+      "duration_seconds": 0.9665,
+      "sample_rate": "44100",
+      "channels": 1,
+      "archive_entries": [
+        "flipcard-91468.mp3"
+      ],
+      "license_status": "not supplied in archive"
+    },
+    {
+      "file": "quick-double-swish-sfx-230502.mp3",
+      "category": "whoosh",
+      "category_basis": "filename, not auditioned",
+      "sha256": "855d0796a6c10cea3ef09e137409d8a9a50791bda2959b6f0fd9eb47f3c598c9",
+      "bytes": 68545,
+      "duration_seconds": 2.142,
+      "sample_rate": "44100",
+      "channels": 2,
+      "archive_entries": [
+        "quick-double-swish-sfx-230502.mp3"
+      ],
+      "license_status": "not supplied in archive"
+    },
+    {
+      "file": "soft-subtle-ui-pop-sfx-348820.mp3",
+      "category": "pop",
+      "category_basis": "filename, not auditioned",
+      "sha256": "d3cb929da8d79a98362d37c48b44dad59d57d432f9109c16f90e5a79e0d1343a",
+      "bytes": 18390,
+      "duration_seconds": 0.5747,
+      "sample_rate": "44100",
+      "channels": 2,
+      "archive_entries": [
+        "soft-subtle-ui-pop-sfx-348820.mp3"
+      ],
+      "license_status": "not supplied in archive"
+    },
+    {
+      "file": "sci-fi-sfx-13-350839 (2).mp3",
+      "category": "digital",
+      "category_basis": "filename, not auditioned",
+      "sha256": "ef832b4a406774418f8b29edfe22219c46d5edd58d0bfe922e106a6a3f8663fd",
+      "bytes": 55170,
+      "duration_seconds": 1.7241,
+      "sample_rate": "44100",
+      "channels": 2,
+      "archive_entries": [
+        "sci-fi-sfx-13-350839 (2).mp3",
+        "sci-fi-sfx-13-350839 (1).mp3",
+        "sci-fi-sfx-13-350839.mp3"
+      ],
+      "license_status": "not supplied in archive"
+    },
+    {
+      "file": "ui-sounds-pack-3-7-359721 (1).mp3",
+      "category": "digital",
+      "category_basis": "filename, not auditioned",
+      "sha256": "14ed4da40bc5187f5ade76cd94cf95073694ed44ffc1ad21f3d9c8950c80b126",
+      "bytes": 4179,
+      "duration_seconds": 0.1306,
+      "sample_rate": "44100",
+      "channels": 2,
+      "archive_entries": [
+        "ui-sounds-pack-3-7-359721 (1).mp3",
+        "ui-sounds-pack-3-7-359721.mp3"
+      ],
+      "license_status": "not supplied in archive"
+    },
+    {
+      "file": "sci-fi-sfx-4-350829.mp3",
+      "category": "digital",
+      "category_basis": "filename, not auditioned",
+      "sha256": "b591d2a06e620a09686d025e29ae706ac1c84c069fc7aa39a785a71d9d6973f3",
+      "bytes": 56842,
+      "duration_seconds": 1.7763,
+      "sample_rate": "44100",
+      "channels": 2,
+      "archive_entries": [
+        "sci-fi-sfx-4-350829.mp3"
+      ],
+      "license_status": "not supplied in archive"
+    },
+    {
+      "file": "sci-fi-sfx-7-350834.mp3",
+      "category": "digital",
+      "category_basis": "filename, not auditioned",
+      "sha256": "b38a88e10d35594088a552e284c72280808bca97daa5bee761954712285451a6",
+      "bytes": 58514,
+      "duration_seconds": 1.8286,
+      "sample_rate": "44100",
+      "channels": 2,
+      "archive_entries": [
+        "sci-fi-sfx-7-350834.mp3"
+      ],
+      "license_status": "not supplied in archive"
+    },
+    {
+      "file": "whoosh-arrow-start-243483.mp3",
+      "category": "whoosh",
+      "category_basis": "filename, not auditioned",
+      "sha256": "729a2596b736d405d27c686f3767cda98ed82d78a637e66ab850dfb81195c111",
+      "bytes": 257280,
+      "duration_seconds": 8.04,
+      "sample_rate": "48000",
+      "channels": 2,
+      "archive_entries": [
+        "whoosh-arrow-start-243483.mp3"
+      ],
+      "license_status": "not supplied in archive"
+    },
+    {
+      "file": "swoosh-2-359826.mp3",
+      "category": "whoosh",
+      "category_basis": "filename, not auditioned",
+      "sha256": "1c27849d4396c2a0cc7f042cb989c58c851b996f8bb0cdac21c60f32a047bc36",
+      "bytes": 35328,
+      "duration_seconds": 1.104,
+      "sample_rate": "48000",
+      "channels": 2,
+      "archive_entries": [
+        "swoosh-2-359826.mp3"
+      ],
+      "license_status": "not supplied in archive"
+    },
+    {
+      "file": "mensaje-de-texto-iphone-218138.mp3",
+      "category": "typing",
+      "category_basis": "filename, not auditioned",
+      "sha256": "16a0caa6c1c4284e9078881e6845bfffb8353a46923553d6d14d1e7cc2fc3b25",
+      "bytes": 1665024,
+      "duration_seconds": 52.032,
+      "sample_rate": "48000",
+      "channels": 2,
+      "archive_entries": [
+        "mensaje-de-texto-iphone-218138.mp3"
+      ],
+      "license_status": "not supplied in archive"
+    },
+    {
+      "file": "ipad_click-99325.mp3",
+      "category": "click",
+      "category_basis": "filename, not auditioned",
+      "sha256": "f36c6d923b74bdf91d93f6fc892b7bcab4db56f59cbcc45dcac0eef3ab8de857",
+      "bytes": 23520,
+      "duration_seconds": 1.176,
+      "sample_rate": "24000",
+      "channels": 2,
+      "archive_entries": [
+        "ipad_click-99325.mp3"
+      ],
+      "license_status": "not supplied in archive"
+    },
+    {
+      "file": "flowing-water-sound-effect-418728.mp3",
+      "category": "other",
+      "category_basis": "filename, not auditioned",
+      "sha256": "52059ceb346871e9c01102d2b864493923914cd487c140e28d25172c2a77be68",
+      "bytes": 507648,
+      "duration_seconds": 15.864,
+      "sample_rate": "48000",
+      "channels": 2,
+      "archive_entries": [
+        "flowing-water-sound-effect-418728.mp3"
+      ],
+      "license_status": "not supplied in archive"
+    },
+    {
+      "file": "glitch-fx-transitions-8-311809.mp3",
+      "category": "digital",
+      "category_basis": "filename, not auditioned",
+      "sha256": "9f76ba96597810fba1a591f1439acc47a844257e3db45d8bc7cad9f3f93f5049",
+      "bytes": 76800,
+      "duration_seconds": 2.4,
+      "sample_rate": "48000",
+      "channels": 2,
+      "archive_entries": [
+        "glitch-fx-transitions-8-311809.mp3"
+      ],
+      "license_status": "not supplied in archive"
+    },
+    {
+      "file": "woosh-230554.mp3",
+      "category": "whoosh",
+      "category_basis": "filename, not auditioned",
+      "sha256": "cda44a4cf7021031552c1fb25d9e57487a9719aa50aa1331b09257a2d3092783",
+      "bytes": 36780,
+      "duration_seconds": 1.1494,
+      "sample_rate": "44100",
+      "channels": 2,
+      "archive_entries": [
+        "woosh-230554.mp3"
+      ],
+      "license_status": "not supplied in archive"
+    },
+    {
+      "file": "soft-pop-sfx-433612.mp3",
+      "category": "pop",
+      "category_basis": "filename, not auditioned",
+      "sha256": "6592ebbc268fcbe1ff51536c3b0c9328da33c5b2a6b02e5a00f50a463e068cd5",
+      "bytes": 6144,
+      "duration_seconds": 0.192,
+      "sample_rate": "48000",
+      "channels": 2,
+      "archive_entries": [
+        "soft-pop-sfx-433612.mp3"
+      ],
+      "license_status": "not supplied in archive"
+    },
+    {
+      "file": "sfx-acceptation-363730.mp3",
+      "category": "notification",
+      "category_basis": "filename, not auditioned",
+      "sha256": "9e3ba2a1413486ce2b6ba6b41318b1b3ce3aeed309e48d26b01b474659d95f76",
+      "bytes": 78576,
+      "duration_seconds": 2.4555,
+      "sample_rate": "44100",
+      "channels": 2,
+      "archive_entries": [
+        "sfx-acceptation-363730.mp3"
+      ],
+      "license_status": "not supplied in archive"
+    },
+    {
+      "file": "simple-whoosh-02-433006.mp3",
+      "category": "whoosh",
+      "category_basis": "filename, not auditioned",
+      "sha256": "f0ae9bc389d75837624351543b75abed15d56f449b3ddf94a63f433ac03c7a1b",
+      "bytes": 129024,
+      "duration_seconds": 4.032,
+      "sample_rate": "48000",
+      "channels": 2,
+      "archive_entries": [
+        "simple-whoosh-02-433006.mp3"
+      ],
+      "license_status": "not supplied in archive"
+    },
+    {
+      "file": "pop-2-269283.mp3",
+      "category": "pop",
+      "category_basis": "filename, not auditioned",
+      "sha256": "ef1a1d2281776e5d56c49cb7056e9ddfdd76abe807bcfdf8d9c7606dc140156a",
+      "bytes": 17554,
+      "duration_seconds": 0.5486,
+      "sample_rate": "44100",
+      "channels": 2,
+      "archive_entries": [
+        "pop-2-269283.mp3"
+      ],
+      "license_status": "not supplied in archive"
+    },
+    {
+      "file": "sonar-ping-95840.mp3",
+      "category": "notification",
+      "category_basis": "filename, not auditioned",
+      "sha256": "1448e767e52db8c9d0a663c58fa059be7308ee89ae2e83f440f011bfd0ce621a",
+      "bytes": 113684,
+      "duration_seconds": 3.5526,
+      "sample_rate": "44100",
+      "channels": 1,
+      "archive_entries": [
+        "sonar-ping-95840.mp3"
+      ],
+      "license_status": "not supplied in archive"
+    },
+    {
+      "file": "ui-pop-sound-316482.mp3",
+      "category": "pop",
+      "category_basis": "filename, not auditioned",
+      "sha256": "a0b8dd00d4f3d0f06c223aa4762f756427fca3bc6a78e801f153de2ba788cda3",
+      "bytes": 43467,
+      "duration_seconds": 1.3583,
+      "sample_rate": "44100",
+      "channels": 2,
+      "archive_entries": [
+        "ui-pop-sound-316482.mp3"
+      ],
+      "license_status": "not supplied in archive"
+    },
+    {
+      "file": "notification-pluck-off-269290.mp3",
+      "category": "notification",
+      "category_basis": "filename, not auditioned",
+      "sha256": "4f782434d7c3ee6577b3fe8949c7df7ca62bfdbe315cc13ad72ecaa6b252a7c5",
+      "bytes": 56006,
+      "duration_seconds": 1.7502,
+      "sample_rate": "44100",
+      "channels": 2,
+      "archive_entries": [
+        "notification-pluck-off-269290.mp3"
+      ],
+      "license_status": "not supplied in archive"
+    },
+    {
+      "file": "new-notification-08-352461.mp3",
+      "category": "notification",
+      "category_basis": "filename, not auditioned",
+      "sha256": "86d967f2c46c458c37e7b5ec8bdb0734ca630f5b9a5df7870c716e5ac11b102b",
+      "bytes": 36096,
+      "duration_seconds": 1.128,
+      "sample_rate": "48000",
+      "channels": 2,
+      "archive_entries": [
+        "new-notification-08-352461.mp3"
+      ],
+      "license_status": "not supplied in archive"
+    },
+    {
+      "file": "notification-2-269292.mp3",
+      "category": "notification",
+      "category_basis": "filename, not auditioned",
+      "sha256": "0ada0918160ab8e3dc730f13a72e4515f7dc2b88e137e2bc6fed05f28935574a",
+      "bytes": 68545,
+      "duration_seconds": 2.142,
+      "sample_rate": "44100",
+      "channels": 2,
+      "archive_entries": [
+        "notification-2-269292.mp3"
+      ],
+      "license_status": "not supplied in archive"
+    },
+    {
+      "file": "mouse-click-290204.mp3",
+      "category": "click",
+      "category_basis": "filename, not auditioned",
+      "sha256": "075e17bdac5c13662a1c9530050e0046f81d4138e00eb3bf30427a7b4404103d",
+      "bytes": 11702,
+      "duration_seconds": 0.3657,
+      "sample_rate": "44100",
+      "channels": 2,
+      "archive_entries": [
+        "mouse-click-290204.mp3"
+      ],
+      "license_status": "not supplied in archive"
+    },
+    {
+      "file": "ui-sound-374228.mp3",
+      "category": "digital",
+      "category_basis": "filename, not auditioned",
+      "sha256": "3ab06b76690800dee2c80b15f58583458d2973606dea0bdcbdae3806e99cb326",
+      "bytes": 28416,
+      "duration_seconds": 0.888,
+      "sample_rate": "48000",
+      "channels": 1,
+      "archive_entries": [
+        "ui-sound-374228.mp3"
+      ],
+      "license_status": "not supplied in archive"
+    },
+    {
+      "file": "rope-creak-01-sound-effect-340131.mp3",
+      "category": "other",
+      "category_basis": "filename, not auditioned",
+      "sha256": "b97348854a2b6aea60bc90ac0234ba9f1fb6b2ff6c6f938b246ccc3a8880c5b7",
+      "bytes": 40960,
+      "duration_seconds": 1.28,
+      "sample_rate": "44100",
+      "channels": 2,
+      "archive_entries": [
+        "rope-creak-01-sound-effect-340131.mp3"
+      ],
+      "license_status": "not supplied in archive"
+    },
+    {
+      "file": "bubble-pops-272427.mp3",
+      "category": "pop",
+      "category_basis": "filename, not auditioned",
+      "sha256": "1ec48495170bebc7d223453d8f6458ab3c548b7ca951132cd9cadadef31d4cf6",
+      "bytes": 222354,
+      "duration_seconds": 6.9486,
+      "sample_rate": "44100",
+      "channels": 2,
+      "archive_entries": [
+        "bubble-pops-272427.mp3"
+      ],
+      "license_status": "not supplied in archive"
+    },
+    {
+      "file": "swoosh-sound-effect-for-fight-scenes-or-transitions-2-149890.mp3",
+      "category": "whoosh",
+      "category_basis": "filename, not auditioned",
+      "sha256": "d2a6e6eb3191c0498637b24897b420717bcae71c4b73f1ab5237db9c47a802f6",
+      "bytes": 11520,
+      "duration_seconds": 0.36,
+      "sample_rate": "48000",
+      "channels": 1,
+      "archive_entries": [
+        "swoosh-sound-effect-for-fight-scenes-or-transitions-2-149890.mp3"
+      ],
+      "license_status": "not supplied in archive"
+    },
+    {
+      "file": "button-202966.mp3",
+      "category": "click",
+      "category_basis": "filename, not auditioned",
+      "sha256": "1ec978d21f9dd44b99128cd636c9fa4921417017a1f7d9536b4c62c00efcb7d6",
+      "bytes": 43008,
+      "duration_seconds": 1.344,
+      "sample_rate": "48000",
+      "channels": 2,
+      "archive_entries": [
+        "button-202966.mp3"
+      ],
+      "license_status": "not supplied in archive"
+    },
+    {
+      "file": "pop-402324.mp3",
+      "category": "pop",
+      "category_basis": "filename, not auditioned",
+      "sha256": "bb343a49535045ee3350f30fe01848ce8f933b1394710a71069c96435116af54",
+      "bytes": 23040,
+      "duration_seconds": 0.72,
+      "sample_rate": "48000",
+      "channels": 2,
+      "archive_entries": [
+        "pop-402324.mp3"
+      ],
+      "license_status": "not supplied in archive"
+    },
+    {
+      "file": "shine-6-268910.mp3",
+      "category": "shine",
+      "category_basis": "filename, not auditioned",
+      "sha256": "5a5f47cac8614059deb5ee6f7890d46b240a8f73f4470b56f096b6b346acea43",
+      "bytes": 215808,
+      "duration_seconds": 6.744,
+      "sample_rate": "48000",
+      "channels": 2,
+      "archive_entries": [
+        "shine-6-268910.mp3"
+      ],
+      "license_status": "not supplied in archive"
+    },
+    {
+      "file": "gorila-315977.mp3",
+      "category": "other",
+      "category_basis": "filename, not auditioned",
+      "sha256": "6497ff1dfad98ed4b26c38be4cb982d2849e55d26abda98caa6998a95ecfe8b0",
+      "bytes": 3695616,
+      "duration_seconds": 115.488,
+      "sample_rate": "48000",
+      "channels": 2,
+      "archive_entries": [
+        "gorila-315977.mp3"
+      ],
+      "license_status": "not supplied in archive"
+    },
+    {
+      "file": "nightfall-future-bass-music-228100.mp3",
+      "category": "music",
+      "category_basis": "filename, not auditioned",
+      "sha256": "993e79a153a30c1b89940320914085d96eec02a1db281ccaa770ae066da5cb26",
+      "bytes": 4532349,
+      "duration_seconds": 141.6359,
+      "sample_rate": "44100",
+      "channels": 2,
+      "archive_entries": [
+        "nightfall-future-bass-music-228100.mp3"
+      ],
+      "license_status": "not supplied in archive"
+    },
+    {
+      "file": "pop-331049.mp3",
+      "category": "pop",
+      "category_basis": "filename, not auditioned",
+      "sha256": "d91fc3e06ee702831a6c45206ebf3bd667401f3d601a25a353d2e9db11382b45",
+      "bytes": 31764,
+      "duration_seconds": 0.9926,
+      "sample_rate": "44100",
+      "channels": 1,
+      "archive_entries": [
+        "pop-331049.mp3"
+      ],
+      "license_status": "not supplied in archive"
+    },
+    {
+      "file": "new-notification-012-363675.mp3",
+      "category": "notification",
+      "category_basis": "filename, not auditioned",
+      "sha256": "f0d9e1db55d578504b54b752b113b2c2ca91937594edc19247c0f2a3947a9654",
+      "bytes": 33792,
+      "duration_seconds": 1.056,
+      "sample_rate": "48000",
+      "channels": 2,
+      "archive_entries": [
+        "new-notification-012-363675.mp3"
+      ],
+      "license_status": "not supplied in archive"
+    },
+    {
+      "file": "swoosh-015-383769.mp3",
+      "category": "whoosh",
+      "category_basis": "filename, not auditioned",
+      "sha256": "6d86a334b13f162c592af68ff75e5597b45e4fc552890a3ec3e79052e6b8c2f6",
+      "bytes": 33792,
+      "duration_seconds": 1.056,
+      "sample_rate": "48000",
+      "channels": 2,
+      "archive_entries": [
+        "swoosh-015-383769.mp3"
+      ],
+      "license_status": "not supplied in archive"
+    },
+    {
+      "file": "bright-notification-352449.mp3",
+      "category": "notification",
+      "category_basis": "filename, not auditioned",
+      "sha256": "b40bf18982d6c529d3b6b95c64624386115d8515721c1e202a77aa69e5c69fd3",
+      "bytes": 98304,
+      "duration_seconds": 3.072,
+      "sample_rate": "48000",
+      "channels": 2,
+      "archive_entries": [
+        "bright-notification-352449.mp3"
+      ],
+      "license_status": "not supplied in archive"
+    },
+    {
+      "file": "tiktok_drop_sample_click3_kofi_by_miraclei-360034.mp3",
+      "category": "click",
+      "category_basis": "filename, not auditioned",
+      "sha256": "3e8996ca5455c61698d5cf95b26b452b5972515d040af4ae00eb9993b6163759",
+      "bytes": 50991,
+      "duration_seconds": 1.5935,
+      "sample_rate": "44100",
+      "channels": 2,
+      "archive_entries": [
+        "tiktok_drop_sample_click3_kofi_by_miraclei-360034.mp3"
+      ],
+      "license_status": "not supplied in archive"
+    },
+    {
+      "file": "simple-whoosh-382724 (1).mp3",
+      "category": "whoosh",
+      "category_basis": "filename, not auditioned",
+      "sha256": "c2efd9d902a59bf9ec5019035d7deadd17762136896b6e3cb6dd99ea50997a30",
+      "bytes": 18390,
+      "duration_seconds": 0.5747,
+      "sample_rate": "44100",
+      "channels": 2,
+      "archive_entries": [
+        "simple-whoosh-382724 (1).mp3",
+        "simple-whoosh-382724.mp3"
+      ],
+      "license_status": "not supplied in archive"
+    },
+    {
+      "file": "interface-digital-de-texto-text-digital-interface-218128 (1).mp3",
+      "category": "typing",
+      "category_basis": "filename, not auditioned",
+      "sha256": "f7c611c735f43e9cb9fc4efdecefec2eb3bb39e30712d996faec1a6fb22756ea",
+      "bytes": 49152,
+      "duration_seconds": 1.536,
+      "sample_rate": "48000",
+      "channels": 2,
+      "archive_entries": [
+        "interface-digital-de-texto-text-digital-interface-218128 (1).mp3",
+        "interface-digital-de-texto-text-digital-interface-218128.mp3"
+      ],
+      "license_status": "not supplied in archive"
+    },
+    {
+      "file": "new-notification-09-352705.mp3",
+      "category": "notification",
+      "category_basis": "filename, not auditioned",
+      "sha256": "d6a99e9d0721b7404b351ab5faff4ab3b79a061e3c383983640e007a81ae264f",
+      "bytes": 36864,
+      "duration_seconds": 1.152,
+      "sample_rate": "48000",
+      "channels": 2,
+      "archive_entries": [
+        "new-notification-09-352705.mp3"
+      ],
+      "license_status": "not supplied in archive"
+    },
+    {
+      "file": "pop-up-notify-smooth-modern-332448 (2).mp3",
+      "category": "pop",
+      "category_basis": "filename, not auditioned",
+      "sha256": "d20340b85b589c8fea552361266cf62138fec7b31f488ae0503df17366a7d4eb",
+      "bytes": 98638,
+      "duration_seconds": 3.0824,
+      "sample_rate": "44100",
+      "channels": 2,
+      "archive_entries": [
+        "pop-up-notify-smooth-modern-332448 (2).mp3",
+        "pop-up-notify-smooth-modern-332448 (1).mp3",
+        "pop-up-notify-smooth-modern-332448.mp3"
+      ],
+      "license_status": "not supplied in archive"
+    },
+    {
+      "file": "happy-message-ping-351298.mp3",
+      "category": "notification",
+      "category_basis": "filename, not auditioned",
+      "sha256": "af1ff75c4231a51f56469cdec1a52344d1090cb1c6808931bf6166d9341dc2ff",
+      "bytes": 36096,
+      "duration_seconds": 1.128,
+      "sample_rate": "48000",
+      "channels": 2,
+      "archive_entries": [
+        "happy-message-ping-351298.mp3"
+      ],
+      "license_status": "not supplied in archive"
+    },
+    {
+      "file": "bubble-254777.mp3",
+      "category": "pop",
+      "category_basis": "filename, not auditioned",
+      "sha256": "ee98f6364ca4f2e544a14f8b652823b5f58855afa42701395347a1c34cd8462e",
+      "bytes": 21733,
+      "duration_seconds": 0.6792,
+      "sample_rate": "44100",
+      "channels": 2,
+      "archive_entries": [
+        "bubble-254777.mp3",
+        "bubble-254777.mp3"
+      ],
+      "license_status": "not supplied in archive"
+    },
+    {
+      "file": "ui-sounds-pack-2-sound-2-358896.mp3",
+      "category": "digital",
+      "category_basis": "filename, not auditioned",
+      "sha256": "1824d92993cc2133d5ea2081b2b3a2b4549264f7b9331a59e44359139c1c2842",
+      "bytes": 99474,
+      "duration_seconds": 3.1086,
+      "sample_rate": "44100",
+      "channels": 2,
+      "archive_entries": [
+        "ui-sounds-pack-2-sound-2-358896.mp3"
+      ],
+      "license_status": "not supplied in archive"
+    },
+    {
+      "file": "ui-interface-sound-26-299883.mp3",
+      "category": "digital",
+      "category_basis": "filename, not auditioned",
+      "sha256": "0ee9ec2203072655bffcc6f5b0f08beef0d9a9bd0a06ae27b7f0ef4dae0fdde8",
+      "bytes": 192768,
+      "duration_seconds": 6.024,
+      "sample_rate": "48000",
+      "channels": 2,
+      "archive_entries": [
+        "ui-interface-sound-26-299883.mp3"
+      ],
+      "license_status": "not supplied in archive"
+    },
+    {
+      "file": "88300.mp3",
+      "category": "other",
+      "category_basis": "filename, not auditioned",
+      "sha256": "c695bd62f609eb2c5e6bd5ca50311e736439a8fad9657eb69ccbc06446c8a8b7",
+      "bytes": 2866050,
+      "duration_seconds": 179.0171,
+      "sample_rate": "44100",
+      "channels": 2,
+      "archive_entries": [
+        "88300.mp3"
+      ],
+      "license_status": "not supplied in archive"
+    },
+    {
+      "file": "success-340660.mp3",
+      "category": "notification",
+      "category_basis": "filename, not auditioned",
+      "sha256": "234a990ee382f6fa4d556848787f22a1db8d01cc6708274e734dd25170c60a72",
+      "bytes": 68160,
+      "duration_seconds": 3.408,
+      "sample_rate": "24000",
+      "channels": 2,
+      "archive_entries": [
+        "success-340660.mp3"
+      ],
+      "license_status": "not supplied in archive"
+    },
+    {
+      "file": "ui_sci-fi-sound-36061.mp3",
+      "category": "digital",
+      "category_basis": "filename, not auditioned",
+      "sha256": "fca512d0eb532ded72ce0c1a8b2586bb3571f96f2cff96c755414b796e7149a6",
+      "bytes": 65280,
+      "duration_seconds": 2.04,
+      "sample_rate": "48000",
+      "channels": 1,
+      "archive_entries": [
+        "ui_sci-fi-sound-36061.mp3"
+      ],
+      "license_status": "not supplied in archive"
+    },
+    {
+      "file": "ui-sounds-pack-2-sound-6-358891.mp3",
+      "category": "digital",
+      "category_basis": "filename, not auditioned",
+      "sha256": "86f57180233e6e5b6e29bbcf35d27bdda2a039b51cfe3cbb8852801e9701bc81",
+      "bytes": 24241,
+      "duration_seconds": 0.7575,
+      "sample_rate": "44100",
+      "channels": 2,
+      "archive_entries": [
+        "ui-sounds-pack-2-sound-6-358891.mp3"
+      ],
+      "license_status": "not supplied in archive"
+    },
+    {
+      "file": "ui-sounds-pack-2-sound-4-358895.mp3",
+      "category": "digital",
+      "category_basis": "filename, not auditioned",
+      "sha256": "23d549a001ae92febbff4e4bc982bfb357fc54eaaa44e6fc843e5cb9e673efd9",
+      "bytes": 80248,
+      "duration_seconds": 2.5078,
+      "sample_rate": "44100",
+      "channels": 2,
+      "archive_entries": [
+        "ui-sounds-pack-2-sound-4-358895.mp3"
+      ],
+      "license_status": "not supplied in archive"
+    },
+    {
+      "file": "ui-sound-off-270300.mp3",
+      "category": "digital",
+      "category_basis": "filename, not auditioned",
+      "sha256": "005623da7669c802441c5450d612f3310b93dbb853b1fa0bba76e5cb1a356a13",
+      "bytes": 106997,
+      "duration_seconds": 3.3437,
+      "sample_rate": "44100",
+      "channels": 2,
+      "archive_entries": [
+        "ui-sound-off-270300.mp3"
+      ],
+      "license_status": "not supplied in archive"
+    },
+    {
+      "file": "whoosh-end-384629.mp3",
+      "category": "whoosh",
+      "category_basis": "filename, not auditioned",
+      "sha256": "96638b8f816228f8f0ece477ee08a73e6acaa22f4d55b68d45ebd7b07316569a",
+      "bytes": 257280,
+      "duration_seconds": 8.04,
+      "sample_rate": "48000",
+      "channels": 2,
+      "archive_entries": [
+        "whoosh-end-384629.mp3"
+      ],
+      "license_status": "not supplied in archive"
+    },
+    {
+      "file": "swoosh-06-351021.mp3",
+      "category": "whoosh",
+      "category_basis": "filename, not auditioned",
+      "sha256": "ac901b8379be71eef102b7c83fdaddbb91accf75d09098188b6e2fc6717b4966",
+      "bytes": 35328,
+      "duration_seconds": 1.104,
+      "sample_rate": "48000",
+      "channels": 2,
+      "archive_entries": [
+        "swoosh-06-351021.mp3"
+      ],
+      "license_status": "not supplied in archive"
+    },
+    {
+      "file": "keyboard-typing-fast-371229.mp3",
+      "category": "typing",
+      "category_basis": "filename, not auditioned",
+      "sha256": "c4247454b0715816004956a3fc1674ec9f7b9c2c497170493ad5609c2662f515",
+      "bytes": 257462,
+      "duration_seconds": 8.0457,
+      "sample_rate": "44100",
+      "channels": 2,
+      "archive_entries": [
+        "keyboard-typing-fast-371229.mp3"
+      ],
+      "license_status": "not supplied in archive"
+    },
+    {
+      "file": "text-sound-4-30218.mp3",
+      "category": "typing",
+      "category_basis": "filename, not auditioned",
+      "sha256": "20c7f94d3060b35471d1c4eddeb6bb4a22f33060f1bb74197b09faf0dc4e8896",
+      "bytes": 529972,
+      "duration_seconds": 16.5616,
+      "sample_rate": "44100",
+      "channels": 1,
+      "archive_entries": [
+        "text-sound-4-30218.mp3"
+      ],
+      "license_status": "not supplied in archive"
+    },
+    {
+      "file": "ui-sounds-pack-2-sound-1-358893.mp3",
+      "category": "digital",
+      "category_basis": "filename, not auditioned",
+      "sha256": "f0c031a534b9c7c26d43a184558134df3f81a82e963285aea223277eda89e3fa",
+      "bytes": 66037,
+      "duration_seconds": 2.0637,
+      "sample_rate": "44100",
+      "channels": 2,
+      "archive_entries": [
+        "ui-sounds-pack-2-sound-1-358893.mp3"
+      ],
+      "license_status": "not supplied in archive"
+    },
+    {
+      "file": "ui-sound-2-374229.mp3",
+      "category": "digital",
+      "category_basis": "filename, not auditioned",
+      "sha256": "1319836ba182f67b9e7865e3670b44bafe3510f13df63ac4692839e6a03dec5c",
+      "bytes": 41472,
+      "duration_seconds": 1.296,
+      "sample_rate": "48000",
+      "channels": 1,
+      "archive_entries": [
+        "ui-sound-2-374229.mp3"
+      ],
+      "license_status": "not supplied in archive"
+    },
+    {
+      "file": "phone-typing-333292.mp3",
+      "category": "typing",
+      "category_basis": "filename, not auditioned",
+      "sha256": "96cdcc0b9d2cae7251bbdb8ec2def6074c7d8aa2063d578d7307dc0881cdd6e5",
+      "bytes": 774060,
+      "duration_seconds": 24.1894,
+      "sample_rate": "44100",
+      "channels": 2,
+      "archive_entries": [
+        "phone-typing-333292.mp3"
+      ],
+      "license_status": "not supplied in archive"
+    },
+    {
+      "file": "game-start-317318.mp3",
+      "category": "notification",
+      "category_basis": "filename, not auditioned",
+      "sha256": "ec4f0a70f696060679f7ae228473020b3f59771d0bebfb5fa5d7eae06bc25c23",
+      "bytes": 45975,
+      "duration_seconds": 1.4367,
+      "sample_rate": "44100",
+      "channels": 2,
+      "archive_entries": [
+        "game-start-317318.mp3"
+      ],
+      "license_status": "not supplied in archive"
+    },
+    {
+      "file": "whoosh-velocity-383019.mp3",
+      "category": "whoosh",
+      "category_basis": "filename, not auditioned",
+      "sha256": "a76cbedefb84c911eefea5c49b3bd3789494fd4e4fa96cff93840062fdab39a0",
+      "bytes": 192768,
+      "duration_seconds": 6.024,
+      "sample_rate": "48000",
+      "channels": 2,
+      "archive_entries": [
+        "whoosh-velocity-383019.mp3"
+      ],
+      "license_status": "not supplied in archive"
+    },
+    {
+      "file": "App Click 1.wav",
+      "category": "click",
+      "category_basis": "filename, not auditioned",
+      "sha256": "4a8d93f40e2f7758ab88e2f98db7ca58dde89b422a41a8250d28e88623edc142",
+      "bytes": 123146,
+      "duration_seconds": 0.6977,
+      "sample_rate": "44100",
+      "channels": 2,
+      "archive_entries": [
+        "App Click 1.wav"
+      ],
+      "license_status": "not supplied in archive"
+    },
+    {
+      "file": "App Click 11.wav",
+      "category": "click",
+      "category_basis": "filename, not auditioned",
+      "sha256": "9562015ee47933cc323e5750350876198b04985c8a1bfb86eeffdb83f21c09b5",
+      "bytes": 123146,
+      "duration_seconds": 0.6977,
+      "sample_rate": "44100",
+      "channels": 2,
+      "archive_entries": [
+        "App Click 11.wav"
+      ],
+      "license_status": "not supplied in archive"
+    }
+  ]
+}

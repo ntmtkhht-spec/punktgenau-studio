@@ -51,7 +51,7 @@ Neue Videos immer mit dem Skill `/punktgenau-short` erstellen (Ablauf in Phasen,
 ## Ton
 - Stimme nimmt der Nutzer auf: eine Datei pro Satz (`audio1.mp3 …`).
 - Musik: eigener Klangteppich (`scripts/make-ambient.py`), unter der Stimme abgesenkt – kein Lizenzrisiko.
-- **Keine Soundeffekte** (wurden ausprobiert und abgelehnt).
+- **Soundeffekte standardmäßig aus.** Situationsabhängig passende Effekte aus dem lokalen Kenyset-Paket vorschlagen; erst nach ausdrücklicher Bestätigung des Nutzers für den konkreten Einsatz einbauen. Allgemeine Video-Freigaben sind keine Soundeffekt-Freigabe. Setup und Ablauf: `.claude/skills/punktgenau-short/references/soundeffekte.md`.
 
 ## Technik-Regeln
 - Alle Zeitpunkte aus der Timeline ableiten (`TL.lineStart(i)`, `TL.lineEnd(i)`, `TL.wordStart(i, k)`), nie feste Sekunden – sonst bricht das Timing, sobald die echte Stimme da ist.

@@ -35,6 +35,13 @@ Befehle laufen in `remotion-shorts/` (`npm run pg -- …`).
 - `npm run pg -- voice <slug>` (Whisper-Wortzeiten, Tonspur, Musik).
 - Weicht die Aufnahme vom Skript ab (Whisper-Text in `videos/<slug>/whisper.json` vergleichen), `script.md` an das tatsächlich Gesprochene anpassen und `voice` erneut ausführen.
 
+## Optionale Soundeffekte – nur nach Nachfrage und Bestätigung
+- Lokales Setup: [references/soundeffekte.md](references/soundeffekte.md). Dieses Dokument lesen, wenn Soundeffekte vorgeschlagen, angehört oder eingebaut werden sollen. Die enthaltene Bibliothek ist vorbereitet, aber standardmäßig deaktiviert.
+- Situationen beurteilen: etwa ein Objekt erscheint, ein Maßstab wechselt, eine Eingabe erfolgt oder ein Ergebnis sichtbar wird. Nur bei einem passenden gestalterischen Zweck wenige konkrete Effekte vorschlagen; nicht automatisch jede Bewegung vertonen.
+- Vor dem Einbau den konkreten Einsatz nennen (Datei, Szene/Ereignis, Häufigkeit, beabsichtigte Lautstärke), bei Bedarf kurze Hörproben anbieten und **ausdrücklich fragen, ob diese Effekte eingesetzt werden sollen**. Zusammengehörige Einsätze dürfen als ein konkreter Plan gemeinsam bestätigt werden.
+- **Erst nach ausdrücklicher Bestätigung einsetzen.** Schweigen, die Bereitstellung des ZIPs, eine Skill-Freigabe, „Video vollständig erstellen“ oder die Freigabe eines Bildtests erlauben keinen Soundeffekt-Einbau. Keine Effekte in Vorschauen oder Exporten vor der Bestätigung. Eine angeforderte isolierte Hörprobe ist keine Freigabe für den Videoeinsatz.
+- Bestätigten Umfang im jeweiligen Projekt dokumentieren; neue Effekte oder zusätzliche Einsätze erneut bestätigen lassen. Ablehnung oder Widerruf beachten. Bestehende Videos nicht durch dieses Setup verändern.
+
 ## Phase 6 – Video bauen und prüfen (Freigabe)
 - Szenen an die echten Wortzeiten hängen, `npm run typecheck`.
 - `npm run pg -- audit <slug>` und **alle** Kontaktbögen ansehen: Überschneidungen, abgeschnittene Labels, Standbilder, Captions über Grafik. Beheben, erneut prüfen.
