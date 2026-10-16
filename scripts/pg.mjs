@@ -5,7 +5,7 @@
 //   npm run pg -- words <slug>           Wortzeiten aus dem Skript schaetzen (Vorschau ohne Stimme)
 //   npm run pg -- voice <slug>           Stimme: Whisper-Wortzeiten, Tonspur zusammenfuegen, Musik erzeugen
 //   npm run pg -- audit <slug>           Kontaktboegen (alle 0,5 s ein Bild) zur Pruefung auf Ueberschneidungen
-//   npm run pg -- scene <slug> <n>       Longform: nur Abschnitt n in 720p rendern und im Browser zeigen (zum Pruefen)
+//   npm run pg -- scene <slug> <n>       Longform: Abschnitt n als eigenen Clip im Remotion Studio oeffnen (--mp4: 720p-Datei)
 //   npm run pg -- render <slug>          Finales Video rendern (Longform: 4K in Teilstuecken) – nur fuer den Export
 //   npm run pg -- preview <slug>         Letzten Export im Browser zeigen (Render macht das automatisch)
 //   npm run pg -- list                   Alle Videos anzeigen
@@ -164,13 +164,40 @@ const sectionFrames = (slug) => {
 const renderRange = (slug, out, frames, scale, extra = []) =>
   run('npx', ['remotion', 'render', 'src/index.ts', compId(slug), out, `--frames=${frames[0]}-${frames[1]}`, `--scale=${scale}`, '--gl=angle', ...extra], {cwd: RS, shell: true});
 
-/** Einen Abschnitt in 720p rendern: zum Bewerten reicht das und es geht ein Vielfaches schneller als 4K. */
-const cmdScene = async (slug, n) => {
+// ---------------------------------------------------------------- Remotion Studio
+const STUDIO_PORT = Number(process.env.PG_STUDIO_PORT ?? 3000);
+const STUDIO = `http://localhost:${STUDIO_PORT}`;
+const studioUp = () => fetch(STUDIO).then((r) => r.ok, () => false);
+
+const openUrl = (url) => {
+  const [cmd, args] = process.platform === 'win32' ? ['cmd', ['/c', 'start', '""', url]] : [process.platform === 'darwin' ? 'open' : 'xdg-open', [url]];
+  spawn(cmd, args, {detached: true, stdio: 'ignore', windowsHide: true}).unref();
+};
+
+/** Startet das Remotion Studio bei Bedarf (im Hintergrund) und oeffnet die Komposition im Browser. */
+const openInStudio = async (compositionId) => {
+  if (!(await studioUp())) {
+    console.log('Starte Remotion Studio ...');
+    spawn('npx', ['remotion', 'studio', 'src/index.ts', `--port=${STUDIO_PORT}`, '--no-open'], {cwd: RS, shell: true, detached: true, stdio: 'ignore', windowsHide: true}).unref();
+    for (let i = 0; i < 360 && !(await studioUp()); i++) await sleep(500); // erster Start bündelt das Projekt (bis ~3 min)
+    if (!(await studioUp())) fail('Remotion Studio startet nicht (Port belegt?). Manuell: npm run studio');
+  }
+  const url = `${STUDIO}/${compositionId}`;
+  openUrl(url);
+  console.log(`Remotion Studio: ${url}`);
+};
+
+/**
+ * Einen Abschnitt zum Bewerten oeffnen: standardmaessig als eigener Clip im Remotion Studio
+ * (abspielen, Regler aendern, speichern). Mit --mp4 zusaetzlich als 720p-Datei rendern.
+ */
+const cmdScene = async (slug, n, flag) => {
   requireVideo(slug);
   if (!isLongform(slug)) fail(`${slug} hat keine Abschnitte (sections.json fehlt) – scene gibt es nur fuer Longform.`);
   const ranges = sectionFrames(slug);
   const i = Number(n) - 1;
   if (!Number.isInteger(i) || i < 0 || i >= ranges.length) fail(`Abschnitt muss 1 bis ${ranges.length} sein.`);
+  if (flag !== '--mp4') return openInStudio(`${compId(slug)}-Szene${String(i + 1).padStart(2, '0')}`);
   mkdirSync(join(videoDir(slug), 'scenes'), {recursive: true});
   const rel = `scenes/szene-${String(i + 1).padStart(2, '0')}.mp4`;
   renderRange(slug, join(videoDir(slug), rel), ranges[i], 2 / 3, ['--crf=23', '--concurrency=50%']);
@@ -215,9 +242,9 @@ const cmdList = () => {
 };
 
 const [cmd, a, b] = process.argv.slice(2);
-const commands = {preview: () => (requireVideo(a), showInBrowser(a)), new: () => cmdNew(a, b), words: () => (requireVideo(a), estimateWords(a)), voice: () => cmdVoice(a), audit: () => cmdAudit(a), scene: () => cmdScene(a, b), render: () => cmdRender(a, b), list: cmdList};
+const commands = {preview: () => (requireVideo(a), showInBrowser(a)), new: () => cmdNew(a, b), words: () => (requireVideo(a), estimateWords(a)), voice: () => cmdVoice(a), audit: () => cmdAudit(a), scene: () => cmdScene(a, b, process.argv[5]), render: () => cmdRender(a, b), list: cmdList};
 if (!commands[cmd]) {
-  console.log('Befehle: new <slug> "<Titel>" | words <slug> | voice <slug> | audit <slug> | scene <slug> <n> | render <slug> [--no-preview] | preview <slug> | list');
+  console.log('Befehle: new <slug> "<Titel>" | words <slug> | voice <slug> | audit <slug> | scene <slug> <n> [--mp4] | render <slug> [--no-preview] | preview <slug> | list');
   process.exit(cmd ? 1 : 0);
 }
 commands[cmd]();

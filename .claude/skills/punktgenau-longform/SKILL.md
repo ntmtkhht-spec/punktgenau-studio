@@ -49,9 +49,11 @@ Alles, was erzählt wird, muss zu sehen sein. **Erst komplett planen, dann animi
 
 ## Phase 5 – Szenen einzeln bauen und prüfen (je Szene Freigabe)
 - Das Video hat `src/videos/<slug>/sections.json` (erste Skriptzeile je Abschnitt). Daran erkennt `pg` ein Longform.
-- **Nie das ganze Video rendern, solange gebaut wird.** Immer nur einen Abschnitt:
-  `npm run pg -- scene <slug> <n>` → `videos/<slug>/scenes/szene-NN.mp4` in **720p** und öffnet es im Browser (offener Tab lädt neu).
-- Ablauf: Szene n bauen → `pg scene` → Nutzer bewertet → verbessern → erneut `pg scene` → nächste Szene.
+- `Video.tsx` exportiert `SECTION_FRAMES`; der Registry-Eintrag bekommt `sections: <Alias>_SEC`. Dann legt `Root.tsx` automatisch für jeden Abschnitt einen eigenen Studio-Clip `<CompId>-Szene01`, `-Szene02`, … an.
+- **Clips immer im Remotion Studio öffnen**, nie als einzelne MP4 im Browser-Player: `npm run pg -- scene <slug> <n>` startet bei Bedarf das Studio und öffnet den Clip der Szene. Dort kann der Nutzer abspielen, Regler ändern und mit „Save“ speichern.
+- Jede Szene bekommt beim Bauen **Regler** (Zod-Schema + `defaultProps`): Positionen, Größen, Farben, Tempo/Verzögerungen, Kamera, Beschriftungen. Werte, die der Nutzer im Studio speichert, nie überschreiben.
+- **Nie das ganze Video rendern, solange gebaut wird.** Nur bei Bedarf eine Szene als Datei: `pg scene <slug> <n> --mp4` (720p).
+- Ablauf: Szene n bauen → `pg scene` → Nutzer bewertet/justiert im Studio → verbessern → nächste Szene.
 - Kontrolle zwischendurch über Einzelbilder (Remotion `renderStill`, halbe Größe), nicht über Komplett-Renders.
 
 ## Phase 6 – Export (nur auf Wunsch des Nutzers)

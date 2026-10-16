@@ -11,6 +11,8 @@ export interface VideoEntry {
   readonly durationSec: number;
   readonly width?: number; // Longform: 1920
   readonly height?: number; // Longform: 1080
+  /** Longform: Bildbereiche [von, bis] je Abschnitt – jeder wird im Studio ein eigener Clip "<id>-Szene01" … */
+  readonly sections?: readonly (readonly [number, number])[];
 }
 
 // <pg:imports>
