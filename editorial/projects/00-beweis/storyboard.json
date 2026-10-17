@@ -1,0 +1,158 @@
+{
+  "slug": "00-beweis",
+  "title": "Beweistest: drei Engines, ein Video",
+  "format": "16x9",
+  "scenes": [
+    {
+      "id": "s1",
+      "sentence": "Eine einzelne Figur – und dann fast tausend.",
+      "archetype": "3d-isometric-diorama",
+      "dimension": "3D",
+      "wallpaper": null,
+      "characters": {
+        "type": "meeple",
+        "reason": "Die Spielfigur steht symbolisch für eine Rolle (Schöpfer); erst als Einzelne, dann als Masse."
+      },
+      "stage": "Dunkler Schieferboden, eine orange Figur mit Label SCHÖPFER, danach 31×31 cremefarbene Figuren, Zähler-Schlagzeile unten.",
+      "typography": [
+        {
+          "text": "Schöpfer",
+          "role": "editorial-didone",
+          "font": "Playfair Display 400, Cremeweiß, Drop-Shadow"
+        },
+        {
+          "text": "961 FIGUREN",
+          "role": "tall-condensed-serif",
+          "font": "DM Serif Display, scaleX 0.74, -6°, Block-Schatten 4px 6px #111",
+          "beleg": "Eigene Nachrechnung: 31 × 31 = 961 Figuren im Raster"
+        }
+      ],
+      "assets": [
+        {
+          "name": "Spielfiguren (Meeples), 31×31",
+          "class": "3d-requisite",
+          "source": "three-parametric"
+        }
+      ],
+      "focusObjects": 1,
+      "choreography": "0–1,2 s: leichter Push-in auf die Einzelfigur, Label blendet ein. 1,2–4,8 s: exponentieller isometrischer Zoom-out, die übrigen Figuren wachsen wellenförmig von der Mitte aus dem Boden. Ab 3,7 s: '961 Figuren' blendet ein.",
+      "camera": "isometric-zoom",
+      "transition": {
+        "type": "light-switch",
+        "durationSec": 0.5
+      },
+      "tool": "remotion-three",
+      "toolReason": "Echte 3D-Geometrie mit orthografischer Isometrie-Kamera und 961 Figuren: nur Three.js kann Perspektive, Licht und den stufenlosen Zoom-out über zwei Größenordnungen sauber rendern.",
+      "component": "MeepleIso",
+      "durationSec": 5
+    },
+    {
+      "id": "s2",
+      "sentence": "Die Maschine meldet sich zu Wort.",
+      "archetype": "diegetic-ui-retro",
+      "dimension": "2.5D",
+      "wallpaper": {
+        "motif": "arkaden",
+        "mode": "kritik",
+        "color": "petrol",
+        "light": "spotlight"
+      },
+      "characters": {
+        "type": "keine",
+        "reason": "Der Monitor selbst ist der Akteur; die Sprechblase gibt ihm die Stimme."
+      },
+      "stage": "Beiger Retro-CRT mit Scanlines und Phosphor-Glühen, Monospace-Terminaltext; schräge Sprechblase mit extrudierter roter Condensed-Schrift.",
+      "typography": [
+        {
+          "text": "> SCHACH.EXE …",
+          "role": "retro-crt-terminal",
+          "font": "IBM Plex Mono 500, Phosphor #f0f6f0 mit Bloom",
+          "beleg": "Zahl 961 aus Szene s1 (eigene Nachrechnung)"
+        },
+        {
+          "text": "Ich spiele alle.",
+          "role": "heavy-plakat-grotesk",
+          "font": "Anton, Kaminrot #a51c1c, -7°, schwarze 3D-Extrusion, Sprechblase #f3ead8 mit 3px Rahmen"
+        }
+      ],
+      "assets": [
+        {
+          "name": "Arkaden-Tapete",
+          "class": "tapete"
+        },
+        {
+          "name": "Retro-CRT mit Terminal",
+          "class": "zitat-ui",
+          "kind": "ui",
+          "build": "dom"
+        },
+        {
+          "name": "Sprechblase",
+          "class": "zitat-ui",
+          "kind": "ui",
+          "build": "dom"
+        }
+      ],
+      "focusObjects": 2,
+      "choreography": "0–0,6 s: Monitor fährt ins Spotlight. 0,4–2,1 s: drei Terminalzeilen tippen sich. Ab 2,2 s: Sprechblasen-Umriss zeichnet sich, Schrift 'Ich spiele alle.' rastet mit einem Stempel-Impuls ein; danach trägt nur noch der Kamera-Push-in die Bewegung.",
+      "camera": "push-in",
+      "transition": {
+        "type": "zoom-through",
+        "durationSec": 0.5
+      },
+      "tool": "hyperframes-gsap",
+      "toolReason": "CRT-Look (Scanlines, Glow, Bildschirmwölbung), Tipp-Effekt und SVG-Stroke-Zeichnung sind reines HTML/CSS + GSAP; in HyperFrames deutlich kürzer als in React-Komponenten, und kein 3D nötig.",
+      "html": "hf/s2",
+      "durationSec": 5
+    },
+    {
+      "id": "s3",
+      "sentence": "Einunddreißig mal einunddreißig ergibt neunhunderteinundsechzig.",
+      "archetype": "math-simulation-graph",
+      "dimension": "2D",
+      "wallpaper": {
+        "motif": "damast",
+        "mode": "these",
+        "color": "kupfer",
+        "light": "vignette"
+      },
+      "characters": {
+        "type": "keine",
+        "reason": "Reine Rechnung; Figuren würden vom Graphen ablenken."
+      },
+      "stage": "LaTeX-Formel n × n = n², Achsen, orange Parabel mit laufendem Punkt; Formel morpht zu 31 × 31 = 961.",
+      "typography": [
+        {
+          "text": "n × n = n² → 31 × 31 = 961",
+          "role": "latex-math",
+          "font": "LaTeX Computer Modern, Cremeweiß",
+          "beleg": "Eigene Nachrechnung: 31² = 961"
+        }
+      ],
+      "assets": [
+        {
+          "name": "Damast-Tapete",
+          "class": "tapete"
+        },
+        {
+          "name": "Formel und Parabel n²",
+          "class": "formel-graph"
+        }
+      ],
+      "focusObjects": 2,
+      "choreography": "0–1 s: Achsen und Formel schreiben sich. 1–3,2 s: Punkt läuft die Parabel bis n = 31. 3,2–3,8 s: Formel wechselt zum Ergebnis, danach ruhige Tapetendrift.",
+      "camera": "static-drift",
+      "transition": {
+        "type": "cut",
+        "durationSec": 0
+      },
+      "tool": "manim-python",
+      "toolReason": "Exakter Funktionsgraph und echter LaTeX-Formelsatz: Manim rechnet die Kurve und setzt die Formel mit TeX; transparent gerendert liegt sie über der Tapete aus Remotion.",
+      "manim": {
+        "file": "manim/s3.py",
+        "class": "S3"
+      },
+      "durationSec": 5
+    }
+  ]
+}

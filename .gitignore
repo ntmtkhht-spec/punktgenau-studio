@@ -21,3 +21,12 @@ Thumbs.db
 # Manim-Renderausgabe
 manim-scenes/media/
 manim-scenes/__pycache__/
+manim-scenes/.venv/
+.scratch/
+
+# Editorial-Pipeline: Renderausgaben
+editorial/projects/*/clips/
+editorial/projects/*/export/
+editorial/projects/*/audit/
+editorial/projects/*/.work/
+editorial/projects/*/assets/

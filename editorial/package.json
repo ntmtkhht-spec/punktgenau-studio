@@ -1,0 +1,26 @@
+{
+  "name": "editorial-studio",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Editorial-Stil (Ultralativ-angelehnt): Multi-Tool-Szenen (Remotion+Three, HyperFrames+GSAP, Manim) fuer 16:9 und 9:16",
+  "scripts": {
+    "studio": "remotion studio remotion/index.ts",
+    "ed": "node ../scripts/ed.mjs",
+    "typecheck": "tsc --noEmit"
+  },
+  "dependencies": {
+    "@react-three/fiber": "^9.8.1",
+    "@remotion/cli": "^4.0.535",
+    "@remotion/google-fonts": "^4.0.535",
+    "@remotion/three": "^4.0.535",
+    "react": "^19.3.0",
+    "react-dom": "^19.3.0",
+    "remotion": "^4.0.535",
+    "three": "^0.186.1"
+  },
+  "devDependencies": {
+    "@types/react": "^19.3.0",
+    "@types/three": "^0.186.0",
+    "typescript": "^7.0.2"
+  }
+}

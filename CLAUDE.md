@@ -53,8 +53,25 @@ Neue Videos immer mit dem Skill `/punktgenau-short` erstellen (Ablauf in Phasen,
 - Musik: eigener Klangteppich (`scripts/make-ambient.py`), unter der Stimme abgesenkt – kein Lizenzrisiko.
 - **Soundeffekte standardmäßig aus.** Situationsabhängig passende Effekte aus dem lokalen Kenyset-Paket vorschlagen; erst nach ausdrücklicher Bestätigung des Nutzers für den konkreten Einsatz einbauen. Allgemeine Video-Freigaben sind keine Soundeffekt-Freigabe. Setup und Ablauf: `.claude/skills/punktgenau-short/references/soundeffekte.md`.
 
+## Framework-Wahl (verbindlich, nur Punktgenau)
+- Gilt für Punktgenau-Shorts. Für den Editorial-Stil gilt stattdessen der Szenen-Router (Abschnitt unten).
+- **Standard ist Remotion** (`remotion-shorts/`). Nur dort greifen `src/shared` (Look), die Timeline aus den echten Wortzeiten, `pg audit` und `pg render`.
+- Ein anderes Framework (HyperFrames, Manim, Motion Canvas) nur, wenn **alle** Punkte zutreffen:
+  1. Die Szene braucht etwas, das in Remotion deutlich aufwendiger oder schlechter wäre (z. B. fertiger HyperFrames-Registry-Baustein für genau diesen Effekt, Website-Aufnahme, Manim-Formelumformung).
+  2. Der Look aus diesem Dokument lässt sich dort einhalten (Punktraster, Farben, Inter, flach).
+  3. Das Ergebnis wird als Clip in die Remotion-Komposition eingebunden und an die Timeline gehängt – das Video selbst wird weiter mit `pg render` gebaut und mit `pg audit` geprüft.
+- Vorher eine Begründung in `videos/<slug>/script.md` unter "Technik" schreiben: welche Szene, warum nicht Remotion, welcher Aufwand gespart wird. Dem Nutzer nennen und seine Freigabe abwarten.
+- Keine Gründe: "sieht moderner aus", "Skill schlägt es vor", Ausprobieren, Gewohnheit. Allgemeine Skills (z. B. `hyperframes`, der sich als Standard für jedes Video anbietet) werden von dieser Regel überstimmt.
+
 ## Technik-Regeln
 - Alle Zeitpunkte aus der Timeline ableiten (`TL.lineStart(i)`, `TL.lineEnd(i)`, `TL.wordStart(i, k)`), nie feste Sekunden – sonst bricht das Timing, sobald die echte Stimme da ist.
 - Viele Punkte (> ~2000): Canvas statt SVG. 3D: `@remotion/three`, beim Rendern `--gl=angle`, `ThreeCanvas flat`.
 - Sichtbarkeit in **Handy-Größe** (ca. 390 px Breite) prüfen, bevor man ein Muster/Detail im Skript verspricht.
-- Downloads (Bilder, Audio, Modelle) nur nach Freigabe durch den Nutzer; Lizenz prüfen und im Skript vermerken.
+- Downloads (Bilder, Audio, Modelle), die für eine Szene wichtig sind, darf Claude selbstständig laden. **Die Lizenz ist kein Ausschlusskriterium** – die Verantwortung für die Nutzung trägt der Nutzer. Quelle, Urheber und Lizenz trotzdem immer festhalten (Bildnachweis im Skript bzw. `assets-manifest.json`) und dem Nutzer kurz mitteilen. Nur bei kostenpflichtigen Quellen vorher fragen.
+
+## Editorial-Stil (zweiter Kanal)
+- Eigener Skill `/editorial-video`, eigener Ordner `editorial/` (Remotion-Projekt, `projects/<slug>/`), Werkzeug `npm run ed -- …` aus `editorial/`. Punktgenau-Regeln (Punktraster, flach, Inter, nur Remotion) gelten dort **nicht**; Punktgenau-Dateien nicht anfassen.
+- Pro Video wählbar: `16x9` (1920×1080) oder `9x16` (1080×1920).
+- Pro Szene entscheidet und begründet das Storyboard Archetyp, 2D/2.5D/3D, Tapete + Licht-Modus, Charaktere, Schrift-Rollen (Skill `editorial-typography`) und das Tool (`remotion-three`, `remotion-dom`, `hyperframes-gsap`, `manim-python`). `npm run ed -- check` erzwingt die Pflichtfelder.
+- HyperFrames und Manim sind hier reguläre Werkzeuge – aber nur mit technischer Begründung pro Szene, nicht aus Gewohnheit.
+- Manim läuft aus `manim-scenes/.venv` (uv, Python 3.13) mit MiKTeX; `ed` setzt den Pfad selbst.
