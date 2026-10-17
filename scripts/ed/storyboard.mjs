@@ -27,8 +27,10 @@ export const FONT_ROLES = [
   'typewriter-archival', 'retro-crt-terminal', 'diegetic-ui-sans', 'latex-math',
 ];
 // Asset-Klassen (Spec 4.1). formel-graph = Manim-Formelsatz/Graph, nur mit manim-python.
-export const ASSET_CLASSES = ['archiv-werk', 'logo-icon', 'tapete', 'zitat-ui', '3d-requisite', 'formel-graph'];
-export const FREE_LICENSES = ['public-domain', 'cc0', 'cc-by', 'cc-by-sa'];
+// eigene-grafik = selbst gebaut (Diagramm, Pfeil, Form, Muster, Illustration) – erlaubt mit Begruendung.
+export const ASSET_CLASSES = ['archiv-werk', 'logo-icon', 'tapete', 'zitat-ui', '3d-requisite', 'formel-graph', 'eigene-grafik'];
+// Logos/Marken werden nie selbst gezeichnet, sondern immer geladen.
+const LOGO_WORDS = /\b(logo|logos|marke|markenzeichen|brand|wortmarke|signet)\b/i;
 const ICON_SOURCES = ['simpleicons', 'wikimedia', 'media-use', 'lucide', 'tabler', 'kenney'];
 const PROP_SOURCES = ['three-parametric', 'cc0-glb'];
 const MAX_FOCUS = 3; // Gesetz der freien Buehne
@@ -37,9 +39,7 @@ const BANNED = [
   [/dashboard|bento|kachel-raster|card-grid/i, 'keine SaaS-Dashboards/Bento-Boxen'],
   [/glas-?panel|glassmorph|backdrop-filter|milchglas/i, 'keine Glas-Panels'],
   [/neon/i, 'keine Neon-Glows'],
-  [/ki-generiert|ai-generated|midjourney-bild|dall-?e|stable diffusion|stock-?foto/i, 'keine KI-Bilder oder Stock-Fotos'],
   [/schweb|wackel|pulsier|idle|\bfloat(ing)?\b|bobbing/i, 'kein Idle-Wackeln: Bewegung nur durch Kamera, Licht oder Wort-Einrasten'],
-  [/handgezeichnet|freihand|selbst gemalt/i, 'keine selbstgekritzelten SVGs'],
 ];
 const EMOJI = /\p{Extended_Pictographic}/u;
 
@@ -97,7 +97,7 @@ const checkScene = (s, i, projectDir) => {
       if (!text(a?.name)) errs.push(at(`${ak}: name fehlt`));
       if (!ASSET_CLASSES.includes(a?.class)) return errs.push(at(`${ak}: class muss eine von ${ASSET_CLASSES.join(', ')} sein`));
       if (a.class === 'archiv-werk') {
-        if (!FREE_LICENSES.includes(a.license)) errs.push(at(`${ak}: license muss ${FREE_LICENSES.join('/')} sein`));
+        if (!text(a.license)) errs.push(at(`${ak}: license fehlt (wird nur protokolliert, nicht gefiltert)`));
         if (!text(a.caption)) errs.push(at(`${ak}: caption (Quellenzeile unter dem Rahmen, z. B. "Caspar David Friedrich, ca. 1818") fehlt`));
         if (!text(a.manifestId)) errs.push(at(`${ak}: manifestId (Eintrag in assets-manifest.json) fehlt`));
       }
@@ -112,6 +112,11 @@ const checkScene = (s, i, projectDir) => {
       }
       if (a.class === '3d-requisite' && !PROP_SOURCES.includes(a.source)) errs.push(at(`${ak}: source muss three-parametric oder cc0-glb sein`));
       if (a.class === 'tapete' && !w) errs.push(at(`${ak}: Tapete angegeben, aber wallpaper fehlt`));
+      if (a.class === 'eigene-grafik') {
+        if (!text(a.reason)) errs.push(at(`${ak}: reason fehlt (warum selbst bauen statt laden?)`));
+        if (LOGO_WORDS.test(`${a.name} ${a.reason ?? ''}`)) errs.push(at(`${ak}: Logos nie selbst bauen – class logo-icon mit geladener Datei nutzen`));
+      }
+      if (a.class === 'tapete' && a.source && !['prozedural', 'geladen'].includes(a.source)) errs.push(at(`${ak}: tapete.source muss prozedural oder geladen sein`));
       if (a.class === 'formel-graph' && s.tool !== 'manim-python') errs.push(at(`${ak}: formel-graph nur mit manim-python`));
     });
 
@@ -192,6 +197,9 @@ const scanSceneFiles = (sb, projectDir) => {
   }
   return errs;
 };
+
+/** Liest storyboard.json ohne Pruefung (fuer ed assets). */
+export const readStoryboardRaw = (projectDir) => JSON.parse(readFileSync(join(projectDir, 'storyboard.json'), 'utf8'));
 
 /** Liest und prueft storyboard.json. Wirft mit allen Fehlern auf einmal. */
 export const loadStoryboard = (projectDir) => {

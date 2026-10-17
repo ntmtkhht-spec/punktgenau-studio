@@ -31,13 +31,13 @@ Pro Szene in `storyboard.md` (Begründung in Prosa) **und** `storyboard.json` (M
 5. **Bühne & Typografie:** konkrete Objekte. Für **jedes** sichtbare Textelement nach dem Entscheidungsbaum aus `/editorial-typography` eine der 7 Rollen wählen und in `typography` festhalten: `text`, `role`, `font` (Familie, Schnitt, Neigung, Schatten/Extrusion), bei Zahlen `beleg`. Sans-Serif nur für nachgebaute App-UIs; Dachzeilen über Rolle 2/3 in kursiver Didone; genau ein Akzentwort pro Zeile.
 6. **Choreografie & Kamera:** Schritt für Schritt mit Zeitangaben; Kamera `push-in`, `isometric-zoom`, `whip-pan`, `3d-orbit`, `static-drift` … Kein Moment ohne Bewegung.
 7. **Übergang:** `cut`, `fade`, `light-switch`, `whip-pan`, `zoom-through`, `chapter-card`.
-8. **Assets & freie Bühne:** jedes sichtbare Element in `assets` einer der 5 Asset-Klassen zuordnen (Herkunft, Lizenz, Quellenzeile), `focusObjects` 1–3. Jede Zahl im Bild mit `beleg`. Verbote aus `references/assets.md` beachten: keine erfundenen Zahlen/Zitate, kein KI-Bild/Stock-Foto, kein Dashboard/Bento/Glas/Neon, keine Emojis oder Freihand-Logos, kein Idle-Wackeln.
+8. **Assets & freie Bühne:** jedes sichtbare Element in `assets` einer Asset-Klasse zuordnen (5 aus der Spec plus `formel-graph`/`eigene-grafik`) (Herkunft, Lizenz, Quellenzeile), `focusObjects` 1–3. Jede Zahl im Bild mit `beleg`. Verbote aus `references/assets.md` beachten: keine erfundenen Zahlen/Zitate, nichts Unechtes als echt ausgeben, kein Dashboard/Bento/Glas/Neon, keine Emojis, Logos immer laden, kein Idle-Wackeln.
 9. **Tool & technische Begründung:** `remotion-three`, `remotion-dom`, `hyperframes-gsap` oder `manim-python` – nach dem Router in `references/regie.md`. Begründung nennt, was dieses Tool für *diese* Szene besser kann (mind. ein Satz, kein „passt gut“).
 
 Danach `npm run ed -- check <slug>` (prüft alle Pflichtfelder, Enums, Dateien, Schrift-Rollen). Storyboard vollständig im Chat zeigen, auf Freigabe warten. **Keine Standbilder** für das Storyboard erzeugen.
 
 ## Phase 4 – Assets beschaffen & Szenen bauen (je Szene prüfen)
-- Zuerst Assets nach `references/assets.md` beschaffen (Wikimedia/Openverse, media-use/SimpleIcons/Lucide), in `projects/<slug>/assets/` ablegen, in `assets-manifest.json` eintragen, **jedes Bild ansehen**, dann `visuallyChecked: true`. Danach erneut `check`.
+- **Pflicht zuerst:** `npm run ed -- assets <slug>` (sucht und lädt alle Archivwerke und Logos aus dem Storyboard), **jedes geladene Bild mit dem Read-Tool ansehen**, falschen Treffer mit `assets <slug> <id>=<n>` tauschen, dann `npm run ed -- approve <slug> <id>`. Ohne Freigabe rendert nichts. Logos nie selbst bauen; Tapeten, Diagramme, Formen und Requisiten dürfen selbst gebaut werden (`references/assets.md`).
 - **Gemeinsame Komponenten benutzen, nichts nachbauen:**
   - Schrift: Remotion nur über `remotion/shared/typography.tsx` (`<RoleText role=…>`, `roleStyle`, `kickerStyle`); HyperFrames nur über `roles.css` (Klassen `.role-*`, `.kicker`, `.caption`, `.bubble-fill`). Eigenes `fontFamily`/`font-family` lehnt `check` ab.
   - Archivwerke: `remotion/shared/FramedArtwork.tsx` (Rahmen + Pflicht-Quellenzeile, Spotlight über `lit`).
@@ -56,4 +56,4 @@ Danach `npm run ed -- check <slug>` (prüft alle Pflichtfelder, Enums, Dateien, 
 - **Alle** Kontaktbögen ansehen: Verstöße gegen das Reinheitsgebot (Wackeln, mehr als 3 Fokus-Objekte, falsche Bilder), Überschneidungen, verpixelte Übergänge, Standbilder, Text in den Plattform-Zonen (9:16: oben ~12 %, unten ~20 %, rechts ~12 % freihalten), unlesbare Schrift in Handygröße. Beheben, neu prüfen, dann dem Nutzer zeigen.
 
 ## Soundeffekte, Downloads, Stimme
-Wie in `CLAUDE.md`: Soundeffekte nur nach ausdrücklicher Bestätigung; Downloads mit freier Lizenz, im Skript vermerkt; keine TTS-Stimme.
+Wie in `CLAUDE.md`: Soundeffekte nur nach ausdrücklicher Bestätigung; Downloads ohne Lizenzfilter, aber Quelle/Urheber/Lizenz immer festhalten; keine TTS-Stimme.

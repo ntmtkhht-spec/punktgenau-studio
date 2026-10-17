@@ -67,7 +67,7 @@ Neue Videos immer mit dem Skill `/punktgenau-short` erstellen (Ablauf in Phasen,
 - Alle Zeitpunkte aus der Timeline ableiten (`TL.lineStart(i)`, `TL.lineEnd(i)`, `TL.wordStart(i, k)`), nie feste Sekunden – sonst bricht das Timing, sobald die echte Stimme da ist.
 - Viele Punkte (> ~2000): Canvas statt SVG. 3D: `@remotion/three`, beim Rendern `--gl=angle`, `ThreeCanvas flat`.
 - Sichtbarkeit in **Handy-Größe** (ca. 390 px Breite) prüfen, bevor man ein Muster/Detail im Skript verspricht.
-- Downloads (Bilder, Audio, Modelle), die für eine Szene wichtig sind, darf Claude selbstständig laden – nur aus seriösen Quellen mit freier bzw. passender Lizenz (z. B. CC0, CC BY, Public Domain). Lizenz, Quelle und Zweck im Skript vermerken (Bildnachweis) und dem Nutzer kurz mitteilen. Unklare Lizenz oder kostenpflichtig: vorher fragen.
+- Downloads (Bilder, Audio, Modelle), die für eine Szene wichtig sind, darf Claude selbstständig laden. **Die Lizenz ist kein Ausschlusskriterium** – die Verantwortung für die Nutzung trägt der Nutzer. Quelle, Urheber und Lizenz trotzdem immer festhalten (Bildnachweis im Skript bzw. `assets-manifest.json`) und dem Nutzer kurz mitteilen. Nur bei kostenpflichtigen Quellen vorher fragen.
 
 ## Editorial-Stil (zweiter Kanal)
 - Eigener Skill `/editorial-video`, eigener Ordner `editorial/` (Remotion-Projekt, `projects/<slug>/`), Werkzeug `npm run ed -- …` aus `editorial/`. Punktgenau-Regeln (Punktraster, flach, Inter, nur Remotion) gelten dort **nicht**; Punktgenau-Dateien nicht anfassen.

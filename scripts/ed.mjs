@@ -4,14 +4,17 @@
 //   new <slug> "<Titel>" --format 16x9|9x16   Projekt anlegen (storyboard.json/.md, script.md, hf/, manim/)
 //   check <slug>                               storyboard.json streng pruefen
 //   scene <slug> <szenen-id>                   eine Szene mit ihrem Tool rendern -> clips/<id>.mp4
+//   assets <slug> [id=n …]                     Archivwerke/Logos suchen + laden (Wikimedia, Openverse, SimpleIcons)
+//   approve <slug> <asset-id>                  Asset nach Sichtpruefung freigeben
 //   build <slug>                               alle Szenen rendern, zusammenfuehren, Audit-Kontaktboegen
 //   join <slug>                                nur zusammenfuehren + Audit (Clips existieren schon)
 //   list                                       Projekte anzeigen
 import {existsSync, mkdirSync, readdirSync, readFileSync, writeFileSync} from 'node:fs';
 import {join} from 'node:path';
 import {assemble, audit, totalDuration} from './ed/assemble.mjs';
+import {approveAsset, fetchAssets} from './ed/assets.mjs';
 import {EDITORIAL, renderScene} from './ed/render.mjs';
-import {FORMATS, loadStoryboard} from './ed/storyboard.mjs';
+import {FORMATS, loadStoryboard, readStoryboardRaw} from './ed/storyboard.mjs';
 
 const PROJECTS = join(EDITORIAL, 'projects');
 const projectDir = (slug) => join(PROJECTS, slug);
@@ -72,6 +75,14 @@ const cmdBuild = (slug) => {
   audit(sb, projectDir(slug));
 };
 
+const cmdAssets = async (slug, picks) => {
+  checkSlug(slug);
+  // Rohdaten lesen: der volle Check schlaegt fehl, solange Assets fehlen – genau die sollen ja geladen werden.
+  const sb = readStoryboardRaw(projectDir(slug));
+  const pick = Object.fromEntries(picks.map((p) => p.split('=')).map(([k, v]) => [k, Number(v)]));
+  await fetchAssets(sb, projectDir(slug), pick);
+};
+
 const cmdList = () => {
   if (!existsSync(PROJECTS)) return console.log('Noch keine Projekte.');
   for (const slug of readdirSync(PROJECTS)) {
@@ -85,13 +96,16 @@ const cmdList = () => {
 
 const [cmd, a, b, ...rest] = process.argv.slice(2);
 try {
+  if (cmd === 'assets') await cmdAssets(a, [b, ...rest].filter(Boolean));
+  else if (cmd === 'approve') approveAsset(projectDir(a), b);
+  else
   if (cmd === 'new') cmdNew(a, b, rest);
   else if (cmd === 'check') cmdCheck(a);
   else if (cmd === 'scene') cmdScene(a, b);
   else if (cmd === 'build') cmdBuild(a);
   else if (cmd === 'join') cmdJoin(a);
   else if (cmd === 'list') cmdList();
-  else fail('Befehle: new, check, scene, build, join, list');
+  else fail('Befehle: new, check, assets, approve, scene, build, join, list');
 } catch (e) {
   fail(e.message);
 }
