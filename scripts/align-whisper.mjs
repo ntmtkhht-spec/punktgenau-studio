@@ -7,6 +7,8 @@ import {execFileSync} from 'node:child_process';
 import {readFileSync, writeFileSync} from 'node:fs';
 
 const [scriptPath, whisperPath, outAudio, outWords] = process.argv.slice(2);
+// --full: Aufnahmen nicht kuerzen (eigene Pausen und Tempo der Sprecher bleiben erhalten)
+const FULL = process.argv.includes('--full');
 const GAP = 0.15; // Pause zwischen zwei Saetzen
 const TAIL = 0.12; // Nachlauf nach dem letzten Wort eines Satzes
 const LEAD = 0.1; // Stille ganz am Anfang
@@ -63,7 +65,7 @@ lines.forEach((line, li) => {
     acc += lens[i];
     words.push({text: tok, start: +(offset + start).toFixed(3), end: +(offset + end).toFixed(3), line: li});
   });
-  const speechEnd = Math.min(whisper[li].duration, ww[ww.length - 1].end + TAIL);
+  const speechEnd = FULL ? whisper[li].duration : Math.min(whisper[li].duration, ww[ww.length - 1].end + TAIL);
   trims.push({file: whisper[li].file, end: speechEnd});
   offset += speechEnd + GAP;
   console.log(`Satz ${li + 1}: ${sameCount ? 'Woerter 1:1' : `Skript ${toks.length} / Whisper ${ww.length} Woerter -> Zeichen-Abgleich`}`);

@@ -1,0 +1,11 @@
+{
+  "version": "0.0.1",
+  "configurations": [
+    {
+      "name": "remotion-studio",
+      "runtimeExecutable": "cmd",
+      "runtimeArgs": ["/c", "cd remotion-shorts && npx remotion studio src/index.ts --port=3000 --no-open"],
+      "port": 3000
+    }
+  ]
+}

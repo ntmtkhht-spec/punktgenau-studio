@@ -9,7 +9,19 @@ import {ChannelBanner, ProfileLogo, WordmarkWide} from './branding/Brand';
 import {zenoSchema} from './zeno/schema';
 import {ZenoThumbnail} from './zeno/Thumbnail';
 import {Zeno, ZENO_TOTAL} from './zeno/Zeno';
+import {sectionClip} from './shared';
 import {VIDEOS} from './videos/registry';
+
+/** Longform: jeder Abschnitt als eigener Clip (einmal erzeugt, damit das Studio nicht neu mountet). */
+const SCENE_CLIPS = VIDEOS.filter((v) => !v.scenes).flatMap((v) =>
+  (v.sections ?? []).map(([from, to], i) => ({
+    id: `${v.id}-Szene${String(i + 1).padStart(2, '0')}`,
+    component: sectionClip(v.component, from),
+    frames: to - from + 1,
+    width: v.width ?? W,
+    height: v.height ?? H,
+  })),
+);
 
 export const RemotionRoot: React.FC = () => (
   <>
@@ -46,7 +58,11 @@ export const RemotionRoot: React.FC = () => (
     />
     {/* Neue Videos aus dem Workflow (npm run pg -- new ...) */}
     {VIDEOS.map((v) => (
-      <Composition key={v.id} id={v.id} component={v.component} durationInFrames={sec(v.durationSec)} fps={FPS} width={W} height={H} />
+      <Composition key={v.id} id={v.id} component={v.component} durationInFrames={sec(v.durationSec)} fps={FPS} width={v.width ?? W} height={v.height ?? H} />
+    ))}
+    {VIDEOS.map((v) => (v.scenes ? <v.scenes key={`${v.id}-scenes`} /> : null))}
+    {SCENE_CLIPS.map((c) => (
+      <Composition key={c.id} id={c.id} component={c.component} durationInFrames={c.frames} fps={FPS} width={c.width} height={c.height} />
     ))}
   </>
 );

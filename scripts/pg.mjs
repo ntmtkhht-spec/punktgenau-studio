@@ -5,7 +5,8 @@
 //   npm run pg -- words <slug>           Wortzeiten aus dem Skript schaetzen (Vorschau ohne Stimme)
 //   npm run pg -- voice <slug>           Stimme: Whisper-Wortzeiten, Tonspur zusammenfuegen, Musik erzeugen
 //   npm run pg -- audit <slug>           Kontaktboegen (alle 0,5 s ein Bild) zur Pruefung auf Ueberschneidungen
-//   npm run pg -- render <slug>          Finales Video rendern
+//   npm run pg -- scene <slug> <n>       Longform: Abschnitt n als eigenen Clip im Remotion Studio oeffnen (--mp4: 720p-Datei)
+//   npm run pg -- render <slug>          Finales Video rendern (Longform: 4K in Teilstuecken) – nur fuer den Export
 //   npm run pg -- preview <slug>         Letzten Export im Browser zeigen (Render macht das automatisch)
 //   npm run pg -- thumbnail <slug>       Thumbnail aus thumbnail-plan.json rendern + Feed-Test + Audit
 //   npm run pg -- list                   Alle Videos anzeigen
@@ -94,7 +95,7 @@ const cmdVoice = (slug) => {
   console.log(`Whisper: ${files.length} Dateien ...`);
   run('python', [join(SCRIPTS, 'whisper-words.py'), whisperJson, ...files]);
   mkdirSync(publicDir(slug), {recursive: true});
-  run('node', [join(SCRIPTS, 'align-whisper.mjs'), join(videoDir(slug), 'script.md'), whisperJson, join(publicDir(slug), 'voice.wav'), join(srcDir(slug), 'words.json')]);
+  run('node', [join(SCRIPTS, 'align-whisper.mjs'), join(videoDir(slug), 'script.md'), whisperJson, join(publicDir(slug), 'voice.wav'), join(srcDir(slug), 'words.json'), '--full']);
   const words = JSON.parse(readFileSync(join(srcDir(slug), 'words.json'), 'utf8'));
   const total = words[words.length - 1].end + 1.5;
   run('python', [join(SCRIPTS, 'make-ambient.py'), join(publicDir(slug), 'music.wav'), total.toFixed(1)]);
@@ -118,11 +119,122 @@ const cmdAudit = (slug) => {
   console.log(`\nAudit: ${sheets} Kontaktboegen (je 10 s, alle 0,5 s ein Bild) in videos/${slug}/audit/`);
 };
 
-const cmdRender = (slug) => {
+// ---------------------------------------------------------------- Browser-Vorschau
+const PREVIEW_PORT = Number(process.env.PG_PREVIEW_PORT ?? 4747);
+const PREVIEW = `http://localhost:${PREVIEW_PORT}`;
+const sleep = (ms) => new Promise((r) => setTimeout(r, ms));
+
+const previewUp = async () => {
+  try {
+    return await (await fetch(`${PREVIEW}/status`)).json();
+  } catch {
+    return null;
+  }
+};
+
+/** Startet den Vorschau-Server bei Bedarf, laedt offene Tabs neu, sonst oeffnet er einen neuen Tab. */
+const showInBrowser = async (slug, rel = `export/${slug}.mp4`) => {
+  if (!existsSync(join(videoDir(slug), rel))) fail(`${rel} gibt es noch nicht.`);
+  if (!(await previewUp())) {
+    spawn('node', [join(SCRIPTS, 'preview-server.mjs')], {detached: true, stdio: 'ignore', windowsHide: true}).unref();
+    for (let i = 0; i < 20 && !(await previewUp()); i++) await sleep(150);
+  }
+  const query = `slug=${slug}&file=${encodeURIComponent(rel)}`;
+  const res = await fetch(`${PREVIEW}/reload?${query}`, {method: 'POST'})
+    .then((r) => r.json())
+    .catch(() => ({clients: 0}));
+  if (res.clients > 0) return console.log(`Vorschau neu geladen: ${rel}`);
+  const url = `${PREVIEW}/v/${slug}?file=${encodeURIComponent(rel)}`;
+  const [cmd, args] = process.platform === 'win32' ? ['cmd', ['/c', 'start', '""', url]] : [process.platform === 'darwin' ? 'open' : 'xdg-open', [url]];
+  spawn(cmd, args, {detached: true, stdio: 'ignore', windowsHide: true}).unref();
+  console.log(`Vorschau: ${url}`);
+};
+
+// ---------------------------------------------------------------- Longform (16:9, Abschnitte)
+const FPS = 30;
+const sectionsFile = (slug) => join(srcDir(slug), 'sections.json');
+const isLongform = (slug) => existsSync(sectionsFile(slug));
+
+/** Bildbereiche je Abschnitt aus Wortzeiten + sections.json (gleiche Logik wie lib.ts im Video). */
+const sectionFrames = (slug) => {
+  const words = JSON.parse(readFileSync(join(srcDir(slug), 'words.json'), 'utf8'));
+  const starts = JSON.parse(readFileSync(sectionsFile(slug), 'utf8')).map((line) => words.find((w) => w.line === line).start);
+  const total = words[words.length - 1].end + 0.6 + 1;
+  return starts.map((t, i) => [Math.round(t * FPS), Math.round((starts[i + 1] ?? total) * FPS) - 1]);
+};
+
+const renderRange = (slug, out, frames, scale, extra = []) =>
+  run('npx', ['remotion', 'render', 'src/index.ts', compId(slug), out, `--frames=${frames[0]}-${frames[1]}`, `--scale=${scale}`, '--gl=angle', ...extra], {cwd: RS, shell: true});
+
+// ---------------------------------------------------------------- Remotion Studio
+const STUDIO_PORT = Number(process.env.PG_STUDIO_PORT ?? 3000);
+const STUDIO = `http://localhost:${STUDIO_PORT}`;
+const studioUp = () => fetch(STUDIO).then((r) => r.ok, () => false);
+
+const openUrl = (url) => {
+  const [cmd, args] = process.platform === 'win32' ? ['cmd', ['/c', 'start', '""', url]] : [process.platform === 'darwin' ? 'open' : 'xdg-open', [url]];
+  spawn(cmd, args, {detached: true, stdio: 'ignore', windowsHide: true}).unref();
+};
+
+/** Startet das Remotion Studio bei Bedarf (im Hintergrund) und oeffnet die Komposition im Browser. */
+const openInStudio = async (compositionId) => {
+  if (!(await studioUp())) {
+    console.log('Starte Remotion Studio ...');
+    const studioArgs = ['remotion', 'studio', 'src/index.ts', `--port=${STUDIO_PORT}`, '--no-open'];
+    // Windows: eigenes (minimiertes) Konsolenfenster, sonst endet das Studio mit dem aufrufenden Prozess.
+    if (process.platform === 'win32') spawn('cmd', ['/c', 'start', '"Remotion Studio"', '/min', 'cmd', '/c', 'npx', ...studioArgs], {cwd: RS, detached: true, stdio: 'ignore', windowsHide: true, windowsVerbatimArguments: true}).unref();
+    else spawn('npx', studioArgs, {cwd: RS, detached: true, stdio: 'ignore'}).unref();
+    for (let i = 0; i < 360 && !(await studioUp()); i++) await sleep(500); // erster Start bündelt das Projekt (bis ~3 min)
+    if (!(await studioUp())) fail('Remotion Studio startet nicht (Port belegt?). Manuell: npm run studio');
+  }
+  const url = `${STUDIO}/${compositionId}`;
+  openUrl(url);
+  console.log(`Remotion Studio: ${url}`);
+};
+
+/**
+ * Einen Abschnitt zum Bewerten oeffnen: standardmaessig als eigener Clip im Remotion Studio
+ * (abspielen, Regler aendern, speichern). Mit --mp4 zusaetzlich als 720p-Datei rendern.
+ */
+const cmdScene = async (slug, n, flag) => {
+  requireVideo(slug);
+  if (!isLongform(slug)) fail(`${slug} hat keine Abschnitte (sections.json fehlt) – scene gibt es nur fuer Longform.`);
+  const ranges = sectionFrames(slug);
+  const i = Number(n) - 1;
+  if (!Number.isInteger(i) || i < 0 || i >= ranges.length) fail(`Abschnitt muss 1 bis ${ranges.length} sein.`);
+  if (flag !== '--mp4') return openInStudio(`${compId(slug)}-Szene${String(i + 1).padStart(2, '0')}`);
+  mkdirSync(join(videoDir(slug), 'scenes'), {recursive: true});
+  const rel = `scenes/szene-${String(i + 1).padStart(2, '0')}.mp4`;
+  renderRange(slug, join(videoDir(slug), rel), ranges[i], 2 / 3, ['--crf=23', '--concurrency=50%']);
+  console.log(`\nSzene ${i + 1}: videos/${slug}/${rel} (${((ranges[i][1] - ranges[i][0] + 1) / FPS).toFixed(1)} s, 720p)`);
+  await showInBrowser(slug, rel);
+};
+
+/** Finaler Longform-Export: 4K in Teilstuecken (stabil bei wenig Speicher), danach ohne Neukodierung zusammenfuegen. */
+const renderLongform4k = (slug, out) => {
+  const parts = join(videoDir(slug), 'export', 'parts');
+  mkdirSync(parts, {recursive: true});
+  const total = sectionFrames(slug).at(-1)[1] + 1;
+  const CHUNK = 2000;
+  const list = [];
+  for (let s = 0; s < total; s += CHUNK) {
+    const f = join(parts, `part_${String(s).padStart(5, '0')}.mp4`);
+    list.push(`file '${f.replaceAll('\\', '/')}'`);
+    if (existsSync(f)) continue; // fertige Teile beim Neustart ueberspringen
+    renderRange(slug, f, [s, Math.min(total, s + CHUNK) - 1], 2, ['--crf=18', '--concurrency=4', '--timeout=120000']);
+  }
+  writeFileSync(join(parts, 'list.txt'), list.join('\n'));
+  run('ffmpeg', ['-v', 'error', '-y', '-f', 'concat', '-safe', '0', '-i', join(parts, 'list.txt'), '-c', 'copy', out]);
+  rmSync(parts, {recursive: true, force: true});
+};
+
+const cmdRender = async (slug, flag) => {
   requireVideo(slug);
   const out = join(videoDir(slug), 'export', `${slug}.mp4`);
-  run('npx', ['remotion', 'render', 'src/index.ts', compId(slug), out, '--crf=18', '--gl=angle'], {cwd: RS, shell: true});
-  console.log(`\nFertig: videos/${slug}/export/${slug}.mp4`);
+  if (isLongform(slug)) renderLongform4k(slug, out);
+  else run('npx', ['remotion', 'render', 'src/index.ts', compId(slug), out, '--crf=18', '--gl=angle'], {cwd: RS, shell: true});
+  console.log(`\nFertig: videos/${slug}/export/${slug}.mp4${isLongform(slug) ? ' (4K)' : ''}`);
+  if (flag !== '--no-preview') await showInBrowser(slug);
 };
 
 /** Thumbnail (Skill thumbnail-design, Modus A): Plan pruefen, Remotion-Still rendern, Feed-Test + Audit. */
@@ -151,9 +263,9 @@ const cmdList = () => {
 };
 
 const [cmd, a, b] = process.argv.slice(2);
-const commands = {preview: () => (requireVideo(a), showInBrowser(a)), new: () => cmdNew(a, b), words: () => (requireVideo(a), estimateWords(a)), voice: () => cmdVoice(a), audit: () => cmdAudit(a), thumbnail: () => cmdThumbnail(a), render: () => cmdRender(a), list: cmdList};
+const commands = {preview: () => (requireVideo(a), showInBrowser(a)), new: () => cmdNew(a, b), words: () => (requireVideo(a), estimateWords(a)), voice: () => cmdVoice(a), audit: () => cmdAudit(a), scene: () => cmdScene(a, b, process.argv[5]), thumbnail: () => cmdThumbnail(a), render: () => cmdRender(a, b), list: cmdList};
 if (!commands[cmd]) {
-  console.log('Befehle: new <slug> "<Titel>" | words <slug> | voice <slug> | audit <slug> | thumbnail <slug> | render <slug> [--no-preview] | preview <slug> | list');
+  console.log('Befehle: new <slug> "<Titel>" | words <slug> | voice <slug> | audit <slug> | scene <slug> <n> [--mp4] | thumbnail <slug> | render <slug> [--no-preview] | preview <slug> | list');
   process.exit(cmd ? 1 : 0);
 }
 commands[cmd]();
