@@ -28,6 +28,7 @@ Befehle laufen in `remotion-shorts/` (`npm run pg -- …`).
 
 ## Phase 4 – Vorschau-Video (optional, ohne Stimme)
 - `npm run pg -- words <slug>` (geschätzte Zeiten), Szenen in `src/videos/<slug>/Video.tsx` bauen.
+- Framework: Remotion. Anderes Framework nur nach "Framework-Wahl" in CLAUDE.md (Begründung in script.md + Freigabe).
 - Bausteine nur aus `src/shared` importieren. Beispiele für Szenen-Code: `src/zeno/` (3D-Hook, Strecke, Quadrat-Beweis), `src/spiral/` (Canvas mit vielen Punkten), `src/phantom/` (Simulation).
 
 ## Phase 5 – Stimme

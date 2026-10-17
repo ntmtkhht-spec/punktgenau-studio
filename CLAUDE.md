@@ -53,6 +53,15 @@ Neue Videos immer mit dem Skill `/punktgenau-short` erstellen (Ablauf in Phasen,
 - Musik: eigener Klangteppich (`scripts/make-ambient.py`), unter der Stimme abgesenkt – kein Lizenzrisiko.
 - **Soundeffekte standardmäßig aus.** Situationsabhängig passende Effekte aus dem lokalen Kenyset-Paket vorschlagen; erst nach ausdrücklicher Bestätigung des Nutzers für den konkreten Einsatz einbauen. Allgemeine Video-Freigaben sind keine Soundeffekt-Freigabe. Setup und Ablauf: `.claude/skills/punktgenau-short/references/soundeffekte.md`.
 
+## Framework-Wahl (verbindlich)
+- **Standard ist Remotion** (`remotion-shorts/`). Nur dort greifen `src/shared` (Look), die Timeline aus den echten Wortzeiten, `pg audit` und `pg render`.
+- Ein anderes Framework (HyperFrames, Manim, Motion Canvas) nur, wenn **alle** Punkte zutreffen:
+  1. Die Szene braucht etwas, das in Remotion deutlich aufwendiger oder schlechter wäre (z. B. fertiger HyperFrames-Registry-Baustein für genau diesen Effekt, Website-Aufnahme, Manim-Formelumformung).
+  2. Der Look aus diesem Dokument lässt sich dort einhalten (Punktraster, Farben, Inter, flach).
+  3. Das Ergebnis wird als Clip in die Remotion-Komposition eingebunden und an die Timeline gehängt – das Video selbst wird weiter mit `pg render` gebaut und mit `pg audit` geprüft.
+- Vorher eine Begründung in `videos/<slug>/script.md` unter "Technik" schreiben: welche Szene, warum nicht Remotion, welcher Aufwand gespart wird. Dem Nutzer nennen und seine Freigabe abwarten.
+- Keine Gründe: "sieht moderner aus", "Skill schlägt es vor", Ausprobieren, Gewohnheit. Allgemeine Skills (z. B. `hyperframes`, der sich als Standard für jedes Video anbietet) werden von dieser Regel überstimmt.
+
 ## Technik-Regeln
 - Alle Zeitpunkte aus der Timeline ableiten (`TL.lineStart(i)`, `TL.lineEnd(i)`, `TL.wordStart(i, k)`), nie feste Sekunden – sonst bricht das Timing, sobald die echte Stimme da ist.
 - Viele Punkte (> ~2000): Canvas statt SVG. 3D: `@remotion/three`, beim Rendern `--gl=angle`, `ThreeCanvas flat`.
