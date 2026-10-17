@@ -7,6 +7,7 @@
 //   npm run pg -- audit <slug>           Kontaktboegen (alle 0,5 s ein Bild) zur Pruefung auf Ueberschneidungen
 //   npm run pg -- render <slug>          Finales Video rendern
 //   npm run pg -- preview <slug>         Letzten Export im Browser zeigen (Render macht das automatisch)
+//   npm run pg -- thumbnail <slug>       Thumbnail aus thumbnail-plan.json rendern + Feed-Test + Audit
 //   npm run pg -- list                   Alle Videos anzeigen
 //
 // Aufruf aus remotion-shorts/ (dort liegt das npm-Skript "pg").
@@ -14,6 +15,7 @@ import {execFileSync, spawn} from 'node:child_process';
 import {existsSync, mkdirSync, readdirSync, readFileSync, rmSync, writeFileSync} from 'node:fs';
 import {dirname, join, resolve} from 'node:path';
 import {fileURLToPath} from 'node:url';
+import {auditThumbnail, checkPlan, thumbDir} from './thumbnail.mjs';
 
 const ROOT = resolve(dirname(fileURLToPath(import.meta.url)), '..');
 const RS = join(ROOT, 'remotion-shorts');
@@ -123,6 +125,22 @@ const cmdRender = (slug) => {
   console.log(`\nFertig: videos/${slug}/export/${slug}.mp4`);
 };
 
+/** Thumbnail (Skill thumbnail-design, Modus A): Plan pruefen, Remotion-Still rendern, Feed-Test + Audit. */
+const cmdThumbnail = (slug) => {
+  checkSlug(slug);
+  try {
+    const {plan, selected} = checkPlan(videoDir(slug), 'punktgenau');
+    if (selected.render.tool !== 'remotion') fail('Punktgenau-Thumbnails werden mit Remotion gebaut (render.tool: "remotion")');
+    const full = join(thumbDir(videoDir(slug)), 'thumbnail_full.png');
+    run('npx', ['remotion', 'still', 'src/index.ts', selected.render.component, full, '--gl=angle'], {cwd: RS, shell: true});
+    console.log(`
+Thumbnail-Audit (${selected.id}, ${selected.archetype}):`);
+    auditThumbnail(full, plan, selected);
+  } catch (e) {
+    fail(e.message);
+  }
+};
+
 const cmdList = () => {
   const dir = join(ROOT, 'videos');
   if (!existsSync(dir)) return console.log('Noch keine Videos.');
@@ -133,9 +151,9 @@ const cmdList = () => {
 };
 
 const [cmd, a, b] = process.argv.slice(2);
-const commands = {preview: () => (requireVideo(a), showInBrowser(a)), new: () => cmdNew(a, b), words: () => (requireVideo(a), estimateWords(a)), voice: () => cmdVoice(a), audit: () => cmdAudit(a), render: () => cmdRender(a), list: cmdList};
+const commands = {preview: () => (requireVideo(a), showInBrowser(a)), new: () => cmdNew(a, b), words: () => (requireVideo(a), estimateWords(a)), voice: () => cmdVoice(a), audit: () => cmdAudit(a), thumbnail: () => cmdThumbnail(a), render: () => cmdRender(a), list: cmdList};
 if (!commands[cmd]) {
-  console.log('Befehle: new <slug> "<Titel>" | words <slug> | voice <slug> | audit <slug> | render <slug> [--no-preview] | preview <slug> | list');
+  console.log('Befehle: new <slug> "<Titel>" | words <slug> | voice <slug> | audit <slug> | thumbnail <slug> | render <slug> [--no-preview] | preview <slug> | list');
   process.exit(cmd ? 1 : 0);
 }
 commands[cmd]();

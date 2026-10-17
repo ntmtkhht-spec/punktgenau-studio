@@ -1,0 +1,87 @@
+{
+  "channelMode": "editorial",
+  "aspectRatio": "16:9",
+  "videoTitle": "Beweistest: drei Engines, ein Video",
+  "concepts": [
+    {
+      "id": "concept-1",
+      "archetype": "symbolic-metaphor-contrast",
+      "text": "Einer gegen 961",
+      "wordCount": 3,
+      "minFontPx": 230,
+      "typographyRole": "tall-condensed-serif",
+      "typographyTreatment": "3d-extrude 18px #0A0A0C, -6°, scaleX 0.74",
+      "focusElements": 2,
+      "heroAssets": [
+        {
+          "name": "Große orange Spielfigur (Profil aus MeepleIso)",
+          "source": "hero-objekt"
+        },
+        {
+          "name": "Masse gedämpfter Figuren",
+          "source": "hero-objekt"
+        },
+        {
+          "name": "Diagonaler Karmesin/Schwarz-Split mit Papierkorn",
+          "source": "textur"
+        }
+      ],
+      "curiosityGap": "Wie kann eine einzelne Figur gegen 961 bestehen?",
+      "render": {
+        "tool": "remotion",
+        "component": "ThumbEinerGegen961"
+      }
+    },
+    {
+      "id": "concept-2",
+      "archetype": "diegetic-ui-overload",
+      "text": "SCHACH.EXE SPIELT ALLE",
+      "wordCount": 3,
+      "minFontPx": 200,
+      "typographyRole": "heavy-plakat-grotesk",
+      "typographyTreatment": "3d-extrude schwarz, -6°",
+      "focusElements": 2,
+      "heroAssets": [
+        {
+          "name": "Gestapelte Retro-Terminalfenster",
+          "source": "ui"
+        },
+        {
+          "name": "Arkaden-Tapete abgedunkelt",
+          "source": "textur"
+        }
+      ],
+      "curiosityGap": "Was passiert, wenn eine Maschine gegen alle gleichzeitig spielt?",
+      "render": {
+        "tool": "hyperframes",
+        "html": "hf/s2"
+      }
+    },
+    {
+      "id": "concept-3",
+      "archetype": "emblem-medallion-centerpiece",
+      "text": "31²",
+      "wordCount": 1,
+      "minFontPx": 300,
+      "typographyRole": "editorial-didone",
+      "typographyTreatment": "gold-bevel #F5D061 -> #C28E26, Drop-Shadow",
+      "focusElements": 2,
+      "heroAssets": [
+        {
+          "name": "Goldenes Medaillon mit Spielfigur",
+          "source": "hero-objekt"
+        },
+        {
+          "name": "Damast-Tapete Kupfer",
+          "source": "textur"
+        }
+      ],
+      "curiosityGap": "Warum ausgerechnet 31 mal 31?",
+      "render": {
+        "tool": "remotion",
+        "component": "ThumbMedaillon"
+      }
+    }
+  ],
+  "selectedConcept": "concept-1"
+}

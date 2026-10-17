@@ -157,3 +157,36 @@ Stattdessen arbeitet das System mit **7 streng getrennten Schrift-Rollen**, aus 
    - **AUSSCHLIESSLICH** für nachgebaute moderne App-Interfaces (Prompt-Suchfeld, `Generate`-Button, Fiverr-Chat) und trockene 1-Satz-Roboter-Sprechblasen (`Kein Plan, lol.`). Streng verboten für Bühnen-Titel oder Thesen!
 
 > **Integrationspflicht**: Der Haupt-Video-Skill muss bei der Erstellung des Storyboards (und beim Bauen der Szenen) zwingend `.claude/skills/editorial-typography/SKILL.md` laden und für jedes Text-Element die gewählte Schrift-Rolle (`1–7`), die Font-Family und das Schatten-/3D-Treatment im Storyboard dokumentieren!
+
+---
+
+## 6. Eigener Skill für Thumbnail-Design (Beide Kanäle): `/thumbnail-design` (`.claude/skills/thumbnail-design/SKILL.md`)
+
+Anhand einer empirischen Analyse von **12 Widescreen- + 5 Shorts-Thumbnails von `@100SekundenPhysik`** (`downloads/thumbnails/100sek_grid.jpg`, `downloads/thumbnails/100sek_shorts_grid.jpg`) und **12 Widescreen-Thumbnails von `@Ultralativ`** (`downloads/thumbnails/ultralativ_grid.jpg`) wurde der dedizierte Skill **`.claude/skills/thumbnail-design/SKILL.md`** erstellt.
+
+### 6.1 Zwei strikt getrennte Kanal-Modi im selben Skill:
+1. **Modus A (`Punktgenau` — Vorbild `@100SekundenPhysik`)**:
+   - **Messwerte**: High-Key heller Hintergrund ($Y = 220\text{–}242$, `#dfdfdd` bis `#f1f1f1` in 11/12 Thumbnails), Kontrast $\sigma = 48\text{–}80$.
+   - **4 erlaubte Archetypen**:
+     1. `paradox-stick-reaction`: Freigestellte Vektor-Figur (`#111111` Outline `4–6px`) reagiert auf 1 farbiges Paradox-Objekt (gebrochene Uhr, Spiegel-Alien, Schildkröte).
+     2. `visual-equation-diagram`: 1 riesige mathematische/physikalische Ungleichung mit Twist (`∞ > ∞` mit Krone, 3D-Achsen `1, 2, 3`).
+     3. `single-word-error-state`: Überlastetes Hero-Objekt (rauchender Roboter) + 1 einzelnes Signalwort (`ERROR`).
+     4. `isometric-grid-outlier`: 3D-/Isometrie-Menge gleichartiger Figuren + 1 farbig/rot markierter Ausreißer.
+   - **Typografie & Wortlimit**: Clean ExtraBold Sans (`Inter` / `Rubik` `800–900`), **0 bis maximal 4 Wörter** (4 von 12 `@100SekundenPhysik`-Thumbnails haben **0 Wörter**!), Mindestschriftgröße `110px` (keine kleinen Formeln am unteren Rand wie bisher in `zeno/Thumbnail.tsx`).
+
+2. **Modus B (`Editorial / Ultralativ` — Vorbild `@Ultralativ`)**:
+   - **Messwerte**: Gesättigte/strukturierte Mittel- bis Dunkel-Bühne ($Y = 75\text{–}159$), extrem hoher Luminanz-Kontrast ($\sigma = 60\text{–}92.5$, Spitzenwert `92.5` bei `01_kUuwvJfQfIk`).
+   - **5 erlaubte Archetypen**:
+     1. `conceptual-split-pun`: Exakter 50/50 Split zweier Welten mit geteilter Monumental-Typografie (`AI | RT` → links kaltes `Umsetzungsautomat.exe`-Fenster, rechts goldener Museumsrahmen).
+     2. `diegetic-ui-overload`: Gestapelte Retro-OS-/Win95-Dialogfenster im Hintergrund + diagonal (`-6°`) gekippter 3D-extrudierter Zweizeiler (`DAS INTERNET / EINE ZUMUTUNG`).
+     3. `symbolic-metaphor-contrast`: Ikonische Silhouette oder 2 kollidierende Hände/Symbole vor tiefem Zweifarb-Split (`GEFAHR: SOCIAL MEDIA` mit Toggle-Switch im Kopf, `Chatbot LIEBE`, `MINDSET`).
+     4. `cutout-portrait-mashup`: Echte Person (Wikimedia CC/PD Cutout mit Halftone-/Duotone-Filter oder Papier-Abrisskante) + 1 Symbol-Objekt (Uhr, Flamme, `X`-Logo bei `MUSKs TWITTER`).
+     5. `emblem-medallion-centerpiece`: Achsensymmetrisches Zentral-Emblem (aufgebrochene OpenAI-Kugel `AllesGPT`, goldenes Okkult-Medaillon `DIE NEUE ESOTERIK`) vor reicher Textur.
+   - **Typografie & Wortlimit**: Zwingende Kopplung an `/editorial-typography` (`tall-condensed-serif`, `heavy-plakat-grotesk`, `editorial-didone`) mit **3D-Block-Extrusion, Gold-Bevel oder hartem Schlagschatten**, **0 bis maximal 3 Wörter**.
+
+### 6.2 Verbindlicher Thumbnail-Workflow & Wissenschaftlicher Feed-Größen-Test (`thumbnail-audit`)
+Sowohl in `/punktgenau-short` als auch im neuen Editorial-Workflow muss die Pipeline:
+1. Im Storyboard (`thumbnail-plan.json`) **3 Konzepte mit unterschiedlichen Archetypen** vorschlagen, bevor das Thumbnail gebaut wird.
+2. Alle Assets nach denselben **5 Asset-Klassen & Anti-Slop-Verboten** (keine KI-generierten Plastik-Bilder, keine >4-Wort-Textblöcke, keine Schrift `< 110px`, keine Kollision mit dem YouTube-Timestamp unten rechts `x > 1580, y > 920`) beziehen.
+3. Das fertige Thumbnail nicht nur in `1920×1080` (`1080×1920`), sondern automatisch auch als **`320×180` (`270×480`) Feed-Größen-Testbild** rendern und alle 6 Audit-Checks in `.claude/skills/thumbnail-design/SKILL.md` bestehen.
+

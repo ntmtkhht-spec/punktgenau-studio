@@ -32,6 +32,7 @@ Neue Videos immer mit dem Skill `/punktgenau-short` erstellen (Ablauf in Phasen,
 - Farben: Blau `#1f7ae0`, Orange `#f97316`, Magenta `#d61f69` (Akzent), Schwarz-Text, Grau `#c4c4c4` (Raster). Kein Navy.
 - Schrift: Inter (über `FONT`). Text über Grafik bekommt eine **weiße Kontur** (paint-order stroke), keinen Schatten.
 - Kein Fortschrittsbalken.
+- **Thumbnails** folgen nicht diesem Video-Look, sondern dem Skill `/thumbnail-design` (Modus A: heller Grund, schwarze Outlines, ≤ 4 Wörter, Schrift ≥ 110 px). Ablauf: 3 Konzepte in `thumbnail-plan.json`, dann `npm run pg -- thumbnail <slug>`.
 
 ## Layout
 - Format 1080×1920, 30 fps.
@@ -74,4 +75,5 @@ Neue Videos immer mit dem Skill `/punktgenau-short` erstellen (Ablauf in Phasen,
 - Pro Video wählbar: `16x9` (1920×1080) oder `9x16` (1080×1920).
 - Pro Szene entscheidet und begründet das Storyboard Archetyp, 2D/2.5D/3D, Tapete + Licht-Modus, Charaktere, Schrift-Rollen (Skill `editorial-typography`) und das Tool (`remotion-three`, `remotion-dom`, `hyperframes-gsap`, `manim-python`). `npm run ed -- check` erzwingt die Pflichtfelder.
 - HyperFrames und Manim sind hier reguläre Werkzeuge – aber nur mit technischer Begründung pro Szene, nicht aus Gewohnheit.
+- Thumbnails nach `/thumbnail-design` (Modus B): 3 Konzepte in `thumbnail-plan.json`, dann `npm run ed -- thumbnail <slug>` (Feed-Test + Audit).
 - Manim läuft aus `manim-scenes/.venv` (uv, Python 3.13) mit MiKTeX; `ed` setzt den Pfad selbst.

@@ -8,11 +8,13 @@
 //   approve <slug> <asset-id>                  Asset nach Sichtpruefung freigeben
 //   build <slug>                               alle Szenen rendern, zusammenfuehren, Audit-Kontaktboegen
 //   join <slug>                                nur zusammenfuehren + Audit (Clips existieren schon)
+//   thumbnail <slug>                           Thumbnail aus thumbnail-plan.json rendern + Feed-Test + Audit
 //   list                                       Projekte anzeigen
 import {existsSync, mkdirSync, readdirSync, readFileSync, writeFileSync} from 'node:fs';
 import {join} from 'node:path';
 import {assemble, audit, totalDuration} from './ed/assemble.mjs';
 import {approveAsset, fetchAssets} from './ed/assets.mjs';
+import {thumbnail} from './ed/thumbnail.mjs';
 import {EDITORIAL, renderScene} from './ed/render.mjs';
 import {FORMATS, loadStoryboard, readStoryboardRaw} from './ed/storyboard.mjs';
 
@@ -96,7 +98,8 @@ const cmdList = () => {
 
 const [cmd, a, b, ...rest] = process.argv.slice(2);
 try {
-  if (cmd === 'assets') await cmdAssets(a, [b, ...rest].filter(Boolean));
+  if (cmd === 'thumbnail') thumbnail(projectDir(a));
+  else if (cmd === 'assets') await cmdAssets(a, [b, ...rest].filter(Boolean));
   else if (cmd === 'approve') approveAsset(projectDir(a), b);
   else
   if (cmd === 'new') cmdNew(a, b, rest);
@@ -105,7 +108,7 @@ try {
   else if (cmd === 'build') cmdBuild(a);
   else if (cmd === 'join') cmdJoin(a);
   else if (cmd === 'list') cmdList();
-  else fail('Befehle: new, check, assets, approve, scene, build, join, list');
+  else fail('Befehle: new, check, assets, approve, thumbnail, scene, build, join, list');
 } catch (e) {
   fail(e.message);
 }

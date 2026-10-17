@@ -34,6 +34,8 @@ Pro Szene in `storyboard.md` (Begründung in Prosa) **und** `storyboard.json` (M
 8. **Assets & freie Bühne:** jedes sichtbare Element in `assets` einer Asset-Klasse zuordnen (5 aus der Spec plus `formel-graph`/`eigene-grafik`) (Herkunft, Lizenz, Quellenzeile), `focusObjects` 1–3. Jede Zahl im Bild mit `beleg`. Verbote aus `references/assets.md` beachten: keine erfundenen Zahlen/Zitate, nichts Unechtes als echt ausgeben, kein Dashboard/Bento/Glas/Neon, keine Emojis, Logos immer laden, kein Idle-Wackeln.
 9. **Tool & technische Begründung:** `remotion-three`, `remotion-dom`, `hyperframes-gsap` oder `manim-python` – nach dem Router in `references/regie.md`. Begründung nennt, was dieses Tool für *diese* Szene besser kann (mind. ein Satz, kein „passt gut“).
 
+**Thumbnail-Plan:** Skill `/thumbnail-design` aufrufen (Modus B `editorial`) und in `projects/<slug>/thumbnail-plan.json` **3 Konzepte mit unterschiedlichen Archetypen** planen (`conceptual-split-pun`, `diegetic-ui-overload`, `symbolic-metaphor-contrast`, `cutout-portrait-mashup`, `emblem-medallion-centerpiece`): höchstens 3 Wörter, Schrift-Rolle aus `/editorial-typography` mit 3D-Extrusion, Gold-Bevel oder hartem Schatten, höchstens 2 Fokus-Elemente, Logos geladen. Vorbild: `projects/00-beweis/thumbnail-plan.json`.
+
 Danach `npm run ed -- check <slug>` (prüft alle Pflichtfelder, Enums, Dateien, Schrift-Rollen). Storyboard vollständig im Chat zeigen, auf Freigabe warten. **Keine Standbilder** für das Storyboard erzeugen.
 
 ## Phase 4 – Assets beschaffen & Szenen bauen (je Szene prüfen)
@@ -54,6 +56,10 @@ Danach `npm run ed -- check <slug>` (prüft alle Pflichtfelder, Enums, Dateien, 
 ## Phase 6 – Zusammenführen & Audit (Freigabe)
 - `npm run ed -- build <slug>` (alle Szenen) oder `join <slug>` (nur zusammenführen): Clips + Übergänge + Ton → `export/<slug>.mp4`, Kontaktbögen alle 0,5 s → `audit/`.
 - **Alle** Kontaktbögen ansehen: Verstöße gegen das Reinheitsgebot (Wackeln, mehr als 3 Fokus-Objekte, falsche Bilder), Überschneidungen, verpixelte Übergänge, Standbilder, Text in den Plattform-Zonen (9:16: oben ~12 %, unten ~20 %, rechts ~12 % freihalten), unlesbare Schrift in Handygröße. Beheben, neu prüfen, dann dem Nutzer zeigen.
+
+## Phase 7 – Thumbnail (Freigabe)
+- Gewähltes Konzept bauen: Remotion-Komponente in `remotion/scenes/` (in `registry.ts` eintragen) oder HyperFrames-HTML (`render.html`). Assets wie im Video über `ed assets` laden.
+- `npm run ed -- thumbnail <slug>`: rendert `thumbnail/thumbnail_full.png` (1920×1080 bzw. 1080×1920), Feed-Testbild `320×180` bzw. `270×480`, Sperrzonen-Bild (16:9 `x > 1580, y > 920`; 9:16 `y > 1450`) und misst Y/σ. Rechnerische Checks müssen PASS sein; Feed-Testbild und Sperrzonen-Bild **mit dem Read-Tool ansehen** (Checks 3 und 5). Bei FAIL ändern und neu prüfen, dann dem Nutzer zeigen.
 
 ## Soundeffekte, Downloads, Stimme
 Wie in `CLAUDE.md`: Soundeffekte nur nach ausdrücklicher Bestätigung; Downloads ohne Lizenzfilter, aber Quelle/Urheber/Lizenz immer festhalten; keine TTS-Stimme.
