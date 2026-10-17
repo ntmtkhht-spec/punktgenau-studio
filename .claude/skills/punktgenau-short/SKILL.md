@@ -23,7 +23,8 @@ Befehle laufen in `remotion-shorts/` (`npm run pg -- …`).
 ## Phase 3 – Skript (Freigabe)
 - `npm run pg -- new <nn-slug> "<Titel>"` (nn = nächste freie Nummer).
 - Skript in `videos/<slug>/script.md` (nummerierte Zeilen, ein Satz = eine Audiodatei), Fakten-Check-Abschnitt füllen.
-- Skript-Regeln aus CLAUDE.md (vollständige Sätze, Kontext im Hook, Loop am Ende, ca. 150 Wörter).
+- **Vor dem Schreiben den Skill `content-principles` laden** und seine Prinzipien still anwenden (nicht als Checkliste ausgeben): jede Zeile verkauft die nächste, der Hook ist die offene Frage und wird erst am Ende beantwortet, konkret statt allgemein, einfache Sätze, kein Füllsatz, nach etwa 60–70 % eine neue offene Frage.
+- Skript-Regeln aus CLAUDE.md (vollständige Sätze, Kontext im Hook, Loop am Ende). Länge nach Inhalt, höchstens ca. 150 Wörter, nie strecken.
 - Skript vollständig im Chat zeigen. Der Nutzer entscheidet und spricht es danach ein.
 
 ## Phase 4 – Storyboard (Freigabe)
@@ -35,6 +36,7 @@ Befehle laufen in `remotion-shorts/` (`npm run pg -- …`).
   - **Werkzeug:** Remotion-Baustein (SVG, Canvas, `@remotion/three` …). Anderes Framework nur mit Begründung nach "Framework-Wahl" in CLAUDE.md.
 - Danach prüfen, ob das Storyboard als Ganzes trägt: Hook-Bild ab Frame 0, roter Faden von Szene zu Szene, jedes "dieses/hier" im Bild zu sehen, kein Moment ohne Bewegung, Loop vom Ende zum Anfang.
 - **Keine Standbilder oder Skizzen** der Szenen erzeugen – das Storyboard ist reiner Text.
+- **Thumbnail-Plan:** Skill `/thumbnail-design` aufrufen (Modus A `punktgenau`) und in `videos/<slug>/thumbnail-plan.json` **3 Konzepte mit unterschiedlichen Archetypen** planen (`paradox-stick-reaction`, `visual-equation-diagram`, `single-word-error-state`, `isometric-grid-outlier`): heller Grund, schwarze Outlines, Inter/Rubik 800–900, höchstens 4 Wörter, jede Schrift ≥ 110 px. Mit dem Storyboard zeigen; der Nutzer wählt `selectedConcept`.
 - Storyboard vollständig im Chat zeigen. Der Nutzer gibt frei oder ändert; erst dann wird gebaut. Beim Bauen dem Storyboard folgen, Abweichungen nennen und begründen.
 
 ## Phase 5 – Vorschau-Video (optional, ohne Stimme)
@@ -60,6 +62,7 @@ Befehle laufen in `remotion-shorts/` (`npm run pg -- …`).
 - `npm run pg -- render <slug>`, Video dem Nutzer schicken. Feedback einarbeiten (gezielt, nicht neu bauen). Bei "sehe ich nicht"/"passt nicht": Ursache erst messen und erklären.
 
 ## Phase 8 – Upload-Paket
-- Thumbnail 1080×1920 als eigene Komposition (Vorbild `src/zeno/Thumbnail.tsx`), Szene + große Schlagzeile, Text nicht über wichtigen Bildteilen.
+- **Thumbnail nach `/thumbnail-design` (Modus A):** gewähltes Konzept als eigene Komposition 1080×1920 bauen (z. B. `src/videos/<slug>/Thumbnail.tsx`, in `Root.tsx` registrieren, ID in `render.component` des Plans). Für Thumbnails gelten die Regeln aus `/thumbnail-design` (schwarze Outlines statt weißer Kontur); `zeno/Thumbnail.tsx` ist wegen der kleinen Gleichung **kein** Vorbild mehr.
+- `npm run pg -- thumbnail <slug>`: prüft den Plan, rendert `thumbnail/thumbnail_full.png`, erzeugt das Feed-Testbild `270×480` und das Sperrzonen-Bild, misst Luminanz und Kontrast. Alle rechnerischen Checks müssen PASS sein; Feed-Testbild und Sperrzonen-Bild (unteres Viertel `y > 1450`) **mit dem Read-Tool ansehen** (Checks 3 und 5). Erst dann dem Nutzer zeigen.
 - Kurz: 3 Titel-Varianten, Beschreibung (2–3 Sätze + Bildnachweise), Hashtags inkl. `#shorts #punktgenau`.
 - In `videos/<slug>/upload.md` speichern und im Chat zeigen.

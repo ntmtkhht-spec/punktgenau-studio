@@ -3,13 +3,26 @@
 // (z. B. Zahlwoerter), werden die Zeiten ueber die Zeichenposition im Satz uebertragen.
 //
 // Aufruf: node scripts/align-whisper.mjs <skript.md> <whisper.json> <ausgabe-audio> <ausgabe-words.json>
-import {execFileSync} from 'node:child_process';
+import {execFileSync, spawnSync} from 'node:child_process';
 import {readFileSync, writeFileSync} from 'node:fs';
 
 const [scriptPath, whisperPath, outAudio, outWords] = process.argv.slice(2);
+// --full: Aufnahmen nicht kuerzen (eigene Pausen und Tempo der Sprecher bleiben erhalten)
+const FULL = process.argv.includes('--full');
 const GAP = 0.15; // Pause zwischen zwei Saetzen
 const TAIL = 0.12; // Nachlauf nach dem letzten Wort eines Satzes
 const LEAD = 0.1; // Stille ganz am Anfang
+
+/** Ende der Sprache laut Pegel: Beginn der Schluss-Stille. Whisper setzt Wortenden oft zu frueh -> abgeschnittene Endungen. */
+const audibleEnd = (file, duration) => {
+  const res = spawnSync('ffmpeg', ['-hide_banner', '-i', file.replace(/^\/c\//, 'C:/'), '-af', 'silencedetect=noise=-45dB:d=0.1', '-f', 'null', '-'], {encoding: 'utf8'});
+  const starts = [...res.stderr.matchAll(/silence_start: ([0-9.]+)/g)].map((m) => Number(m[1]));
+  const ends = [...res.stderr.matchAll(/silence_end: ([0-9.]+)/g)].map((m) => Number(m[1]));
+  const last = starts.length - 1;
+  // nur zaehlen, wenn diese Stille bis zum Dateiende reicht (neuere ffmpeg melden dort trotzdem ein silence_end)
+  const trailing = last >= 0 && (ends.length === last || ends[last] >= duration - 0.06);
+  return trailing ? starts[last] : duration;
+};
 
 const lines = readFileSync(scriptPath, 'utf8')
   .split(/\r?\n/)
@@ -63,7 +76,8 @@ lines.forEach((line, li) => {
     acc += lens[i];
     words.push({text: tok, start: +(offset + start).toFixed(3), end: +(offset + end).toFixed(3), line: li});
   });
-  const speechEnd = Math.min(whisper[li].duration, ww[ww.length - 1].end + TAIL);
+  const heard = audibleEnd(whisper[li].file, whisper[li].duration);
+  const speechEnd = FULL ? whisper[li].duration : Math.min(whisper[li].duration, Math.max(ww[ww.length - 1].end, heard) + TAIL);
   trims.push({file: whisper[li].file, end: speechEnd});
   offset += speechEnd + GAP;
   console.log(`Satz ${li + 1}: ${sameCount ? 'Woerter 1:1' : `Skript ${toks.length} / Whisper ${ww.length} Woerter -> Zeichen-Abgleich`}`);
@@ -75,4 +89,6 @@ const concat = trims.map((_, i) => `[a${i}]`).join('') + `concat=n=${trims.lengt
 execFileSync('ffmpeg', ['-y', '-v', 'error', ...inputs, '-filter_complex', `${parts};${concat}`, '-map', '[out]', '-ar', '48000', outAudio]);
 
 writeFileSync(outWords, JSON.stringify(words, null, 1));
+// Exaktes Ende der Stimme (ohne Pause nach dem letzten Satz) -> Videolaenge fuer einen sauberen Loop
+writeFileSync(outWords.replace(/words\.json$/, 'timing.json'), JSON.stringify({voiceEnd: +(offset - GAP).toFixed(3)}, null, 1));
 console.log(`Gesamtdauer ${offset.toFixed(2)} s, ${words.length} Woerter`);

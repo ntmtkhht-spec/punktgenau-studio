@@ -1,8 +1,8 @@
-// Browser-Vorschau fuer gerenderte Videos.
-// Zeigt videos/<slug>/export/<slug>.mp4 an und laedt den offenen Tab neu,
-// sobald pg.mjs nach einem Render POST /reload?slug=<slug> schickt (Server-Sent Events).
+// Browser-Vorschau fuer gerenderte Videos und einzelne Szenen.
+// Zeigt videos/<slug>/export/<slug>.mp4 (oder ?file=scenes/szene-03.mp4) an und laedt den offenen Tab neu,
+// sobald pg.mjs nach einem Render POST /reload?slug=<slug>&file=<datei> schickt (Server-Sent Events).
 //
-//   node scripts/preview-server.mjs            (startet normalerweise automatisch durch "pg render")
+//   node scripts/preview-server.mjs            (startet normalerweise automatisch durch "pg render" / "pg scene")
 import {createReadStream, existsSync, statSync} from 'node:fs';
 import {createServer} from 'node:http';
 import {dirname, join, resolve} from 'node:path';
@@ -12,9 +12,12 @@ const PREVIEW_PORT = Number(process.env.PG_PREVIEW_PORT ?? 4747);
 
 const ROOT = resolve(dirname(fileURLToPath(import.meta.url)), '..');
 const SLUG_RE = /^[a-z0-9][a-z0-9-]*$/;
+// Nur Dateien aus export/ oder scenes/ (kein Pfad-Ausbruch moeglich).
+const FILE_RE = /^(export|scenes)\/[a-z0-9-]+\.mp4$/;
+const fileOf = (slug, f) => (f && FILE_RE.test(f) ? f : `export/${slug}.mp4`);
 const clients = new Set();
 
-const page = (slug) => `<!doctype html>
+const page = (slug, file) => `<!doctype html>
 <html lang="de"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
 <title>Punktgenau – ${slug}</title>
 <style>
@@ -22,28 +25,28 @@ const page = (slug) => `<!doctype html>
   body{margin:0;min-height:100vh;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:12px;
        font-family:Inter,system-ui,sans-serif;background:#f4f4f4;color:#111}
   @media (prefers-color-scheme:dark){body{background:#151515;color:#eee}}
-  video{height:86vh;max-width:96vw;aspect-ratio:9/16;background:#000}
+  video{max-height:86vh;max-width:96vw;background:#000}
   #info{font-size:14px;opacity:.7}
 </style></head>
 <body>
-  <video id="v" controls autoplay playsinline src="/video/${slug}?t=${Date.now()}"></video>
-  <div id="info">${slug} · wartet auf neue Renderings …</div>
+  <video id="v" controls autoplay playsinline src="/video/${slug}?file=${file}&t=${Date.now()}"></video>
+  <div id="info">${slug} · ${file} · wartet auf neue Renderings …</div>
 <script>
   const v = document.getElementById('v'), info = document.getElementById('info');
   const es = new EventSource('/events');
   es.addEventListener('reload', (e) => {
-    const slug = e.data;
-    if (slug !== location.pathname.split('/').pop()) history.replaceState(null, '', '/v/' + slug);
-    v.src = '/video/' + slug + '?t=' + Date.now();
+    const [slug, file] = e.data.split('|');
+    history.replaceState(null, '', '/v/' + slug + '?file=' + file);
+    v.src = '/video/' + slug + '?file=' + file + '&t=' + Date.now();
     v.play().catch(() => {});
-    info.textContent = slug + ' · neu geladen ' + new Date().toLocaleTimeString('de-DE');
+    info.textContent = slug + ' · ' + file + ' · neu geladen ' + new Date().toLocaleTimeString('de-DE');
   });
 </script>
 </body></html>`;
 
-const sendVideo = (req, res, slug) => {
-  const file = join(ROOT, 'videos', slug, 'export', `${slug}.mp4`);
-  if (!existsSync(file)) return res.writeHead(404).end('Noch kein Export.');
+const sendVideo = (req, res, slug, rel) => {
+  const file = join(ROOT, 'videos', slug, rel);
+  if (!existsSync(file)) return res.writeHead(404).end('Noch kein Render.');
   const size = statSync(file).size;
   const range = /bytes=(\d*)-(\d*)/.exec(req.headers.range ?? '');
   if (!range) {
@@ -79,12 +82,14 @@ const handle = (req, res) => {
   if (kind === 'reload' && req.method === 'POST') {
     const target = url.searchParams.get('slug') ?? '';
     if (!SLUG_RE.test(target)) return res.writeHead(400).end('Ungueltiger Slug.');
-    for (const c of clients) c.write(`event: reload\ndata: ${target}\n\n`);
+    const rel = fileOf(target, url.searchParams.get('file'));
+    for (const c of clients) c.write(`event: reload\ndata: ${target}|${rel}\n\n`);
     return res.writeHead(200, {'Content-Type': 'application/json'}).end(JSON.stringify({clients: clients.size}));
   }
   if ((kind === 'v' || kind === 'video') && SLUG_RE.test(slug ?? '')) {
-    if (kind === 'video') return sendVideo(req, res, slug);
-    return res.writeHead(200, {'Content-Type': 'text/html; charset=utf-8'}).end(page(slug));
+    const rel = fileOf(slug, url.searchParams.get('file'));
+    if (kind === 'video') return sendVideo(req, res, slug, rel);
+    return res.writeHead(200, {'Content-Type': 'text/html; charset=utf-8'}).end(page(slug, rel));
   }
   res.writeHead(404).end('Nicht gefunden.');
 };

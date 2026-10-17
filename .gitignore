@@ -30,3 +30,6 @@ editorial/projects/*/export/
 editorial/projects/*/audit/
 editorial/projects/*/.work/
 editorial/projects/*/assets/
+editorial/projects/*/thumbnail/
+videos/*/thumbnail/
+videos/_source/

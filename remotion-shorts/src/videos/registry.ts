@@ -9,6 +9,12 @@ export interface VideoEntry {
   readonly slug: string; // Ordnername, z. B. "04-monty-hall"
   readonly component: React.FC;
   readonly durationSec: number;
+  readonly width?: number; // Longform: 1920
+  readonly height?: number; // Longform: 1080
+  /** Longform: Bildbereiche [von, bis] je Abschnitt – jeder wird im Studio ein eigener Clip "<id>-Szene01" … */
+  readonly sections?: readonly (readonly [number, number])[];
+  /** Longform mit eigenen Szenen-Clips (Regler je Szene): ersetzt die automatischen Clips. */
+  readonly scenes?: React.FC;
 }
 
 // <pg:imports>

@@ -9,3 +9,4 @@ export {Captions} from '../phantom/Captions';
 export {DotBackground} from './DotBackground';
 export {makeTimeline, type Timeline, type Word} from './words';
 export {VoiceAndMusic} from './VoiceAndMusic';
+export {sectionClip} from './SectionClip';
