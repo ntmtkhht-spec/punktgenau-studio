@@ -23,7 +23,8 @@ Befehle laufen in `remotion-shorts/` (`npm run pg -- …`).
 ## Phase 3 – Skript (Freigabe)
 - `npm run pg -- new <nn-slug> "<Titel>"` (nn = nächste freie Nummer).
 - Skript in `videos/<slug>/script.md` (nummerierte Zeilen, ein Satz = eine Audiodatei), Fakten-Check-Abschnitt füllen.
-- Skript-Regeln aus CLAUDE.md (vollständige Sätze, Kontext im Hook, Loop am Ende, ca. 150 Wörter).
+- **Vor dem Schreiben den Skill `content-principles` laden** und seine Prinzipien still anwenden (nicht als Checkliste ausgeben): jede Zeile verkauft die nächste, der Hook ist die offene Frage und wird erst am Ende beantwortet, konkret statt allgemein, einfache Sätze, kein Füllsatz, nach etwa 60–70 % eine neue offene Frage.
+- Skript-Regeln aus CLAUDE.md (vollständige Sätze, Kontext im Hook, Loop am Ende). Länge nach Inhalt, höchstens ca. 150 Wörter, nie strecken.
 - Skript vollständig im Chat zeigen. Der Nutzer entscheidet und spricht es danach ein.
 
 ## Phase 4 – Storyboard (Freigabe)

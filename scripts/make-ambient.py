@@ -27,8 +27,9 @@ def hz(midi: float) -> float:
 
 
 def envelope(n: int, attack: float, release: float) -> np.ndarray:
-    a = max(1, int(attack * SR))
-    r = max(1, int(release * SR))
+    # kurze letzte Segmente: Ein-/Ausblenden auf die Segmentlaenge begrenzen (sonst Absturz)
+    a = max(1, min(int(attack * SR), n // 2))
+    r = max(1, min(int(release * SR), n // 2))
     env = np.ones(n)
     env[:a] = np.linspace(0, 1, a)
     env[-r:] *= np.linspace(1, 0, r)
@@ -50,7 +51,7 @@ def pluck(t: np.ndarray, f: float) -> np.ndarray:
 
 
 def render(duration: float) -> np.ndarray:
-    n = int(duration * SR)
+    n = round(duration * SR)
     left = np.zeros(n)
     right = np.zeros(n)
     seg = 2 * BAR

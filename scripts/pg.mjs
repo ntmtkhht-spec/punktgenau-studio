@@ -22,6 +22,8 @@ const ROOT = resolve(dirname(fileURLToPath(import.meta.url)), '..');
 const RS = join(ROOT, 'remotion-shorts');
 const SCRIPTS = join(ROOT, 'scripts');
 const REGISTRY = join(RS, 'src', 'videos', 'registry.ts');
+// Python-Aufruf: unter Windows ueber den Launcher "py" (dort laufen faster_whisper und numpy); PG_PYTHON ueberschreibt.
+const PYTHON = process.env.PG_PYTHON || (process.platform === 'win32' ? 'py' : 'python');
 
 const run = (cmd, args, opts = {}) => execFileSync(cmd, args, {stdio: 'inherit', ...opts});
 const fail = (msg) => {
@@ -93,12 +95,12 @@ const cmdVoice = (slug) => {
   if (files.length === 0) fail(`Keine Audiodateien in videos/${slug}/voice (erwartet: audio1.mp3, audio2.mp3, ...)`);
   const whisperJson = join(videoDir(slug), 'whisper.json');
   console.log(`Whisper: ${files.length} Dateien ...`);
-  run('python', [join(SCRIPTS, 'whisper-words.py'), whisperJson, ...files]);
+  run(PYTHON, [join(SCRIPTS, 'whisper-words.py'), whisperJson, ...files]);
   mkdirSync(publicDir(slug), {recursive: true});
   run('node', [join(SCRIPTS, 'align-whisper.mjs'), join(videoDir(slug), 'script.md'), whisperJson, join(publicDir(slug), 'voice.wav'), join(srcDir(slug), 'words.json'), '--full']);
   const words = JSON.parse(readFileSync(join(srcDir(slug), 'words.json'), 'utf8'));
   const total = words[words.length - 1].end + 1.5;
-  run('python', [join(SCRIPTS, 'make-ambient.py'), join(publicDir(slug), 'music.wav'), total.toFixed(1)]);
+  run(PYTHON, [join(SCRIPTS, 'make-ambient.py'), join(publicDir(slug), 'music.wav'), total.toFixed(1)]);
   writeMeta(slug, {...readMeta(slug), hasVoice: true, hasMusic: true});
   console.log(`\nStimme + Musik fertig. Dauer ca. ${total.toFixed(1)} s`);
 };
