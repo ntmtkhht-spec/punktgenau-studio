@@ -8,8 +8,10 @@
 //   npm run pg -- scene <slug> <n>       Longform: Abschnitt n als eigenen Clip im Remotion Studio oeffnen (--mp4: 720p-Datei)
 //   npm run pg -- render <slug>          Finales Video rendern (Longform: 4K in Teilstuecken) – nur fuer den Export
 //   npm run pg -- preview <slug>         Letzten Export im Browser zeigen (Render macht das automatisch)
+//   npm run pg -- chapters <slug>        YouTube-Kapitelmarken aus "## Kapitel: ..." im Skript (export/kapitel.txt)
+//   npm run pg -- srt <slug>             Untertiteldatei fuer den Upload (export/<slug>.srt)
 //   npm run pg -- thumbnail <slug>       Thumbnail aus thumbnail-plan.json rendern + Feed-Test + Audit
-//   npm run pg -- list                   Alle Videos anzeigen
+//   npm run pg -- list                  Alle Videos anzeigen
 //
 // Aufruf aus remotion-shorts/ (dort liegt das npm-Skript "pg").
 import {execFileSync, spawn} from 'node:child_process';
@@ -17,6 +19,7 @@ import {existsSync, mkdirSync, readdirSync, readFileSync, rmSync, writeFileSync}
 import {dirname, join, resolve} from 'node:path';
 import {fileURLToPath} from 'node:url';
 import {auditThumbnail, checkPlan, thumbDir} from './thumbnail.mjs';
+import {writeChapters, writeSrt} from './upload-texts.mjs';
 
 const ROOT = resolve(dirname(fileURLToPath(import.meta.url)), '..');
 const RS = join(ROOT, 'remotion-shorts');
@@ -255,6 +258,27 @@ Thumbnail-Audit (${selected.id}, ${selected.archetype}):`);
   }
 };
 
+const readWords = (slug) => JSON.parse(readFileSync(join(srcDir(slug), 'words.json'), 'utf8'));
+
+const cmdChapters = (slug) => {
+  requireVideo(slug);
+  try {
+    const {txt, warnings} = writeChapters(join(videoDir(slug), 'script.md'), readWords(slug), join(videoDir(slug), 'export'), join(srcDir(slug), 'chapters.json'));
+    console.log(txt);
+    for (const w of warnings) console.warn(`Warnung: ${w}`);
+    console.log(`\nKapitel: videos/${slug}/export/kapitel.txt (in die Videobeschreibung kopieren)`);
+  } catch (e) {
+    fail(e.message);
+  }
+};
+
+const cmdSrt = (slug) => {
+  requireVideo(slug);
+  mkdirSync(join(videoDir(slug), 'export'), {recursive: true});
+  const n = writeSrt(readWords(slug), join(videoDir(slug), 'export', `${slug}.srt`));
+  console.log(`Untertitel: videos/${slug}/export/${slug}.srt (${n} Eintraege)`);
+};
+
 const cmdList = () => {
   const dir = join(ROOT, 'videos');
   if (!existsSync(dir)) return console.log('Noch keine Videos.');
@@ -265,9 +289,9 @@ const cmdList = () => {
 };
 
 const [cmd, a, b] = process.argv.slice(2);
-const commands = {preview: () => (requireVideo(a), showInBrowser(a)), new: () => cmdNew(a, b), words: () => (requireVideo(a), estimateWords(a)), voice: () => cmdVoice(a), audit: () => cmdAudit(a), scene: () => cmdScene(a, b, process.argv[5]), thumbnail: () => cmdThumbnail(a), render: () => cmdRender(a, b), list: cmdList};
+const commands = {preview: () => (requireVideo(a), showInBrowser(a)), new: () => cmdNew(a, b), words: () => (requireVideo(a), estimateWords(a)), voice: () => cmdVoice(a), audit: () => cmdAudit(a), scene: () => cmdScene(a, b, process.argv[5]), chapters: () => cmdChapters(a), srt: () => cmdSrt(a), thumbnail: () => cmdThumbnail(a), render: () => cmdRender(a, b), list: cmdList};
 if (!commands[cmd]) {
-  console.log('Befehle: new <slug> "<Titel>" | words <slug> | voice <slug> | audit <slug> | scene <slug> <n> [--mp4] | thumbnail <slug> | render <slug> [--no-preview] | preview <slug> | list');
+  console.log('Befehle: new <slug> "<Titel>" | words <slug> | voice <slug> | audit <slug> | scene <slug> <n> [--mp4] | chapters <slug> | srt <slug> | thumbnail <slug> | render <slug> [--no-preview] | preview <slug> | list');
   process.exit(cmd ? 1 : 0);
 }
 commands[cmd]();

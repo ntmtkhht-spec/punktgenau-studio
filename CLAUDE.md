@@ -22,6 +22,9 @@ Neue Videos immer mit dem Skill `/punktgenau-short` erstellen (Ablauf in Phasen,
 | `npm run pg -- audit <slug>` | Kontaktbögen alle 0,5 s nach `videos/<slug>/audit/` |
 | `npm run pg -- scene <slug> <n>` | Longform: Abschnitt n als eigenen Clip im **Remotion Studio** öffnen (abspielen, Regler, speichern). Clips immer dort öffnen, nie das ganze Video rendern. `--mp4`: zusätzlich 720p-Datei |
 | `npm run pg -- render <slug>` | Finales Video nach `videos/<slug>/export/` (Longform in 4K, in Teilstücken), danach automatisch im Browser (offener Tab lädt neu, kein neues Fenster). Nur für den Export |
+| `npm run pg -- chapters <slug>` | Longform: YouTube-Kapitelmarken aus `## Kapitel: …` im Skript → `export/kapitel.txt` |
+| `npm run pg -- srt <slug>` | Untertiteldatei → `export/<slug>.srt` |
+| `npm run pg -- thumbnail <slug>` | Thumbnail nach `/thumbnail-design`: Plan prüfen, rendern, Feed-Test + Audit |
 | `npm run pg -- preview <slug>` | Letzten Export im Browser zeigen |
 | `npm run pg -- list` | Übersicht |
 | `npm run studio` | Remotion Studio (Vorschau, Regler) |

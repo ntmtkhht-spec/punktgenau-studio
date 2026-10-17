@@ -36,6 +36,7 @@ Zielläng festlegen (Nutzer fragt meist nach Minuten → ca. 140 Wörter/min Deu
 - **Jeder Begriff wird beim ersten Auftreten erklärt** (fett im Skript), dann konsequent gleich benannt.
 - **Aufzählungen nie als Satzfetzen** („Nur die Fünf. Alle außer fünf.“). Erst erklären, wie man es liest (Tabelle, Punkt = dabei), dann Beispiele in ganzen Sätzen.
 - Jede Abschnitts-Überschrift trägt Zeitbereich und `[Bild: …]`-Anweisung.
+- **Kapitel:** Im fertigen Skript (`videos/<slug>/script.md`) vor dem ersten Absatz jedes Kapitels eine Zeile `## Kapitel: <Titel>` setzen (mindestens 3 Kapitel, je mindestens 10 s). Daraus entstehen später die YouTube-Kapitelmarken.
 
 ## Phase 4 – Storyboards: eins pro Szene (Freigabe)
 Alles, was erzählt wird, muss zu sehen sein, und zwar **intuitiv**, **didaktisch sauber** und **wissenschaftlich korrekt**. Erst alles planen, dann animieren.
@@ -60,4 +61,7 @@ Alles, was erzählt wird, muss zu sehen sein, und zwar **intuitiv**, **didaktisc
 ## Phase 6 – Export (nur auf Wunsch des Nutzers)
 - `npm run pg -- render <slug>` rendert Longform in **4K** (3840×2160, `--scale=2`) in Teilstücken zu 2.000 Bildern (`--concurrency=4`, sonst stürzt der Browser ab), fügt sie zusammen und öffnet das Ergebnis im Browser. Bricht es ab: Befehl erneut starten, fertige Teile werden übersprungen.
 - 4K **ausschließlich** für den finalen Export – nie für Zwischenstände.
+- Upload-Texte aus den echten Wortzeiten (nach `pg voice`):
+  - `npm run pg -- chapters <slug>` → `export/kapitel.txt` (Kapitelmarken für die Beschreibung, warnt bei < 3 Kapiteln oder Kapiteln < 10 s).
+  - `npm run pg -- srt <slug>` → `export/<slug>.srt` (Untertitel zum Hochladen, Zeilen bis ca. 42 Zeichen, keine Überlappung).
 - Einzelne Videos (Code unter `src/videos/<slug>`, `public/<slug>`, `videos/<slug>`) werden **nicht committet**, nur Pipeline-Dateien.
