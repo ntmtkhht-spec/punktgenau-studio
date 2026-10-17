@@ -1,0 +1,21 @@
+/* Die 7 Schrift-Rollen aus Skill editorial-typography fuer HyperFrames-Szenen.
+   scripts/ed.mjs kopiert diese Datei in jede HF-Szene; Szenen setzen KEIN eigenes font-family. */
+@import url("https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;0,900;1,400&family=DM+Serif+Display&family=Anton&family=Cormorant+Garamond:ital,wght@0,400;0,500;1,400&family=Special+Elite&family=IBM+Plex+Mono:wght@500&family=Inter:wght@400;600&display=block");
+
+.role-editorial-didone { font-family: "Playfair Display", Georgia, serif; font-weight: 400; color: #f5efe1; filter: drop-shadow(0 4px 10px rgba(0,0,0,0.65)); }
+.role-tall-condensed-serif { font-family: "DM Serif Display", serif; text-transform: uppercase; letter-spacing: -0.02em; color: #f5efe1; text-shadow: 4px 6px 0 #111, 0 12px 24px rgba(0,0,0,0.5); }
+.role-tall-condensed-serif > .tilt { display: inline-block; transform: rotate(-6deg) scaleX(0.74); }
+.role-heavy-plakat-grotesk { font-family: "Anton", "Bebas Neue", sans-serif; font-weight: 400; text-transform: uppercase; line-height: 0.92; color: #a51c1c;
+  text-shadow: 1px 1px 0 #000, 2px 2px 0 #000, 3px 3px 0 #000, 4px 4px 0 #000, 5px 5px 0 #000, 6px 6px 0 #000; }
+.role-literary-book-serif { font-family: "Cormorant Garamond", Georgia, serif; font-style: italic; line-height: 1.38; color: #f5efe1; text-shadow: 0 2px 6px rgba(0,0,0,0.65); }
+.role-literary-book-serif.upright { font-style: normal; color: #111; text-shadow: none; }
+.role-typewriter-archival { font-family: "Special Elite", "Courier Prime", monospace; color: #1a1a18; line-height: 1.45; }
+.role-retro-crt-terminal { font-family: "IBM Plex Mono", Consolas, monospace; font-weight: 500; color: #f0f6f0; text-shadow: 0 0 8px rgba(240,255,240,0.6); }
+.role-diegetic-ui-sans { font-family: "Inter", "DM Sans", sans-serif; font-weight: 400; }
+
+/* Kursive Didone-Dachzeile ueber Rolle 2/3 (Gesetz der Schrift-Paarung). */
+.kicker { font-family: "Playfair Display", Georgia, serif; font-style: italic; }
+/* Quellenzeile unter Bilderrahmen (Asset-Klasse archiv-werk). */
+.caption { font-family: "Cormorant Garamond", Georgia, serif; font-weight: 400; color: #d0d0d0; text-align: center; }
+/* Physischer Traeger fuer Sprechblasen-Text (Skill-Regel 3). */
+.bubble-fill { fill: #f3ead8; stroke: #000; stroke-width: 3; }
