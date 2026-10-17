@@ -84,3 +84,34 @@ Anderer Port: Umgebungsvariable `PG_PREVIEW_PORT` setzen. Der Server lauscht nur
 | `branding/` | Logo, Banner, Profilbild |
 | `.claude/skills/punktgenau-short/` | Claude-Code-Skill für den Gesamtablauf |
 | `CLAUDE.md` | Verbindliche Stil- und Layoutregeln |
+| `editorial/` | Zweiter Stil (Editorial/Video-Essay): Remotion-Projekt, gemeinsame Komponenten, `projects/<slug>/` |
+| `scripts/ed.mjs`, `scripts/ed/` | `ed`-CLI: Storyboard-Check, Asset-Suche, Szenen-Router, Zusammenführen, Audit |
+| `manim-scenes/` | Manim-Umgebung (`uv`) für Formel- und Graph-Szenen |
+| `.claude/skills/editorial-video/`, `editorial-typography/` | Skills für den Editorial-Stil und seine Schrift-Rollen |
+| `research/ultralativ-editorial-pipeline-spec.md` | Stilanalyse und verbindliche Regeln des Editorial-Stils |
+
+## Editorial-Stil (zweiter Kanal)
+
+Video-Essays in 16:9 oder Shorts in 9:16. Jede Szene wählt im Storyboard Archetyp, 2D/2.5D/3D, Tapete, Licht,
+Schrift-Rollen und das Render-Tool – Remotion + Three.js, HyperFrames + GSAP oder Manim – mit Begründung.
+In Claude Code mit `/editorial-video` starten.
+
+Zusätzliche Voraussetzungen: [uv](https://docs.astral.sh/uv/) (für Manim) und MiKTeX (LaTeX), Internet beim Rendern von HyperFrames-Szenen.
+
+```bash
+cd manim-scenes
+uv venv --python 3.13 .venv
+uv pip install --python .venv/Scripts/python.exe "manim>=0.19"
+cd ../editorial
+npm install
+```
+
+Befehle aus `editorial/`:
+
+| Befehl | Zweck |
+|---|---|
+| `npm run ed -- new 02-thema "Titel" --format 16x9` | Projekt anlegen (`16x9` oder `9x16`) |
+| `npm run ed -- check <slug>` | Storyboard streng prüfen (Pflichtfelder, Schrift-Rollen, Assets, Verbote) |
+| `npm run ed -- assets <slug>` | Archivwerke und Logos suchen und laden, danach `approve <slug> <id>` |
+| `npm run ed -- scene <slug> <id>` | Eine Szene mit ihrem Tool rendern |
+| `npm run ed -- build <slug>` | Alle Szenen rendern, zusammenführen, Kontaktbögen erzeugen |
