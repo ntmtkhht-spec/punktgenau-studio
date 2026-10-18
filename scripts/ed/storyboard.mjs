@@ -17,14 +17,14 @@ export const ARCHETYPES = [
 export const DIMENSIONS = ['2D', '2.5D', '3D'];
 export const TOOLS = ['remotion-three', 'remotion-dom', 'hyperframes-gsap', 'manim-python'];
 export const CHARACTERS = ['keine', 'meeple', 'roboter', 'portraet', 'silhouetten-publikum', 'panel-figur'];
-export const MOTIFS = ['damast', 'arkaden', 'blaetter', 'birken'];
+export const MOTIFS = ['damast', 'arkaden', 'blaetter', 'birken', 'botanisch', 'farne', 'urne'];
 export const MODES = ['these', 'kritik'];
 export const COLORS = ['tiefblau', 'orange', 'kupfer', 'petrol', 'lachs'];
 export const LIGHTS = ['none', 'vignette', 'spotlight', 'sunburst'];
 // Schrift-Rollen aus dem Skill editorial-typography, plus latex-math fuer Manim-Formelsatz.
 export const FONT_ROLES = [
   'editorial-didone', 'tall-condensed-serif', 'heavy-plakat-grotesk', 'literary-book-serif',
-  'typewriter-archival', 'retro-crt-terminal', 'diegetic-ui-sans', 'latex-math',
+  'typewriter-archival', 'retro-crt-terminal', 'diegetic-ui-sans', 'latex-math', 'historical-fraktur',
 ];
 // Asset-Klassen (Spec 4.1). formel-graph = Manim-Formelsatz/Graph, nur mit manim-python.
 // eigene-grafik = selbst gebaut (Diagramm, Pfeil, Form, Muster, Illustration) – erlaubt mit Begruendung.

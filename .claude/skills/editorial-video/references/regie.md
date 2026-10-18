@@ -50,7 +50,7 @@ storyboard.json ──check──▶ pro Szene: Router
 
 Alles relativ zu `width`/`height` bzw. `__U__` (1 % der kurzen Seite) bauen; Manim über `config.frame_width/height`. Jedes Projekt hat genau ein Format.
 
-## Bekannte Grenzen (Stand Beweistest)
-- Tapeten-Motive sind prozedural (4 Stück). Echte Tapeten-/Bildtexturen dürfen geladen werden; Quelle und Lizenz im Manifest vermerken.
+## Bekannte Grenzen & Standards
+- Tapeten-Motive: Ausschließlich echte, historische Museums-Scans und Digitalisate (`editorial/remotion/shared/wallpapers/`). Prozedurale SVGs und KI-Texturen sind strikt untersagt.
 - HyperFrames lädt GSAP und Google Fonts per CDN – Rendern braucht Internet.
 - Manim braucht `manim-scenes/.venv` (uv) und MiKTeX unter `~/scoop/apps/miktex`.

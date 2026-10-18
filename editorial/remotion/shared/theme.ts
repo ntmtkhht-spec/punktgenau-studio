@@ -1,7 +1,7 @@
 // Farb- und Lichtmodi, gemessen am Referenzvideo (research/ultralativ-editorial-pipeline-spec.md, 2.1).
 
 export type Mode = 'these' | 'kritik';
-export type Motif = 'damast' | 'arkaden' | 'blaetter' | 'birken';
+export type Motif = 'damast' | 'arkaden' | 'blaetter' | 'birken' | 'botanisch' | 'farne' | 'urne';
 export type Light = 'none' | 'vignette' | 'spotlight' | 'sunburst';
 
 /** Farbiger These-Modus: eine Grundfarbe pro Kapitel. */

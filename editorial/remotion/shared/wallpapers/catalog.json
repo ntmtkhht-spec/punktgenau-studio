@@ -1,0 +1,68 @@
+{
+  "version": "1.0",
+  "reinheitsgebot": "100% gemeinfreie Original-Scans aus Museumssammlungen (Met, Rijksmuseum, V&A, NGA, LoC). 0% KI-generiert, 0% Vektor-Ornamentik.",
+  "wallpapers": {
+    "damast": {
+      "file": "damast.jpg",
+      "titel": "Seidendamast-Gewebe (Barock / Renaissance)",
+      "quelle": "The Metropolitan Museum of Art, New York (Accession 17.121.6)",
+      "lizenz": "Public Domain (CC0 / Open Access)",
+      "stimmung": "Standard-Editorial, Festlich, Historisch, Klassisch",
+      "beschreibung": "Echtes barockes Seidendamast-Gewebe mit symmetrischem Granatapfel- und Blattwerk-Muster."
+    },
+    "blaetter": {
+      "file": "blaetter.jpg",
+      "titel": "Willow Bough Tapetenmuster (1887)",
+      "kuenstler": "William Morris",
+      "quelle": "Victoria and Albert Museum, London",
+      "lizenz": "Public Domain",
+      "stimmung": "Neutral, Natur, Klassisch, Organisch (wie Ultralativ frame_0055.jpg)",
+      "beschreibung": "Verschlungenes Weidenblatt-Muster im Arts-and-Crafts-Stil."
+    },
+    "birken": {
+      "file": "birken.jpg",
+      "titel": "Les Bouleaux (Birkenwald)",
+      "kuenstler": "Alphonse Legros (1837–1911)",
+      "quelle": "National Gallery of Art, Washington D.C.",
+      "lizenz": "Public Domain (Open Access)",
+      "stimmung": "Ernst, Melancholisch, Dämmerung, Atmosphäre (wie Ultralativ frame_0190.jpg mit Farbverlauf)",
+      "beschreibung": "Kaltnadelradierung eines Birkenwaldes mit feiner Linienstruktur."
+    },
+    "arkaden": {
+      "file": "arkaden.jpg",
+      "titel": "Carceri d'invenzione (Arkaden & Bögen)",
+      "kuenstler": "Giovanni Battista Piranesi (1720–1778)",
+      "quelle": "Rijksmuseum Amsterdam / MET",
+      "lizenz": "Public Domain",
+      "stimmung": "Monumental, Philosophie, Architektur, Rätsel",
+      "beschreibung": "Monumentale Radierung monumentaler Steinbögen und Arkadenfluchten."
+    },
+    "botanisch": {
+      "file": "botanisch.jpg",
+      "titel": "De Wilde Roos Behangselontwerp (1898)",
+      "kuenstler": "Theo Nieuwenhuis (1866–1951)",
+      "quelle": "Rijksmuseum Amsterdam (RP-P-1970-4)",
+      "lizenz": "Public Domain (CC0)",
+      "stimmung": "Dunkel, Kritik, Botanik, Jugendstil (wie Ultralativ frame_0120.jpg)",
+      "beschreibung": "Dichtes Holzschnitt-Medaillonmuster aus Wildrosen und Akanthusblättern."
+    },
+    "farne": {
+      "file": "farne.jpg",
+      "titel": "Filicinae – Laubfarne (1904)",
+      "kuenstler": "Ernst Haeckel (Kunstformen der Natur, Tafel 92)",
+      "quelle": "Library of Congress / Biodiversity Heritage Library",
+      "lizenz": "Public Domain",
+      "stimmung": "Wissenschaftlich, Naturgeschichte, Botanik, Filigran",
+      "beschreibung": "Meisterhafte lithographische Naturstudie von Hirschzungen- und Geweihfarnen."
+    },
+    "urne": {
+      "file": "urne.jpg",
+      "titel": "Vase of Flowers in a Stone Niche (Trompe-l'œil Marmornische)",
+      "kuenstler": "Niederländischer Meister, ca. 1700",
+      "quelle": "The Metropolitan Museum of Art, New York (DP104644)",
+      "lizenz": "Public Domain (CC0)",
+      "stimmung": "Klassizismus, Antike, Kunstgeschichte, Museum (wie Ultralativ frame_0140.jpg)",
+      "beschreibung": "Trompe-l'œil Marmornische mit klassischer Zierurne und Blumengebinde."
+    }
+  }
+}

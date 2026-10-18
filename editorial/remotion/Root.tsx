@@ -5,6 +5,8 @@ import {WallpaperSpec} from './shared/theme';
 import {Wallpaper} from './shared/Wallpaper';
 import {SCENES} from './scenes/registry';
 
+import {LocalFonts} from './shared/typography';
+
 // Jede Komposition bekommt Format und Dauer als Props von scripts/ed.mjs.
 // Dadurch rendert dieselbe Szene in 16:9 oder 9:16, ohne Code-Kopie.
 export type SceneProps = {
@@ -22,11 +24,17 @@ const metadata: CalculateMetadataFunction<SceneProps> = ({props}) => ({
   durationInFrames: Math.max(1, Math.round(props.durationSec * FPS)),
 });
 
-const WallpaperComp: React.FC<SceneProps> = ({wallpaper}) => <Wallpaper spec={wallpaper ?? DEFAULT_WALLPAPER} />;
+const WallpaperComp: React.FC<SceneProps> = ({wallpaper}) => (
+  <>
+    <LocalFonts />
+    <Wallpaper spec={wallpaper ?? DEFAULT_WALLPAPER} />
+  </>
+);
 
 const withWallpaper = (Scene: React.FC): React.FC<SceneProps> => {
   const Wrapped: React.FC<SceneProps> = ({wallpaper}) => (
     <AbsoluteFill>
+      <LocalFonts />
       {wallpaper ? <Wallpaper spec={wallpaper} /> : null}
       <Scene />
     </AbsoluteFill>

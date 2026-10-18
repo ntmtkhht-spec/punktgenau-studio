@@ -1,0 +1,22 @@
+{
+  "title": "Wer gewinnt auf Dauer?",
+  "hasVoice": false,
+  "hasMusic": true,
+  "music": {
+    "file": "cornfield-chase.wav",
+    "title": "Cornfield Chase",
+    "artist": "Hans Zimmer",
+    "source": "https://www.youtube.com/watch?v=JuSsvM8B4Jc",
+    "localSource": "downloads/music-JuSsvM8B4Jc.mp4",
+    "sourceStartSeconds": 15,
+    "durationSeconds": 28,
+    "fadeInSeconds": 2.5,
+    "fadeOutSeconds": 2.5,
+    "normalizationTargetLUFS": -23,
+    "license": "Urheberrechtlich geschützt; auf ausdrücklichen Nutzerwunsch eingebunden."
+  }
+}
+
+
+
+

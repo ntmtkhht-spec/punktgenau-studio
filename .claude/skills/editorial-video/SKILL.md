@@ -39,7 +39,7 @@ Pro Szene in `storyboard.md` (Begründung in Prosa) **und** `storyboard.json` (M
 Danach `npm run ed -- check <slug>` (prüft alle Pflichtfelder, Enums, Dateien, Schrift-Rollen). Storyboard vollständig im Chat zeigen, auf Freigabe warten. **Keine Standbilder** für das Storyboard erzeugen.
 
 ## Phase 4 – Assets beschaffen & Szenen bauen (je Szene prüfen)
-- **Pflicht zuerst:** `npm run ed -- assets <slug>` (sucht und lädt alle Archivwerke und Logos aus dem Storyboard), **jedes geladene Bild mit dem Read-Tool ansehen**, falschen Treffer mit `assets <slug> <id>=<n>` tauschen, dann `npm run ed -- approve <slug> <id>`. Ohne Freigabe rendert nichts. Logos nie selbst bauen; Tapeten, Diagramme, Formen und Requisiten dürfen selbst gebaut werden (`references/assets.md`).
+- **Pflicht zuerst:** `npm run ed -- assets <slug>` (sucht und lädt alle Archivwerke und Logos aus dem Storyboard), **jedes geladene Bild mit dem Read-Tool ansehen**, falschen Treffer mit `assets <slug> <id>=<n>` tauschen, dann `npm run ed -- approve <slug> <id>`. Ohne Freigabe rendert nichts. Logos und Tapeten nie selbst generieren (Tapeten sind echte historische Digitalisate in `shared/wallpapers`); Diagramme, Formen und Requisiten dürfen selbst gebaut werden (`references/assets.md`).
 - **Gemeinsame Komponenten benutzen, nichts nachbauen:**
   - Schrift: Remotion nur über `remotion/shared/typography.tsx` (`<RoleText role=…>`, `roleStyle`, `kickerStyle`); HyperFrames nur über `roles.css` (Klassen `.role-*`, `.kicker`, `.caption`, `.bubble-fill`). Eigenes `fontFamily`/`font-family` lehnt `check` ab.
   - Archivwerke: `remotion/shared/FramedArtwork.tsx` (Rahmen + Pflicht-Quellenzeile, Spotlight über `lit`).

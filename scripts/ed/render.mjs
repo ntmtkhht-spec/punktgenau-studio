@@ -40,7 +40,13 @@ const renderWallpaperVideo = (sb, scene, work) => {
   return out;
 };
 
-const renderRemotion = (sb, scene, work) => {
+const renderRemotion = (sb, scene, work, projectDir) => {
+  const assetsDir = join(projectDir, 'assets');
+  if (existsSync(assetsDir)) {
+    const pubAssets = join(EDITORIAL, 'public', 'assets');
+    mkdirSync(pubAssets, {recursive: true});
+    cpSync(assetsDir, pubAssets, {recursive: true});
+  }
   const out = join(work, `${scene.id}-raw.mp4`);
   remotion('render', scene.component, out, sceneProps(sb, scene), work);
   return out;

@@ -11,6 +11,8 @@ import {ZenoThumbnail} from './zeno/Thumbnail';
 import {Zeno, ZENO_TOTAL} from './zeno/Zeno';
 import {sectionClip} from './shared';
 import {VIDEOS} from './videos/registry';
+import {KugelThumbnailA, KugelThumbnailB, KugelThumbnailC} from './videos/08-kugel-aus-punkt/Thumbnail';
+import {ExponentiellThumbnailA, ExponentiellThumbnailB, ExponentiellThumbnailC} from './videos/09-exponentiell-gewinnt/Thumbnail';
 
 /** Longform: jeder Abschnitt als eigener Clip (einmal erzeugt, damit das Studio nicht neu mountet). */
 const SCENE_CLIPS = VIDEOS.filter((v) => !v.scenes).flatMap((v) =>
@@ -25,6 +27,12 @@ const SCENE_CLIPS = VIDEOS.filter((v) => !v.scenes).flatMap((v) =>
 
 export const RemotionRoot: React.FC = () => (
   <>
+    <Composition id="V08KugelThumbnailA" component={KugelThumbnailA} durationInFrames={1} fps={FPS} width={1080} height={1920}/>
+    <Composition id="V08KugelThumbnailB" component={KugelThumbnailB} durationInFrames={1} fps={FPS} width={1080} height={1920}/>
+    <Composition id="V08KugelThumbnailC" component={KugelThumbnailC} durationInFrames={1} fps={FPS} width={1080} height={1920}/>
+    <Composition id="V09ExponentiellThumbnailA" component={ExponentiellThumbnailA} durationInFrames={1} fps={FPS} width={1080} height={1920}/>
+    <Composition id="V09ExponentiellThumbnailB" component={ExponentiellThumbnailB} durationInFrames={1} fps={FPS} width={1080} height={1920}/>
+    <Composition id="V09ExponentiellThumbnailC" component={ExponentiellThumbnailC} durationInFrames={1} fps={FPS} width={1080} height={1920}/>
     <Composition id="KnnShort" component={KnnShort} durationInFrames={sec(53)} fps={FPS} width={W} height={H} />
     <Composition id="Phantomstau" component={Phantom} durationInFrames={sec(TOTAL)} fps={FPS} width={W} height={H} />
     <Composition id="ProfilLogo" component={ProfileLogo} durationInFrames={1} fps={FPS} width={800} height={800} />

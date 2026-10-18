@@ -30,6 +30,10 @@ Jedes einzelne Text-Element einer Szene muss im Storyboard **exakt einer** diese
 | **5. `typewriter-archival`**<br>*(Mechanische Schreibmaschine)* | - Historische Zitate, Zeitungs-Schnipsel, alte Prognosen oder Akten-Notizen auf abgerissenem Papier (`Das Auto ist eine vorübergehende Erscheinung...`) | `frame_0090.jpg` (`07:24`) | **`Special Elite`** oder **`Courier Prime`** / **`Cutive Mono`** | - Immer auf physischem Papier-Träger (abgerissene Kanten, leichtes Papierkorn) in gedämpftem Tinten-Schwarz (`#1a1a18`), Zeilenabstand `1.45`. |
 | **6. `retro-crt-terminal`**<br>*(80er/90er Pixel- & Terminal-Monospace)* | - Code, Algorithmen, frühe Informatik (`ELIZA 1966`), ASCII-Banner und technische Flussdiagramme auf einem CRT-Monitor | `frame_0172.jpg` (`14:15`) | **`VT323`**, **`IBM Plex Mono`** oder **`Share Tech Mono`** | - Leuchtendes Phosphor-Weiß/Grün (`#f0f6f0`) auf tiefschwarzem CRT-Glas (`#050605`) mit Phosphor-Bloom (`text-shadow: 0 0 8px rgba(240,255,240,0.6)`). |
 | **7. `diegetic-ui-sans`**<br>*(Neutrale System-Grotesk)* | - **NUR** für nachgebaute moderne Software-UIs (Prompt-Suchleisten, `Generate`-Buttons, Fiverr-Chat-Bubbles) und trockene 1-Satz-Roboter-Sprechblasen (`Kein Plan, lol.`) | `sheet_007.jpg` (`06:28`)<br>`sheet_009.jpg` (`09:00`)<br>`sheet_014.jpg` (`13:52`) | **`Inter`** oder **`DM Sans`** | - Sauber, schmucklos (`400` für Eingabetext, `600` für Buttons).<br>- **STRENG VERBOTEN** für Überschriften, Thesen, Kapitel oder Zitate! |
+| **8. `historical-fraktur`**<br>*(Historische Dokumente & Erlasse)* | - Kaiserliche/Historische Erlasse, Urkunden, Gesetzestexte des 19. Jh. und dramatische historische Zäsuren | Archiv-Referenz | **`UnifrakturMaguntia`** (lokal im Repo) | - Historische Fraktur mit Ligaturen, warmes Papierweiß/Elfenbein mit Tiefschatten (`0 2px 6px rgba(0,0,0,0.85)`). |
+
+> **Permanente Font-Vorlagen im Repo (`editorial/remotion/shared/fonts/` & `editorial/public/fonts/`):**
+> Alle 16 Schriftfamilien (28 TTF-Dateien) liegen vollständig lokal im Repository vor (`catalog.json` und `fonts.css`). Kein FOUC, kein Nachladen, 100 % offline-fähig für Remotion, Manim, HyperFrames und GSAP.
 
 ---
 

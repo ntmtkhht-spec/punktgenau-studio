@@ -1,0 +1,479 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "Punktgenau & Editorial Studio Font Catalog",
+  "description": "Permanente Sammlung von kuratierten, ästhetischen Open-Source-Schriften (100% offline-fähig, SIL OFL & Apache 2.0).",
+  "version": "1.0.0",
+  "totalFonts": 28,
+  "roles": [
+    "editorial-didone",
+    "tall-condensed-serif",
+    "heavy-plakat-grotesk",
+    "literary-book-serif",
+    "typewriter-archival",
+    "retro-crt-terminal",
+    "diegetic-ui-sans",
+    "historical-fraktur"
+  ],
+  "fonts": [
+    {
+      "family": "Playfair Display",
+      "role": "editorial-didone",
+      "file": "PlayfairDisplay[wght].ttf",
+      "format": "truetype",
+      "weight": "400 900",
+      "style": "normal",
+      "variable": true,
+      "designer": "Claus Eggers Sørensen",
+      "license": "OFL-1.1",
+      "description": "Iconic high-contrast Didone serif with transitional ball terminals and sharp serifs. The primary title and thesis typeface of the channel.",
+      "recommendedFor": [
+        "Kapitel-Titel",
+        "Thesen-Fragen",
+        "Philosophische Kernaussagen",
+        "Figuren-Rollen"
+      ]
+    },
+    {
+      "family": "Playfair Display",
+      "role": "editorial-didone",
+      "file": "PlayfairDisplay-Italic[wght].ttf",
+      "format": "truetype",
+      "weight": "400 900",
+      "style": "italic",
+      "variable": true,
+      "designer": "Claus Eggers Sørensen",
+      "license": "OFL-1.1",
+      "description": "Calligraphic Didone italic for kicker dachzeilen, philosophical emphasis, and elegant thesis sublines.",
+      "recommendedFor": [
+        "Dachzeilen über Blockschriften",
+        "Akzentwörter",
+        "Elegante Thesen-Sublines"
+      ]
+    },
+    {
+      "family": "Bodoni Moda",
+      "role": "editorial-didone",
+      "file": "BodoniModa[opsz,wght].ttf",
+      "format": "truetype",
+      "weight": "400 900",
+      "style": "normal",
+      "variable": true,
+      "designer": "Owen Earl, Indestructible Type",
+      "license": "OFL-1.1",
+      "description": "Ultra-refined digital revival of Giambattista Bodoni (Parma, 1798). Extreme thick-to-thin contrast, flat unbracketed serifs.",
+      "recommendedFor": [
+        "Monumentale Hero-Titel",
+        "Großformatige Jahreszahlen",
+        "High-Fashion & Kultur-Essays"
+      ]
+    },
+    {
+      "family": "Bodoni Moda",
+      "role": "editorial-didone",
+      "file": "BodoniModa-Italic[opsz,wght].ttf",
+      "format": "truetype",
+      "weight": "400 900",
+      "style": "italic",
+      "variable": true,
+      "designer": "Owen Earl, Indestructible Type",
+      "license": "OFL-1.1",
+      "description": "Dramatic Italian Bodoni cursive with hairline swashes and extreme modulation.",
+      "recommendedFor": [
+        "Hero-Kursiven",
+        "Historische Einleitungen"
+      ]
+    },
+    {
+      "family": "Instrument Serif",
+      "role": "tall-condensed-serif",
+      "file": "InstrumentSerif-Regular.ttf",
+      "format": "truetype",
+      "weight": "400",
+      "style": "normal",
+      "variable": false,
+      "designer": "Rodrigo Fuenzalida, Jordan Runge (Instrument)",
+      "license": "OFL-1.1",
+      "description": "Ultra-aesthetic, slender transitional display serif with narrow proportions and delicate, razor-sharp terminals. Modern editorial darling.",
+      "recommendedFor": [
+        "Monumentale Raum-Leitmotive",
+        "Große Schlagworte mit 3D-Schatten",
+        "Vertikale Text-Säulen"
+      ]
+    },
+    {
+      "family": "Instrument Serif",
+      "role": "tall-condensed-serif",
+      "file": "InstrumentSerif-Italic.ttf",
+      "format": "truetype",
+      "weight": "400",
+      "style": "italic",
+      "variable": false,
+      "designer": "Rodrigo Fuenzalida, Jordan Runge (Instrument)",
+      "license": "OFL-1.1",
+      "description": "Fast, sharp editorial italic with razor-thin hairline strokes and graceful rhythm.",
+      "recommendedFor": [
+        "Geneigte Raum-Statements (-6°)",
+        "Dramatische Pointen"
+      ]
+    },
+    {
+      "family": "DM Serif Display",
+      "role": "tall-condensed-serif",
+      "file": "DMSerifDisplay-Regular.ttf",
+      "format": "truetype",
+      "weight": "400",
+      "style": "normal",
+      "variable": false,
+      "designer": "Colophon Foundry",
+      "license": "OFL-1.1",
+      "description": "High-contrast transitional display serif with robust sculptural brackets and punchy editorial presence.",
+      "recommendedFor": [
+        "Stempel-Worte (TALENT vs ARBEIT)",
+        "Große Zahlenkombinationen"
+      ]
+    },
+    {
+      "family": "DM Serif Display",
+      "role": "tall-condensed-serif",
+      "file": "DMSerifDisplay-Italic.ttf",
+      "format": "truetype",
+      "weight": "400",
+      "style": "italic",
+      "variable": false,
+      "designer": "Colophon Foundry",
+      "license": "OFL-1.1",
+      "description": "Expressive display italic with organic drop terminals.",
+      "recommendedFor": [
+        "Akzentuierte Schlagworte im Raum"
+      ]
+    },
+    {
+      "family": "Cinzel",
+      "role": "tall-condensed-serif",
+      "file": "Cinzel[wght].ttf",
+      "format": "truetype",
+      "weight": "400 900",
+      "style": "normal",
+      "variable": true,
+      "designer": "Natanael Gama",
+      "license": "OFL-1.1",
+      "description": "Classical Roman inscriptional capitals inspired by 1st-century monumental stone epigraphy.",
+      "recommendedFor": [
+        "Epochen-Titel",
+        "Monumentale Römische Kapitelziffern",
+        "Institutionelle Mahnmale"
+      ]
+    },
+    {
+      "family": "Anton",
+      "role": "heavy-plakat-grotesk",
+      "file": "Anton-Regular.ttf",
+      "format": "truetype",
+      "weight": "400",
+      "style": "normal",
+      "variable": false,
+      "designer": "Vernon Adams",
+      "license": "OFL-1.1",
+      "description": "Rethought traditional German advertising wood-type display grotesque with immense stroke weight and dense geometry.",
+      "recommendedFor": [
+        "Hype-Begriffe in Sprechblasen",
+        "3D-Block-Extrusion",
+        "Laute Slogans"
+      ]
+    },
+    {
+      "family": "Bebas Neue",
+      "role": "heavy-plakat-grotesk",
+      "file": "BebasNeue-Regular.ttf",
+      "format": "truetype",
+      "weight": "400",
+      "style": "normal",
+      "variable": false,
+      "designer": "Ryoichi Tsunekawa (Dharma Type)",
+      "license": "OFL-1.1",
+      "description": "Tall, condensed all-caps headline sans with clean geometric punch and compact line heights.",
+      "recommendedFor": [
+        "Kompakte Banner",
+        "Extrudierte Vertikal-Titel",
+        "Plakative Vergleiche"
+      ]
+    },
+    {
+      "family": "Rubik",
+      "role": "heavy-plakat-grotesk",
+      "file": "Rubik[wght].ttf",
+      "format": "truetype",
+      "weight": "300 900",
+      "style": "normal",
+      "variable": true,
+      "designer": "Hubert and Fischer, Meir Sadan, Cyreal",
+      "license": "OFL-1.1",
+      "description": "Slightly rounded stout sans-serif with massive heavy weights (800-900). Perfect for high-contrast thumbnails.",
+      "recommendedFor": [
+        "YouTube-Thumbnails (minFontPx >= 110)",
+        "Kurze, knallige Stopp-Worte"
+      ]
+    },
+    {
+      "family": "Rubik",
+      "role": "heavy-plakat-grotesk",
+      "file": "Rubik-Italic[wght].ttf",
+      "format": "truetype",
+      "weight": "300 900",
+      "style": "italic",
+      "variable": true,
+      "designer": "Hubert and Fischer, Meir Sadan, Cyreal",
+      "license": "OFL-1.1",
+      "description": "Dynamic slanted cut of Rubik for punchy thumbnail action titles.",
+      "recommendedFor": [
+        "Dynamische Thumbnail-Worte"
+      ]
+    },
+    {
+      "family": "Cormorant Garamond",
+      "role": "literary-book-serif",
+      "file": "CormorantGaramond[wght].ttf",
+      "format": "truetype",
+      "weight": "300 700",
+      "style": "normal",
+      "variable": true,
+      "designer": "Christian Thalmann (Catharsis Fonts)",
+      "license": "OFL-1.1",
+      "description": "Masterful French Renaissance revival of Claude Garamond (16th c.). Razor-sharp, organic, aristocratic elegance.",
+      "recommendedFor": [
+        "Wörtliche Buchzitate",
+        "Quellenangaben unter Bilderrahmen",
+        "Sprechblasen-Dialoge"
+      ]
+    },
+    {
+      "family": "Cormorant Garamond",
+      "role": "literary-book-serif",
+      "file": "CormorantGaramond-Italic[wght].ttf",
+      "format": "truetype",
+      "weight": "300 700",
+      "style": "italic",
+      "variable": true,
+      "designer": "Christian Thalmann (Catharsis Fonts)",
+      "license": "OFL-1.1",
+      "description": "Exquisite calligraphic Garamond italic for voiceover-synchronized literary text and paper clippings.",
+      "recommendedFor": [
+        "Wort-synchrone Zitate auf Tapete",
+        "Philosophische Reflexionen"
+      ]
+    },
+    {
+      "family": "Fraunces",
+      "role": "literary-book-serif",
+      "file": "Fraunces[SOFT,WONK,opsz,wght].ttf",
+      "format": "truetype",
+      "weight": "100 900",
+      "style": "normal",
+      "variable": true,
+      "designer": "Phaedra Charles, Flavia Zimbardi (Undercase Type)",
+      "license": "OFL-1.1",
+      "description": "Warm, expressive, fleshy Old Style serif inspired by early 20th-century book typography and Windsor/Cooper styles.",
+      "recommendedFor": [
+        "Kultur-Essays",
+        "Menschliche, intime Zitate",
+        "Story-Einstiege"
+      ]
+    },
+    {
+      "family": "Fraunces",
+      "role": "literary-book-serif",
+      "file": "Fraunces-Italic[SOFT,WONK,opsz,wght].ttf",
+      "format": "truetype",
+      "weight": "100 900",
+      "style": "italic",
+      "variable": true,
+      "designer": "Phaedra Charles, Flavia Zimbardi (Undercase Type)",
+      "license": "OFL-1.1",
+      "description": "Playful yet sophisticated literary cursive with tactile bookish character.",
+      "recommendedFor": [
+        "Gedichte",
+        "Handschrift-nahe Passagen"
+      ]
+    },
+    {
+      "family": "Special Elite",
+      "role": "typewriter-archival",
+      "file": "SpecialElite-Regular.ttf",
+      "format": "truetype",
+      "weight": "400",
+      "style": "normal",
+      "variable": false,
+      "designer": "Astigmatic (Brian J. Bonislawsky)",
+      "license": "Apache-2.0",
+      "description": "Gritty, authentic vintage mechanical typewriter with ink-bleed and worn hammer key impressions (Remington/Smith Corona).",
+      "recommendedFor": [
+        "Historische Zitate auf Zeitungsschnipseln",
+        "Alte Aktenvermerke",
+        "Redigierte Dokumente"
+      ]
+    },
+    {
+      "family": "Courier Prime",
+      "role": "typewriter-archival",
+      "file": "CourierPrime-Regular.ttf",
+      "format": "truetype",
+      "weight": "400",
+      "style": "normal",
+      "variable": false,
+      "designer": "Alan Dague-Greene (Quote-Unquote Apps)",
+      "license": "OFL-1.1",
+      "description": "The definitive cinema/screenplay monospaced typewriter font. Crisp, perfectly balanced strike.",
+      "recommendedFor": [
+        "Offizielle Gutachten",
+        "Manuskripte",
+        "Gerichtsprotokolle"
+      ]
+    },
+    {
+      "family": "Courier Prime",
+      "role": "typewriter-archival",
+      "file": "CourierPrime-Italic.ttf",
+      "format": "truetype",
+      "weight": "400",
+      "style": "italic",
+      "variable": false,
+      "designer": "Alan Dague-Greene (Quote-Unquote Apps)",
+      "license": "OFL-1.1",
+      "description": "True slanted mechanical typewriter cut for annotated archival records.",
+      "recommendedFor": [
+        "Handschriftliche Randnotizen auf Akten"
+      ]
+    },
+    {
+      "family": "Courier Prime",
+      "role": "typewriter-archival",
+      "file": "CourierPrime-Bold.ttf",
+      "format": "truetype",
+      "weight": "700",
+      "style": "normal",
+      "variable": false,
+      "designer": "Alan Dague-Greene (Quote-Unquote Apps)",
+      "license": "OFL-1.1",
+      "description": "Heavy ink-carbon copy typewriter stroke for stamped headings.",
+      "recommendedFor": [
+        "Gestempelte Akten-Kennungen (STRENG GEHEIM)"
+      ]
+    },
+    {
+      "family": "VT323",
+      "role": "retro-crt-terminal",
+      "file": "VT323-Regular.ttf",
+      "format": "truetype",
+      "weight": "400",
+      "style": "normal",
+      "variable": false,
+      "designer": "Peter Hull",
+      "license": "OFL-1.1",
+      "description": "Authentic 1982 DEC VT220 / VT320 raster terminal font. True glowing green/amber phosphor pixel matrix.",
+      "recommendedFor": [
+        "CRT-Monitore",
+        "Frühe KI (ELIZA 1966, Deep Blue Terminal)",
+        "ASCII-Banner"
+      ]
+    },
+    {
+      "family": "IBM Plex Mono",
+      "role": "retro-crt-terminal",
+      "file": "IBMPlexMono-Regular.ttf",
+      "format": "truetype",
+      "weight": "400",
+      "style": "normal",
+      "variable": false,
+      "designer": "Mike Abbink, Bold Monday (IBM)",
+      "license": "OFL-1.1",
+      "description": "Engineered corporate monospace font capturing the spirit of IBM mainframes, Selectric typewriters, and technical blueprints.",
+      "recommendedFor": [
+        "Algorithmen & Quelltext",
+        "Daten-Diagramme",
+        "Technische Datenblätter"
+      ]
+    },
+    {
+      "family": "IBM Plex Mono",
+      "role": "retro-crt-terminal",
+      "file": "IBMPlexMono-Bold.ttf",
+      "format": "truetype",
+      "weight": "700",
+      "style": "normal",
+      "variable": false,
+      "designer": "Mike Abbink, Bold Monday (IBM)",
+      "license": "OFL-1.1",
+      "description": "Bold engineered monospace for emphasized code syntax and terminal error messages.",
+      "recommendedFor": [
+        "Terminal-Fehlercodes",
+        "Fett gesetzte Parameter"
+      ]
+    },
+    {
+      "family": "IBM Plex Mono",
+      "role": "retro-crt-terminal",
+      "file": "IBMPlexMono-Italic.ttf",
+      "format": "truetype",
+      "weight": "400",
+      "style": "italic",
+      "variable": false,
+      "designer": "Mike Abbink, Bold Monday (IBM)",
+      "license": "OFL-1.1",
+      "description": "Technical monospaced italic for code comments and scientific annotations.",
+      "recommendedFor": [
+        "Code-Kommentare",
+        "Variablen in Formeln"
+      ]
+    },
+    {
+      "family": "Inter",
+      "role": "diegetic-ui-sans",
+      "file": "Inter[opsz,wght].ttf",
+      "format": "truetype",
+      "weight": "100 900",
+      "style": "normal",
+      "variable": true,
+      "designer": "Rasmus Andersson",
+      "license": "OFL-1.1",
+      "description": "Precision engineered UI sans-serif designed for high legibility on computer screens. ONLY for diegetic apps and software interfaces.",
+      "recommendedFor": [
+        "Suchfelder & Prompts (ChatGPT, Midjourney)",
+        "Buttons & Menüs",
+        "Fiverr/Chat-Bubbles"
+      ]
+    },
+    {
+      "family": "Inter",
+      "role": "diegetic-ui-sans",
+      "file": "Inter-Italic[opsz,wght].ttf",
+      "format": "truetype",
+      "weight": "100 900",
+      "style": "italic",
+      "variable": true,
+      "designer": "Rasmus Andersson",
+      "license": "OFL-1.1",
+      "description": "Interface italic for placeholder text in prompt inputs.",
+      "recommendedFor": [
+        "Placeholder-Texte in Prompts",
+        "UI-Tooltips"
+      ]
+    },
+    {
+      "family": "UnifrakturMaguntia",
+      "role": "historical-fraktur",
+      "file": "UnifrakturMaguntia-Book.ttf",
+      "format": "truetype",
+      "weight": "400",
+      "style": "normal",
+      "variable": false,
+      "designer": "J. 'Mach' Wust",
+      "license": "OFL-1.1",
+      "description": "Historical German Fraktur based on Peter Schöffer's Mainz types (15th/16th c.) with ligature support. Perfect for German archival citations, decrees, and old printings.",
+      "recommendedFor": [
+        "Historische Kaiser-/Reichs-Erlasse",
+        "19. Jh. Gesetzestexte",
+        "Dramatischer deutscher Epochen-Kontrast"
+      ]
+    }
+  ]
+}

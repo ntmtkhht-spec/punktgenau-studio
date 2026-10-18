@@ -8,10 +8,14 @@ Selbst bauen ist **erlaubt und oft richtig** – eingegrenzt, nicht verboten:
 
 | Darf selbst gebaut werden | Muss geladen werden |
 |---|---|
-| Tapeten und Muster (`tapete`, `source: "prozedural"`), Diagramme mit belegten Daten, Pfeile, Rahmen, Sprechblasen, UI-Nachbauten, 3D-Requisiten, Formeln/Graphen, einfache Illustrationen (`eigene-grafik` mit `reason`) | **Logos und Marken – immer, ohne Ausnahme** (`logo-icon`, SimpleIcons/Wikimedia/media-use). Selbst gezeichnete Logos sehen falsch aus; `check` lehnt `eigene-grafik` mit „Logo/Marke/Brand“ ab. |
-| | Echte Werke, Fotos, Buchcover, historische Dokumente (`archiv-werk`) – nie nachbauen oder generieren, weil sie als echt gezeigt werden. |
+| Diagramme mit belegten Daten, Pfeile, Rahmen, Sprechblasen, UI-Nachbauten, 3D-Requisiten, Formeln/Graphen, einfache Illustrationen (`eigene-grafik` mit `reason`) | **Logos und Marken – immer, ohne Ausnahme** (`logo-icon`, SimpleIcons/Wikimedia/media-use). Selbst gezeichnete Logos sehen falsch aus; `check` lehnt `eigene-grafik` mit „Logo/Marke/Brand“ ab. |
+| | **Echte Werke, Fotos, Buchcover, historische Dokumente** (`archiv-werk`) – nie nachbauen oder generieren, weil sie als echt gezeigt werden. |
+| | **Hintergrund-Tapeten & Texturen** (`tapete`) – **NIEMALS per Hand prozedural zeichnen und NIEMALS per KI generieren!** Tapeten müssen echte, hochauflösende Scans historischer Textilmuster, Holzstiche, Radierungen oder Museums-Tapeten (z. B. Met, Victoria and Albert Museum, NGA, Rijksmuseum) sein. |
 
-Faustregel für alles andere: Wenn eine einfache, saubere Form reicht, selbst bauen. Wenn es realistisch aussehen muss (Gesichter, Hände, Tiere, Fotos), lieber ein echtes Asset laden – der Agent entscheidet und begründet das in `reason`.
+> **Korrektur-Notiz & Regelhistorie (Warum anfangs prozedurale SVGs verwendet wurden):**  
+> In der ersten Entwicklungsstufe wurden in `Wallpaper.tsx` vier einfache SVG-Pfad-Generatoren (`MotifTile`) als schneller Platzhalter-Fallback eingesetzt. Dies verletzte das Ultralativ-Reinheitsgebot: Die Hintergründe wirkten flach, künstlich und wie KI-/Synthetik-Muster. Alle prozeduralen SVG-Tapeten wurden daher aus dem Repo gelöscht und durch echte gemeinfreie Digitalisate in `editorial/remotion/shared/wallpapers/` ersetzt.
+
+Faustregel für alles andere: Wenn eine einfache, saubere Form reicht, selbst bauen. Wenn es realistisch aussehen muss (Gesichter, Hände, Tiere, Fotos, historische Texturen), zwingend ein echtes Asset laden – der Agent entscheidet und begründet das in `reason`.
 
 ## Suchen und laden: `npm run ed -- assets <slug>` (Pflicht in Phase 4)
 
@@ -27,9 +31,9 @@ Jedes sichtbare Element gehört zu genau einer Klasse:
 
 | `class` | Was | Woher, wie | Pflichtfelder |
 |---|---|---|---|
-| `archiv-werk` | Gemälde, Archivfotos, Buchcover, Partituren | Suche über **Wikimedia Commons / Wikipedia / Openverse API** per Skript. Nur echte Werke; Lizenz egal, wird aber festgehalten. Unter jedem Rahmen die Quellenzeile in `literary-book-serif` (z. B. „Caspar David Friedrich, ca. 1818“). | `license` (Text aus der Quelle, nur Protokoll), `caption`, `manifestId` |
+| `archiv-werk` | Gemälde, Archivfotos, Buchcover, Partituren | Suche über **Wikimedia Commons / Wikipedia / Openverse API** per Skript. Nur echte Werke; Lizenz egal, wird aber festgehalten. Unter jedem Rahmen die Quellenzeile in `literary-book-serif` (z. B. „Caspar David Friedrich, ca. 1818“). Rahmen muss ein physisch plastischer Museums-Prunkrahmen sein (`FramedArtwork.tsx`). | `license` (Text aus der Quelle, nur Protokoll), `caption`, `manifestId` |
 | `logo-icon` | Marken-Logos, Symbol-Icons | **Nie von Hand zeichnen.** Logos: `npx hyperframes media-use resolve --type logo --entity <name>`, SimpleIcons oder Wikimedia-SVG. Icons: media-use `--type icon`, Lucide, Tabler oder Kenney. Einheitlich gestylt: cremeweiße/farbige Fläche + `drop-shadow(0 8px 16px rgba(0,0,0,0.45))`. | `source` (`simpleicons`, `wikimedia`, `media-use`, `lucide`, `tabler`, `kenney`), `manifestId` |
-| `tapete` | Ornament-Tapete, Oberfläche | Nahtlos kachelbar (`remotion/shared/Wallpaper.tsx`), Papierkorn + Vignette, zwei Zustände: These (farbig) und Kritik (Anthrazit). Keine Stock-Fotos. | `wallpaper` der Szene gesetzt |
+| `tapete` | Authentische historische Tapete / Oberfläche | **Keine KI-Generierung, keine prozeduralen SVGs.** Echte Museums-Digitalisate (`remotion/shared/wallpapers/`), kombiniert mit Film-/Papierkorn + Vignette/Lichtregie. Zwei kalibrierte Zustände: These (farbig getönt) und Kritik (Anthrazit `#383838`, $Y \approx 55\text{--}70$). | `wallpaper` der Szene gesetzt |
 | `zitat-ui` | Zitate, Buchauszüge, UI-Nachbauten | `kind: "zitat"`: **wortwörtlich** aus echter Quelle mit Seite/Jahr, auf Papierzettel oder neben dem Buch. `kind: "ui"`: Suchleiste, Button, Terminal, Chat als **scharfe DOM-/Vektor-Komponente** (`build: "dom"`), nie als Screenshot, damit Wörter auf die Stimme einrasten. | `kind`; bei Zitat `quoteSource`, bei UI `build: "dom"` |
 | `3d-requisite` | Schachfiguren, Meeples, Bücher, Staffelei, Roboter | Parametrische Three.js-Geometrie (`LatheGeometry`, `ExtrudeGeometry`) mit `MeshToonMaterial` + Papierkorn oder geprüftes CC0-GLB. Kein Plastikglanz, keine harten Glanzlichter. | `source` (`three-parametric`, `cc0-glb`) |
 

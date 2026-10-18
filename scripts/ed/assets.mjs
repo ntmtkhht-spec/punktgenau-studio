@@ -4,7 +4,7 @@ import {existsSync, mkdirSync, readFileSync, writeFileSync} from 'node:fs';
 import {extname, join} from 'node:path';
 
 const UA = 'editorial-video-pipeline/1.0 (asset search)';
-const SIMPLE_ICONS = 'https://cdn.jsdelivr.net/npm/simple-icons@13.21.0/icons';
+const SIMPLE_ICONS = 'https://cdn.jsdelivr.net/npm/simple-icons@latest/icons';
 const MAX_WIDTH = 2400;
 
 const getJson = async (url) => {

@@ -23,13 +23,19 @@ manim-scenes/media/
 manim-scenes/__pycache__/
 manim-scenes/.venv/
 .scratch/
+**/__pycache__/
+research/reference-*
 
-# Editorial-Pipeline: Renderausgaben
+# Editorial-Pipeline: Renderausgaben & Testprojekte
 editorial/projects/*/clips/
 editorial/projects/*/export/
 editorial/projects/*/audit/
 editorial/projects/*/.work/
 editorial/projects/*/assets/
 editorial/projects/*/thumbnail/
+editorial/projects/02-deep-blue/
+editorial/public/assets/
+remotion-shorts/public/09-exponentiell-gewinnt/
 videos/*/thumbnail/
 videos/_source/
+/videos/

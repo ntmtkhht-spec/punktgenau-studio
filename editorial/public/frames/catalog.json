@@ -1,0 +1,36 @@
+{
+  "version": "1.0",
+  "reinheitsgebot": "Photorealistische Museums-Profilrahmen und historische Original-Prunkrahmen mit transparentem Bildausschnitt. 0% flache CSS-Verläufe.",
+  "frames": {
+    "gold_klassisch": {
+      "file": "gold_klassisch.png",
+      "format": "2048x2048 PNG (transparenter Bildausschnitt)",
+      "stil": "Klassische Galerie-Goldleiste (wie Ultralativ frame_0055.jpg)",
+      "merkmale": "Mehrstufiges Kehlprofil, Wulst mit Glanzlicht, 45°-Gehrungsfugen, Lichtfall von oben links, Falz-Schatten.",
+      "anwendung": "Standard für Kunstwerke, Bildvergleiche, historische Gemälde."
+    },
+    "silber_antik": {
+      "file": "silber_antik.png",
+      "format": "2048x2048 PNG (transparenter Bildausschnitt)",
+      "stil": "Antikes Silber- / Zinn-Profil (wie Ultralativ frame_0120.jpg)",
+      "merkmale": "Dezente metallische Eleganz, profilierte Kehle, dunkler Falz.",
+      "anwendung": "Kritik-Szenen, nüchterne Analysen, Porträts aus dem 18./19. Jahrhundert."
+    },
+    "holz_dunkel": {
+      "file": "holz_dunkel.png",
+      "format": "2048x2048 PNG (transparenter Bildausschnitt)",
+      "stil": "Dunkles Mahagoni / Nussbaum mit Blattgold-Sichtleiste",
+      "merkmale": "Tiefe Holzlasur, feines Goldinlay am Innenrand.",
+      "anwendung": "Historische Dokumente, Stiche, Radierungen, feierliche Exponate."
+    },
+    "david_gold": {
+      "file": "david_gold.png",
+      "format": "2111x2393 PNG (transparenter Bildausschnitt)",
+      "stil": "Französischer Empire-Prunkrahmen (1824)",
+      "quelle": "Jacques-Louis David (Marte disarmato da Venere, Brüssel, Königliche Museen)",
+      "lizenz": "Public Domain",
+      "merkmale": "Handgeschnitzte Palmetten, Rosetten-Medaillons, authentische Blattgold-Patinierung.",
+      "anwendung": "Große Meisterwerke, feierliche Höhepunkte, prachtvolle Museumspräsentationen."
+    }
+  }
+}
