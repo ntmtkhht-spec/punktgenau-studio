@@ -10,6 +10,8 @@ const ROOT = resolve(dirname(fileURLToPath(import.meta.url)), '..', '..');
 export const EDITORIAL = join(ROOT, 'editorial');
 const MANIM_DIR = join(ROOT, 'manim-scenes');
 const MANIM_PY = join(MANIM_DIR, '.venv', process.platform === 'win32' ? 'Scripts/python.exe' : 'bin/python');
+// Blender: BLENDER_EXE setzen oder Standard-Installation unter Windows bzw. blender im PATH.
+const BLENDER = process.env.BLENDER_EXE ?? (process.platform === 'win32' ? 'C:/Program Files/Blender Foundation/Blender 5.1/blender.exe' : 'blender');
 const MIKTEX_BIN = join(homedir(), 'scoop', 'apps', 'miktex', 'current', 'texmfs', 'install', 'miktex', 'bin', 'x64');
 
 const quote = (a) => (/[\s"]/.test(a) ? `"${a.replaceAll('"', '\\"')}"` : a);
@@ -106,11 +108,28 @@ const renderManim = (sb, scene, work, projectDir) => {
   return out;
 };
 
+/** Blender-Skript rendert PNG mit Alpha (Konvention: `-- <ausgabe-ordner>`, ED_WIDTH/ED_HEIGHT/ED_DURATION). */
+const renderBlender = (sb, scene, work, projectDir) => {
+  if (process.platform === 'win32' && !process.env.BLENDER_EXE && !existsSync(BLENDER)) throw new Error(`Blender fehlt: ${BLENDER} (oder BLENDER_EXE setzen)`);
+  const {width, height} = FORMATS[sb.format];
+  const frames = join(work, `blender-${scene.id}`);
+  rmSync(frames, {recursive: true, force: true});
+  // ED_PREVIEW=1: Zwischenstand in halber Aufloesung (wird danach auf das Format hochskaliert), Full HD nur fuer den finalen Clip.
+  const k = process.env.ED_PREVIEW ? 0.5 : 1;
+  const env = {...process.env, ED_WIDTH: String(Math.round(width * k)), ED_HEIGHT: String(Math.round(height * k)), ED_DURATION: String(scene.durationSec)};
+  run(BLENDER, ['-b', '-P', join(projectDir, scene.blender.file), '--', frames], {env});
+  const bg = renderWallpaperVideo(sb, scene, work);
+  const out = join(work, `${scene.id}-raw.mp4`);
+  ffmpeg(['-i', bg, '-framerate', String(FPS), '-start_number', '0', '-i', join(frames, 'f%04d.png'), '-filter_complex', `[1:v]scale=${width}:${height}[fg];[0:v][fg]overlay=0:0:shortest=0:eof_action=repeat[v]`, '-map', '[v]', '-t', String(scene.durationSec), '-c:v', 'libx264', '-crf', '14', '-pix_fmt', 'yuv420p', out]);
+  return out;
+};
+
 const RENDERERS = {
   'remotion-three': renderRemotion,
   'remotion-dom': renderRemotion,
   'hyperframes-gsap': renderHyperframes,
   'manim-python': renderManim,
+  'blender-python': renderBlender,
 };
 
 /** Rendert eine Szene nach clips/<id>.mp4 (Format, 30 fps, exakte Dauer, ohne Ton). */

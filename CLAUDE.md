@@ -77,7 +77,8 @@ Neue Videos immer mit dem Skill `/punktgenau-short` erstellen (Ablauf in Phasen,
 ## Editorial-Stil (zweiter Kanal)
 - Eigener Skill `/editorial-video`, eigener Ordner `editorial/` (Remotion-Projekt, `projects/<slug>/`), Werkzeug `npm run ed -- …` aus `editorial/`. Punktgenau-Regeln (Punktraster, flach, Inter, nur Remotion) gelten dort **nicht**; Punktgenau-Dateien nicht anfassen.
 - Pro Video wählbar: `16x9` (1920×1080) oder `9x16` (1080×1920).
-- Pro Szene entscheidet und begründet das Storyboard Archetyp, 2D/2.5D/3D, Tapete + Licht-Modus, Charaktere, Schrift-Rollen (Skill `editorial-typography`) und das Tool (`remotion-three`, `remotion-dom`, `hyperframes-gsap`, `manim-python`). `npm run ed -- check` erzwingt die Pflichtfelder.
+- Pro Szene entscheidet und begründet das Storyboard Archetyp, 2D/2.5D/3D, Tapete + Licht-Modus, Charaktere, Schrift-Rollen (Skill `editorial-typography`) und das Tool (`remotion-three`, `remotion-dom`, `hyperframes-gsap`, `manim-python`, `blender-python`). `npm run ed -- check` erzwingt die Pflichtfelder.
 - HyperFrames und Manim sind hier reguläre Werkzeuge – aber nur mit technischer Begründung pro Szene, nicht aus Gewohnheit.
 - Thumbnails nach `/thumbnail-design` (Modus B): 3 Konzepte in `thumbnail-plan.json`, dann `npm run ed -- thumbnail <slug>` (Feed-Test + Audit).
+- Blender (`blender-python`) für fotorealistische Hero-Objekte; Toon-Dioramen bleiben in `remotion-three`.
 - Manim läuft aus `manim-scenes/.venv` (uv, Python 3.13) mit MiKTeX; `ed` setzt den Pfad selbst.

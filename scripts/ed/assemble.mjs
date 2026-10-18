@@ -11,8 +11,9 @@ export const totalDuration = (scenes) =>
   scenes.reduce((sum, s, i) => sum + s.durationSec - (i < scenes.length - 1 ? overlapOf(s) : 0), 0);
 
 const videoGraph = (scenes) => {
-  const parts = [];
-  let prev = '[0:v]';
+  // Jeden Clip auf gleiche Zeitbasis, Bildrate und Pixelformat bringen – sonst bricht xfade bei gemischten Quellen ab.
+  const parts = scenes.map((_, i) => `[${i}:v]settb=AVTB,fps=${FPS},format=yuv420p,setsar=1[n${i}]`);
+  let prev = '[n0]';
   let offset = 0;
   scenes.slice(0, -1).forEach((s, i) => {
     const name = TRANSITIONS[s.transition.type];
@@ -21,7 +22,7 @@ const videoGraph = (scenes) => {
     const out = `[v${i + 1}]`;
     // Harter Schnitt = xfade ueber genau ein Frame, damit die Kette einheitlich bleibt.
     const xf = `xfade=transition=${name && s.transition.durationSec > 0 ? name : 'fade'}:duration=${d.toFixed(4)}:offset=${offset.toFixed(4)}`;
-    parts.push(`${prev}[${i + 1}:v]${xf}${out}`);
+    parts.push(`${prev}[n${i + 1}]${xf}${out}`);
     prev = out;
   });
   return {graph: parts.join(';'), last: prev};

@@ -15,7 +15,7 @@ export const ARCHETYPES = [
   'math-simulation-graph',
 ];
 export const DIMENSIONS = ['2D', '2.5D', '3D'];
-export const TOOLS = ['remotion-three', 'remotion-dom', 'hyperframes-gsap', 'manim-python'];
+export const TOOLS = ['remotion-three', 'remotion-dom', 'hyperframes-gsap', 'manim-python', 'blender-python'];
 export const CHARACTERS = ['keine', 'meeple', 'roboter', 'portraet', 'silhouetten-publikum', 'panel-figur'];
 export const MOTIFS = ['damast', 'arkaden', 'blaetter', 'birken', 'botanisch', 'farne', 'urne'];
 export const MODES = ['these', 'kritik'];
@@ -139,6 +139,10 @@ const checkScene = (s, i, projectDir) => {
     if (!/^[A-Z][A-Za-z0-9]*$/.test(s.manim?.class ?? '')) errs.push(at('manim.class fehlt'));
     if (!w) errs.push(at('manim-python braucht eine wallpaper (transparentes Overlay)'));
   }
+  if (s.tool === 'blender-python') {
+    if (!existsSync(join(projectDir, s.blender?.file ?? '-'))) errs.push(at(`blender.file ${s.blender?.file} nicht gefunden`));
+    if (!w) errs.push(at('blender-python braucht eine wallpaper (transparentes Overlay)'));
+  }
   return errs;
 };
 
@@ -172,7 +176,7 @@ const checkManifest = (sb, projectDir) => {
 const scanSceneFiles = (sb, projectDir) => {
   const errs = [];
   for (const s of sb.scenes) {
-    const f = s.tool === 'hyperframes-gsap' ? join(projectDir, s.html ?? '-', 'index.html') : s.tool === 'manim-python' ? join(projectDir, s.manim?.file ?? '-') : null;
+    const f = s.tool === 'hyperframes-gsap' ? join(projectDir, s.html ?? '-', 'index.html') : s.tool === 'manim-python' ? join(projectDir, s.manim?.file ?? '-') : s.tool === 'blender-python' ? join(projectDir, s.blender?.file ?? '-') : null;
     if (!f || !existsSync(f)) continue;
     const src = readFileSync(f, 'utf8');
     if (EMOJI.test(src)) errs.push(`Szene ${s.id}: Emoji im Quelltext`);

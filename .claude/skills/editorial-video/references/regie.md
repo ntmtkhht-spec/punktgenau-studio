@@ -21,9 +21,10 @@ Zwei aufeinanderfolgende Szenen mit gleichem Archetyp nur, wenn der Gedanke weit
 Frage in dieser Reihenfolge, erste passende Antwort gewinnt:
 
 1. **Exakte Mathematik** (LaTeX-Formel, Funktionsgraph, Vektorfeld, Gleichungsumformung)? → `manim-python`. Wird transparent über die Remotion-Tapete gelegt.
-2. **Echter Raum** (Perspektive, Kamera im 3D-Raum, Licht/Schatten auf Objekten, viele Objekte in Tiefe, Ebenen im Raum)? → `remotion-three`.
-3. **HTML-typische Effekte** (CSS-Scanlines/Glow, Tipp-Effekte, SVG-Stroke-Zeichnen, UI-Nachbau, Registry-Block für genau diesen Effekt)? → `hyperframes-gsap`.
-4. **Sonst** (Layout, Bilder, Rahmen, Text, Collage, an Wortzeiten gebunden) → `remotion-dom`.
+2. **Fotorealistisches Hero-Objekt** (echte Materialien wie Metall, Bakelit, Holz; weiches Flächenlicht; ein Gegenstand, der wie das echte Objekt aussehen soll)? → `blender-python` (EEVEE, transparent über die Tapete). Nicht für Toon-Dioramen mit vielen Figuren – die bleiben `remotion-three`.
+3. **Echter Raum** (Perspektive, Kamera im 3D-Raum, Licht/Schatten auf Objekten, viele Objekte in Tiefe, Ebenen im Raum)? → `remotion-three`.
+4. **HTML-typische Effekte** (CSS-Scanlines/Glow, Tipp-Effekte, SVG-Stroke-Zeichnen, UI-Nachbau, Registry-Block für genau diesen Effekt)? → `hyperframes-gsap`.
+5. **Sonst** (Layout, Bilder, Rahmen, Text, Collage, an Wortzeiten gebunden) → `remotion-dom`.
 
 Die Begründung im Storyboard nennt den konkreten Vorteil („Kamera fährt durch 961 Objekte in Tiefe – braucht echtes 3D“), nicht nur den Toolnamen.
 
@@ -34,6 +35,7 @@ storyboard.json ──check──▶ pro Szene: Router
    remotion-three / remotion-dom ─▶ npx remotion render (Format + Dauer als Props, Tapete darunter)
    hyperframes-gsap ─▶ Platzhalter füllen, Tapete als bg.png ─▶ npx hyperframes render
    manim-python ─▶ manim --transparent (Seitenverhältnis per format.cfg) ─▶ ffmpeg-Overlay auf Tapete
+   blender-python ─▶ blender -b (EEVEE, PNG mit Alpha, ED_WIDTH/HEIGHT/DURATION) ─▶ ffmpeg-Overlay auf Tapete
  ─▶ clips/<id>.mp4 (gleiches Format, 30 fps, exakte Dauer)
  ─▶ ffmpeg xfade-Kette + voice.wav/music.wav ─▶ export/<slug>.mp4 ─▶ audit/sheet_*.jpg
 ```
@@ -53,4 +55,5 @@ Alles relativ zu `width`/`height` bzw. `__U__` (1 % der kurzen Seite) bauen; Man
 ## Bekannte Grenzen & Standards
 - Tapeten-Motive: Ausschließlich echte, historische Museums-Scans und Digitalisate (`editorial/remotion/shared/wallpapers/`). Prozedurale SVGs und KI-Texturen sind strikt untersagt.
 - HyperFrames lädt GSAP und Google Fonts per CDN – Rendern braucht Internet.
+- Blender: Standardpfad `C:/Program Files/Blender Foundation/Blender 5.1/blender.exe`, sonst `BLENDER_EXE` setzen. Variable Fonts (Playfair) liest Blender nicht vollständig – im 3D-Text statische Schnitte nutzen (z. B. DM Serif Display). Farbmanagement `Standard`, sonst entsättigt AgX die Akzentfarben.
 - Manim braucht `manim-scenes/.venv` (uv) und MiKTeX unter `~/scoop/apps/miktex`.

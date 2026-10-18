@@ -32,7 +32,7 @@ Pro Szene in `storyboard.md` (Begründung in Prosa) **und** `storyboard.json` (M
 6. **Choreografie & Kamera:** Schritt für Schritt mit Zeitangaben; Kamera `push-in`, `isometric-zoom`, `whip-pan`, `3d-orbit`, `static-drift` … Kein Moment ohne Bewegung.
 7. **Übergang:** `cut`, `fade`, `light-switch`, `whip-pan`, `zoom-through`, `chapter-card`.
 8. **Assets & freie Bühne:** jedes sichtbare Element in `assets` einer Asset-Klasse zuordnen (5 aus der Spec plus `formel-graph`/`eigene-grafik`) (Herkunft, Lizenz, Quellenzeile), `focusObjects` 1–3. Jede Zahl im Bild mit `beleg`. Verbote aus `references/assets.md` beachten: keine erfundenen Zahlen/Zitate, nichts Unechtes als echt ausgeben, kein Dashboard/Bento/Glas/Neon, keine Emojis, Logos immer laden, kein Idle-Wackeln.
-9. **Tool & technische Begründung:** `remotion-three`, `remotion-dom`, `hyperframes-gsap` oder `manim-python` – nach dem Router in `references/regie.md`. Begründung nennt, was dieses Tool für *diese* Szene besser kann (mind. ein Satz, kein „passt gut“).
+9. **Tool & technische Begründung:** `remotion-three`, `remotion-dom`, `hyperframes-gsap`, `manim-python` oder `blender-python` – nach dem Router in `references/regie.md`. Begründung nennt, was dieses Tool für *diese* Szene besser kann (mind. ein Satz, kein „passt gut“).
 
 **Thumbnail-Plan:** Skill `/thumbnail-design` aufrufen (Modus B `editorial`) und in `projects/<slug>/thumbnail-plan.json` **3 Konzepte mit unterschiedlichen Archetypen** planen (`conceptual-split-pun`, `diegetic-ui-overload`, `symbolic-metaphor-contrast`, `cutout-portrait-mashup`, `emblem-medallion-centerpiece`): höchstens 3 Wörter, Schrift-Rolle aus `/editorial-typography` mit 3D-Extrusion, Gold-Bevel oder hartem Schatten, höchstens 2 Fokus-Elemente, Logos geladen. Vorbild: `projects/00-beweis/thumbnail-plan.json`.
 
@@ -46,6 +46,7 @@ Danach `npm run ed -- check <slug>` (prüft alle Pflichtfelder, Enums, Dateien, 
   - Tapete und Licht: `remotion/shared/Wallpaper.tsx` (kommt automatisch aus `wallpaper` der Szene).
 - Remotion: Komponente in `editorial/remotion/scenes/`, in `scenes/registry.ts` eintragen. Format kommt als Prop – nie feste Pixel, immer relativ zu `width`/`height`.
 - HyperFrames: `projects/<slug>/hf/<id>/index.html` mit Platzhaltern `__W__ __H__ __U__ __DUR__`, `<link href="roles.css">`, Tapete als `bg.png` (beides setzt die Pipeline ein), GSAP-Timeline in `window.__timelines["main"]`, kein `repeat: -1`/`yoyo`.
+- Blender: `projects/<slug>/blender/<id>.py`, Aufruf `blender -b -P <datei> -- <ausgabe-ordner> [frame …]`, Auflösung und Dauer aus `ED_WIDTH`/`ED_HEIGHT`/`ED_DURATION`, PNG mit Alpha (`film_transparent`) als `f0000.png …`. Wird über die Remotion-Tapete gelegt. Selbstkontrolle mit einzelnen Frames, Vorschau in 1280×720. Ganze Animation in einem `render(animation=True)`-Aufruf, `taa_render_samples` aus `ED_SAMPLES` (Standard 16). Zwischenstände mit `ED_PREVIEW=1` (halbe Auflösung), Full HD nur für den finalen Clip. Vorlage: `projects/04-enigma/blender/s3.py`.
 - Manim: `projects/<slug>/manim/<id>.py`, Layout über `config.frame_width/height`, Dauer aus `ED_DURATION`. Wird transparent über die Remotion-Tapete gelegt.
 - Jede Szene einzeln: `npm run ed -- scene <slug> <id>`, Frames ansehen, korrigieren.
 
