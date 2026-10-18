@@ -20,11 +20,13 @@ export interface VideoEntry {
 // <pg:imports>
 import {Video as KugelAusPunkt, DURATION as KUGEL_DURATION} from './08-kugel-aus-punkt/Video';
 import {DURATION as V09ExponentiellGewinnt_DUR, Video as V09ExponentiellGewinnt} from './09-exponentiell-gewinnt/Video';
+import {DURATION as V10DrehenderKopf_DUR, Video as V10DrehenderKopf} from './10-drehender-kopf/Video';
 // </pg:imports>
 
 export const VIDEOS: readonly VideoEntry[] = [
   // <pg:entries>
   {id: 'V08KugelAusPunkt', slug: '08-kugel-aus-punkt', component: KugelAusPunkt, durationSec: KUGEL_DURATION},
   {id: 'V09ExponentiellGewinnt', slug: '09-exponentiell-gewinnt', component: V09ExponentiellGewinnt, durationSec: V09ExponentiellGewinnt_DUR},
+  {id: 'V10DrehenderKopf', slug: '10-drehender-kopf', component: V10DrehenderKopf, durationSec: V10DrehenderKopf_DUR},
   // </pg:entries>
 ];

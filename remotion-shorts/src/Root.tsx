@@ -13,6 +13,7 @@ import {sectionClip} from './shared';
 import {VIDEOS} from './videos/registry';
 import {KugelThumbnailA, KugelThumbnailB, KugelThumbnailC} from './videos/08-kugel-aus-punkt/Thumbnail';
 import {ExponentiellThumbnailA, ExponentiellThumbnailB, ExponentiellThumbnailC} from './videos/09-exponentiell-gewinnt/Thumbnail';
+import {V10DrehenderKopfThumbnailA, V10DrehenderKopfThumbnailB, V10DrehenderKopfThumbnailC} from './videos/10-drehender-kopf/Thumbnail';
 
 /** Longform: jeder Abschnitt als eigener Clip (einmal erzeugt, damit das Studio nicht neu mountet). */
 const SCENE_CLIPS = VIDEOS.filter((v) => !v.scenes).flatMap((v) =>
@@ -27,6 +28,9 @@ const SCENE_CLIPS = VIDEOS.filter((v) => !v.scenes).flatMap((v) =>
 
 export const RemotionRoot: React.FC = () => (
   <>
+    <Composition id="V10DrehenderKopfThumbnailA" component={V10DrehenderKopfThumbnailA} durationInFrames={1} fps={FPS} width={1080} height={1920}/>
+    <Composition id="V10DrehenderKopfThumbnailB" component={V10DrehenderKopfThumbnailB} durationInFrames={1} fps={FPS} width={1080} height={1920}/>
+    <Composition id="V10DrehenderKopfThumbnailC" component={V10DrehenderKopfThumbnailC} durationInFrames={1} fps={FPS} width={1080} height={1920}/>
     <Composition id="V08KugelThumbnailA" component={KugelThumbnailA} durationInFrames={1} fps={FPS} width={1080} height={1920}/>
     <Composition id="V08KugelThumbnailB" component={KugelThumbnailB} durationInFrames={1} fps={FPS} width={1080} height={1920}/>
     <Composition id="V08KugelThumbnailC" component={KugelThumbnailC} durationInFrames={1} fps={FPS} width={1080} height={1920}/>
